@@ -1,0 +1,50 @@
+{% extends "front.layout.app" %}
+
+{% block content %}
+
+    {% include 'front/widget/menu.twig' with data.menu only %}
+
+    {% include 'front/widget/header.twig' with {'data': data.header, 'city': city} only %}
+
+    <!-- Page Content -->
+    <div class="container">
+
+        {# преимущества #}
+        {% if data.benefits is not empty %}
+            {% include 'front/widget/benefits.twig' with data.benefits only %}
+        {% endif %}
+
+        {# товары #}
+        {% if data.products is not empty %}
+            {% include 'front/widget/products.twig' with {'data': data.products, 'city': city } only %}
+        {% endif %}
+
+        {# отзывы #}
+        {% if data.benefits is not empty %}
+            {% include 'front/widget/reviews.twig' with data.reviews only %}
+        {% endif %}
+
+        {# форма #}
+        {% if data.form.widget is not empty %}
+            {% include 'front/widget/form.twig' with data.form only %}
+        {% endif %}
+
+        <div class="text-center" style="margin-top: 24px; margin-bottom: 48px">
+            {% if data.title.header_down_button is not empty %}
+                <h3>{{ data.title.header_down_button | nl2br }}</h3>
+            {% endif %}
+
+        {% if data.title.url_down_button is not empty %}
+            <a href="{{ data.title.url_down_button }}" target="_blank" class="btn btn-primary btn-lg">{{ data.title.title_down_button | replace({'city_name': city}) }}</a>
+        {% else %}
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#get_phone">{{ data.title.title_down_button | replace({'city_name': city}) }}</button>
+        {% endif %}
+        </div>
+    </div>
+        {# картинка #}
+
+        {# видео #}
+        {% if data.video is not empty %}
+            {% include 'front/widget/video.twig' with data.video only %}
+        {% endif %}
+{% endblock %}

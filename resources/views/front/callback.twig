@@ -1,0 +1,18 @@
+{% extends "front.layout.app" %}
+
+{% block content %}
+
+    {% include 'front/widget/menu.twig' with data.menu only %}
+
+    <!-- Page Content -->
+    <div class="container text-center well well-lg" style="padding-top: 48px; padding-bottom: 48px">
+        <h2 class="text-success">
+            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Наш менеджер уже набирает ваш телефон
+        </h2>
+    </div>
+
+    {% include 'front/widget/header.twig' with data.header only %}
+
+
+
+{% endblock %}

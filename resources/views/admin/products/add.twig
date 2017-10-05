@@ -1,0 +1,28 @@
+{% extends "admin.layouts.app" %}
+
+{% block title %}Создать новую "Шапку"{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-lg-5 col-md-7">
+            <h1>Создать новую "Шапку"</h1>
+
+            <form method="post" action="{{ route('admin_products_insert') }}">
+                {{ csrf_field() }}
+                {% for item in label %}
+                {% if item.visible < 1 %}
+
+                <div class="form-group has-error">
+                    {% else %}
+                    <div class="form-group">
+                        {% endif %}
+
+                        <label>{{ item.label }}</label>
+                        <input type="text" name="{{ item.name }}" value="-" class="form-control">
+                    </div>
+                {% endfor %}
+
+                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Создать</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

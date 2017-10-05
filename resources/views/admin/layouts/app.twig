@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="">
+    <title>{% block title %}{% endblock %} - My Webpage</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/simple-sidebar.css" rel="stylesheet">
+    <link href="/css/menu.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="wrapper">
+    <div id="sidebar-wrapper">
+        <nav class="navbar navbar-default sidebar" role="navigation">
+            <div class="container-fluid" style="padding: 0px">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="{{ route('admin_sites_index') }}">0. Сайты<span class="pull-right hidden-xs showopacity glyphicon glyphicon-folder-open"></span></a></li>
+                        <li><a href="{{ route('admin_menu_index') }}">1. Меню<span class="pull-right hidden-xs showopacity glyphicon glyphicon-tasks"></span></a></li>
+                        <li><a href="{{ route('admin_headers_index') }}">2. Заголовок<span class="pull-right hidden-xs showopacity glyphicon glyphicon-education"></span></a></li>
+                        <li><a href="{{ route('admin_benefits_index') }}">3. Преимущества<span class="pull-right hidden-xs showopacity glyphicon glyphicon-object-align-bottom"></span></a></li>
+                        <li><a href="{{ route('admin_products_index') }}">4. Товары<span class="pull-right hidden-xs showopacity glyphicon glyphicon-shopping-cart"></span></a></li>
+                        <li><a href="{{ route('admin_label_index') }}">5. Параметры<span class="pull-right hidden-xs showopacity glyphicon glyphicon-file"></span></a></li>
+                        <li><a href="{{ route('admin_reviews_index') }}">6. Отзывы<span class="pull-right hidden-xs showopacity glyphicon glyphicon-comment"></span></a></li>
+                        <li><a href="{{ route('admin_video_index') }}">7. Видео<span class="pull-right hidden-xs showopacity glyphicon glyphicon-facetime-video"></span></a></li>
+                        <li><a href="{{ route('admin_titles_index') }}">8. Строки<span class="pull-right hidden-xs showopacity glyphicon glyphicon-file"></span></a></li>
+                        <li><a href="{{ route('admin_forms_index') }}">9. Форма<span class="pull-right hidden-xs showopacity glyphicon glyphicon-file"></span></a></li>
+                        <li><a href="{{ route('admin_phones_index') }}">!. Телефоны<span class="pull-right hidden-xs showopacity glyphicon glyphicon-earphone"></span></a></li>
+                        <li><a href="{{ route('logout') }}">Выход<span class="pull-right hidden-xs showopacity glyphicon glyphicon-log-out"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div id="page-content-wrapper">
+        <div class="container-fluid">{% block content %}{% endblock %}</div>
+    </div>
+</div>
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+{% block script %}{% endblock %}
+</body>
+</html>
