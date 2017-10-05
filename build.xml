@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="CodeSniffer" default="build">
+    <target name="build">
+        <echo msg="Moving .tgz"/>
+    </target>
+</project>
