@@ -1,0 +1,150 @@
+{% extends 'front.layouts.app' %}
+
+{% block title %}Лизинг{% endblock %}
+
+{% block content %}
+    <style>
+        .item1 {
+            width: 85px;
+            height: 28px;
+            font-family: GillSans;
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 1.0;
+            text-align: left;
+            color: #000000;
+        }
+
+        .item2 {
+            width: 50px;
+            height: 28px;
+            font-family: GillSans;
+            font-size: 18px;
+            line-height: 1.56;
+            text-align: left;
+            color: #646464;
+        }
+
+        /*** 123 */
+        input[type=range] {
+            height: 32px;
+            -webkit-appearance: none;
+            margin: 10px 0;
+            width: 100%;
+        }
+        input[type=range]:focus {
+            outline: none;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 2px;
+            cursor: pointer;
+            animate: 0.2s;
+            background: #777;
+            border-radius: 0;
+            border: 0;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            box-shadow: 0;
+            border: 0;
+            height: 18px;
+            width: 36px;
+            border-radius: 0;
+            background: #000;
+            cursor: pointer;
+            -webkit-appearance: none;
+            margin-top: -8px;
+        }
+        input[type=range]:focus::-webkit-slider-runnable-track {
+            background: #ccc;
+        }
+        input[type=range]::-moz-range-track {
+            width: 100%;
+            height: 16px;
+            cursor: pointer;
+            animate: 0.2s;
+            box-shadow: 0px 0px 0px #000000;
+            background: #B6B6B6;
+            border-radius: 25px;
+            border: 1px solid #8A8A8A;
+        }
+        input[type=range]::-moz-range-thumb {
+            box-shadow: 1px 1px 1px #828282;
+            border: 1px solid #8A8A8A;
+            height: 24px;
+            width: 35px;
+            border-radius: 6px;
+            background: #DADADA;
+            cursor: pointer;
+        }
+        input[type=range]::-ms-track {
+            width: 100%;
+            height: 16px;
+            cursor: pointer;
+            animate: 0.2s;
+            background: transparent;
+            border-color: transparent;
+            color: transparent;
+        }
+        input[type=range]::-ms-fill-lower {
+            background: #ccc;
+            border: 1px solid #8A8A8A;
+            border-radius: 50px;
+            box-shadow: 0px 0px 0px #000000;
+        }
+        input[type=range]::-ms-fill-upper {
+            background: #ccc;
+            border: 1px solid #8A8A8A;
+            border-radius: 50px;
+            box-shadow: 0px 0px 0px #000000;
+        }
+        input[type=range]::-ms-thumb {
+            margin-top: 1px;
+            box-shadow: 1px 1px 1px #828282;
+            border: 1px solid #8A8A8A;
+            height: 24px;
+            width: 35px;
+            border-radius: 6px;
+            background: #DADADA;
+            cursor: pointer;
+        }
+        input[type=range]:focus::-ms-fill-lower {
+            background: #ccc;
+        }
+        input[type=range]:focus::-ms-fill-upper {
+            background: #ccc;
+        }
+    </style>
+
+    <div class="container">
+        <h1>Лизинг</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="item1">Расчет</h2>
+                <p class="item2">Сумма</p>
+
+
+                <label>Срок кредита, мес </label>
+                <input name="period" type="range" min="1" max="5" step="1" value="4">
+
+                <label>Первоначальный взнос</label>
+                <input name="price" type="range" min="10" max="50" step="1">
+
+            </div>
+            <div class="col-md-6">
+                <p>Область деятельности компании – производство и продажа полного модельного ряда коммерческой техники ISUZU полной массой от 3,5 до 33 тонн через национальную дилерскую сеть, которая на данный момент насчитывает более 50 дилерских центров. Производственные мощности АО «ИСУЗУ РУС» расположены в г. Ульяновск.</p>
+            </div>
+        </div>
+
+        <div class="row" style="background-color: #ff2500; 	opacity: 0.1;">
+            <div class="col-md-3">
+                <p>Сумма кредита</p>
+                <p><strong>123</strong></p>
+                </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+    </div>
+{% endblock %}
