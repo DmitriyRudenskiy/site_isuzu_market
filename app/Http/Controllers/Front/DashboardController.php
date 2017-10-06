@@ -11,7 +11,7 @@ class DashboardController extends Controller
      */
     public function home()
     {
-
+        return view('front.dashboard.home');
     }
 
     /**
@@ -19,14 +19,14 @@ class DashboardController extends Controller
      */
     public function about()
     {
-
+        return view('front.dashboard.about');
     }
 
     /**
      *
      */
-    public function contact()
+    public function contacts()
     {
-
+        return view('front.dashboard.contacts');
     }
 }

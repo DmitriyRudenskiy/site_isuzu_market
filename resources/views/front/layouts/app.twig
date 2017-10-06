@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <link href="/fonts/GillSansC.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/header.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: "ExGillSansC" !important;
+        }
+
+        .btn-red {
+            background: #fff;
+            border: 2px solid red;
+            border-radius: 0;
+            padding: 19px 50px 15px 50px;
+            color: #000000;
+            font-size: 18px;
+            line-height: 1;
+        }
+
+        .btn-red:focus {
+            box-shadow: none;
+        }
+
+        .btn-red:active {
+            background: red;
+            color: #fff;
+            box-shadow: none;
+        }
+    </style>
+
+</head>
+<body>
+<!-- header -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-6 col-sm-5 col-md-3 col-lg-2 text-center text_logo">
+            <a href="{{ route('front_home') }}" title=""><img src="img/logo_white.png" alt="" style="width: 70%"></a>
+        </div>
+        <div class="col-xs-6 col-sm-7 col-md-9 col-lg-10" style="padding-left: 0">
+
+            <div class="row header_before_menu hidden-xs" style="margin: 0; padding-left: 20px;">
+                <div class="col-lg-6  header_before_menu_info">
+                    <p>Официальный дилерский центр</p>
+                </div>
+                <div class="col-lg-6 text-right" style="padding-top: 10px; padding-right: 45px">
+                    <strong>(+7 383) 2222-608</strong> <button class="btn btn-link" data-toggle="modal" data-target="#modal_callback" style="opacity: 0.64; font-size: 16px; color: #4a4a4a;">Обратный звонок</button>
+                </div>
+            </div>
+
+            <!-- menu -->
+            <nav class="navbar" style="padding-left: 20px; padding-right: 20px; margin-bottom: 0">
+                <div id="navbar navbar-make" class="navbar-collapse collapse no-padding-left">
+                    <ul class="nav navbar-nav">
+                        <li><a href="{{ route('front_news_list') }}">Новости</a></li>
+                        <li><a href="{{ route('front_leasing_info') }}">Лизинг</a></li>
+                        <li><a href="{{ route('front_dashboard_about') }}">О компании</a></li>
+                        <li><a href="{{ route('front_dashboard_contacts') }}">Контакты</a></li>
+                    </ul>
+                    <!--
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="./" style="color: red">Мой заказ</a></li>
+                        <li class="active"><a href="./" ><span style="border:1px solid red; border-radius: 15px; color: red;">3</span></a></li>
+                        <li class="active"><a href="./" style="font-size: 24px"><i class="fa fa-bars" aria-hidden="true"></i></a></li>
+                    </ul>
+                    -->
+                </div><!--/.nav-collapse -->
+            </nav>
+            <!--/ menu -->
+        </div>
+    </div>
+</div>
+<!--/ header -->
+{% block content %}{% endblock %}
+
+<style>
+    footer {
+        padding-top: 48px;
+        padding-left: 80px;
+        padding-bottom: 40px;
+        font-size: 16px;
+        line-height: 1.4;
+        color: #797979;
+    }
+</style>
+
+<footer class="footer">
+        <div class="row">
+            <div class="col-lg-12">
+                © ISUZU 2017<br>Официальный дистрнибьютор автомобилей марки ISUZU
+            </div>
+            <div class="col-lg-12 text-right">
+            </div>
+        </div>
+</footer>
+
+<style>
+    h5 {
+        font-size: 36px;
+    }
+    
+    .modal-header {
+        padding-bottom: 0;
+        border: 0;
+        color: yellow;
+    }
+
+    .modal-body {
+        position: relative;
+        padding: 0 40px 40px 40px;
+    }
+
+    .modal_form_comment {
+        font-size: 18px;
+        line-height: 1.4;
+        color: #777;
+        font-weight: 400;
+    }
+
+    .form-control, .form-control:focus  {
+        box-shadow: none;
+        border-radius: 0;
+        border: 0;
+        border-bottom: 2px solid #000;
+        font-size: 18px;
+        line-height: 1.4;
+        color: #333;
+        padding-left: 0;
+    }
+
+    .form-group {
+        margin-bottom: 40px !important;
+    }
+
+    .modal-content {
+        border-radius: 0;
+        border: 1px solid #000;
+    }
+
+
+
+</style>
+
+<div class="modal fade" id="modal_callback"  tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-size: 38px; line-height: 1; color: #333;"><span aria-hidden="true">&times;</span></button>
+            </div>
+
+            <div class="modal-body">
+                <h5>Обратный звонок</h5>
+                <p class="modal_form_comment">Оставьте свой телефон, чтобы вам перезвонил наш менеджер</p>
+
+                <form style="padding-top: 20px">
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Имя">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Телефон">
+                    </div>
+                    <button type="button" class="btn btn-red">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/vendor.js"></script>
+{% block script %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,41 @@
+{% extends 'front.layouts.app' %}
+
+{% block title %}Контакты{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Контакты</h1>
+        <p>(+7 495) 783-70-35</p>
+        <p>ул. Красный проспект, д. 16, стр. 1, офис B-602</p>
+        <p>dm-isuzu@yandex.ru</p>
+
+        <div class="row">
+            <div class="col-md-6">
+                <p>АО «ИСУЗУ РУС» (бывшее ЗАО «СОЛЛЕРС-ИСУЗУ») – это официальный производитель и дистрибьютер автомобильной марки ISUZU в России. Компания основана совместными усилиями двух японских корпораций — Isuzu Motors Limited (74% акций) и Sojitz Corporation (26% акций).</p>
+            </div>
+            <div class="col-md-6">
+                <p>Область деятельности компании – производство и продажа полного модельного ряда коммерческой техники ISUZU полной массой от 3,5 до 33 тонн через национальную дилерскую сеть, которая на данный момент насчитывает более 50 дилерских центров. Производственные мощности АО «ИСУЗУ РУС» расположены в г. Ульяновск.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" id="map"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        ymaps.ready(init);
+        var myMap;
+
+        function init(){
+            myMap = new ymaps.Map("map", {
+                center: [55.76, 37.64],
+                zoom: 7
+            });
+        }
+    </script>
+{% endblock %}
