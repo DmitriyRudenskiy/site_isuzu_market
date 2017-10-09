@@ -87,7 +87,7 @@ h5 {
     font-weight: 400;
 }
 
-.form-control, .form-control:focus  {
+.form-control, .form-control:focus {
     box-shadow: none;
     border-radius: 0;
     border: 0;
@@ -107,13 +107,12 @@ h5 {
     border: 1px solid #000;
 }
 
-.navbar-nav>li>a {
+.navbar-nav > li > a {
     margin: 0 26px;
-    /* Сверху | Справа | Снизу | Слева */
     padding: 22px 0px 3px 0px !important;
 }
 
-.navbar-nav>li>a:hover {
+.navbar-nav > li > a:hover {
     background: none !important;
     border-bottom: 2px solid red;
 }
