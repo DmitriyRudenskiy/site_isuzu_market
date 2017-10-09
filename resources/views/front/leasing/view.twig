@@ -161,15 +161,34 @@
         <div class="row">
             <div class="col-md-6">
                 <h2 class="item1">Расчет</h2>
-                <p class="item2">Сумма</p>
 
+                <form>
+                <div class="form-group">
+                    <label class="col-sm-12">Срок кредита, мес</label>
+                    <div class="col-sm-8 col-md-9">
+                        <input name="period" type="range" min="1" max="5" step="1" value="4">
+                    </div>
+                    <div class="col-sm-4 col-md-3">
+                        <p class="form-control-static">12 мес.</p>
+                    </div>
+                </div>
 
-                <label>Срок кредита, мес </label>
-                <input name="period" type="range" min="1" max="5" step="1" value="4">
+                <div class="form-group">
+                    <label class="col-sm-12">Первоначальный взнос</label>
+                    <div class="col-sm-8 col-md-9">
+                        <input name="price" type="range" min="10" max="50" step="1" value="50">
+                    </div>
+                    <div class="col-sm-4 col-md-3">
+                        <p class="form-control-static">50%</p>
+                    </div>
+                </div>
 
-                <label>Первоначальный взнос</label>
-                <input name="price" type="range" min="10" max="50" step="1">
-
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <button type="button" class="btn btn-red">Оформить заявку</button>
+                        </div>
+                    </div>
+                </form>
             </div>
             <div class="col-md-4">
                 <span class="thumbnail">
