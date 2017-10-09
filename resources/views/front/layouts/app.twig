@@ -9,49 +9,22 @@
     <link href="/fonts/GillSansC.css" rel="stylesheet">
     <link href="/css/bootstrap.css" rel="stylesheet">
     <link href="/css/header.css" rel="stylesheet">
-    <link href="/css/main.css" rel="stylesheet">
-
-    <style>
-        * {
-            font-family: "ExGillSansC" !important;
-        }
-
-        .btn-red {
-            background: #fff;
-            border: 2px solid red;
-            border-radius: 0;
-            padding: 19px 50px 15px 50px;
-            color: #000000;
-            font-size: 18px;
-            line-height: 1;
-        }
-
-        .btn-red:focus {
-            box-shadow: none;
-        }
-
-        .btn-red:active {
-            background: red;
-            color: #fff;
-            box-shadow: none;
-        }
-    </style>
-
+    <link href="/css/main.css?v=1" rel="stylesheet">
 </head>
 <body>
 <!-- header -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-xs-6 col-sm-5 col-md-3 col-lg-2 text-center text_logo">
-            <a href="{{ route('front_home') }}" title=""><img src="img/logo_white.png" alt="" style="width: 70%"></a>
+            <a href="{{ route('front_home') }}" title=""><img src="/img/logo_white.png" alt="" style="width: 70%"></a>
         </div>
         <div class="col-xs-6 col-sm-7 col-md-9 col-lg-10" style="padding-left: 0">
 
             <div class="row header_before_menu hidden-xs" style="margin: 0; padding-left: 20px;">
-                <div class="col-lg-6  header_before_menu_info">
+                <div class="col-lg-7 col-xs-7  header_before_menu_info">
                     <p>Официальный дилерский центр</p>
                 </div>
-                <div class="col-lg-6 text-right" style="padding-top: 10px; padding-right: 45px">
+                <div class="col-lg-5 col-xs-5  text-right" style="padding-top: 10px; padding-right: 45px">
                     <strong>(+7 383) 2222-608</strong> <button class="btn btn-link" data-toggle="modal" data-target="#modal_callback" style="opacity: 0.64; font-size: 16px; color: #4a4a4a;">Обратный звонок</button>
                 </div>
             </div>
@@ -81,17 +54,6 @@
 <!--/ header -->
 {% block content %}{% endblock %}
 
-<style>
-    footer {
-        padding-top: 48px;
-        padding-left: 80px;
-        padding-bottom: 40px;
-        font-size: 16px;
-        line-height: 1.4;
-        color: #797979;
-    }
-</style>
-
 <footer class="footer">
         <div class="row">
             <div class="col-lg-12">
@@ -101,53 +63,6 @@
             </div>
         </div>
 </footer>
-
-<style>
-    h5 {
-        font-size: 36px;
-    }
-    
-    .modal-header {
-        padding-bottom: 0;
-        border: 0;
-        color: yellow;
-    }
-
-    .modal-body {
-        position: relative;
-        padding: 0 40px 40px 40px;
-    }
-
-    .modal_form_comment {
-        font-size: 18px;
-        line-height: 1.4;
-        color: #777;
-        font-weight: 400;
-    }
-
-    .form-control, .form-control:focus  {
-        box-shadow: none;
-        border-radius: 0;
-        border: 0;
-        border-bottom: 2px solid #000;
-        font-size: 18px;
-        line-height: 1.4;
-        color: #333;
-        padding-left: 0;
-    }
-
-    .form-group {
-        margin-bottom: 40px !important;
-    }
-
-    .modal-content {
-        border-radius: 0;
-        border: 1px solid #000;
-    }
-
-
-
-</style>
 
 <div class="modal fade" id="modal_callback"  tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">

@@ -1,1 +1,119 @@
-body{font-family:ExGillSansC;font-size:18px;color:#000}h1{font-size:64px;margin-top:60px}p{line-height:1.7}.__news_date{font-size:14px;line-height:0;padding-top:10px;padding-bottom:10px;color:#646464}.__news_thumbnail{padding:0;border:0}#map{width:100%;height:400px;margin-top:24px}
+body {
+    font-family: ExGillSansC;
+    font-size: 18px;
+    color: #000
+}
+
+h1 {
+    font-size: 64px;
+    margin-top: 60px
+}
+
+p {
+    line-height: 1.7
+}
+
+.__news_date {
+    font-size: 14px;
+    line-height: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #646464
+}
+
+.__news_thumbnail {
+    padding: 0;
+    border: 0
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+    margin-top: 24px
+}
+
+* {
+    font-family: "ExGillSansC" !important;
+}
+
+.btn-red {
+    background: #fff;
+    border: 2px solid red;
+    border-radius: 0;
+    padding: 19px 50px 15px 50px;
+    color: #000000;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.btn-red:focus {
+    box-shadow: none;
+}
+
+.btn-red:active {
+    background: red;
+    color: #fff;
+    box-shadow: none;
+}
+
+footer {
+    padding-top: 48px;
+    padding-left: 80px;
+    padding-bottom: 40px;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #797979;
+}
+
+h5 {
+    font-size: 36px;
+}
+
+.modal-header {
+    padding-bottom: 0;
+    border: 0;
+    color: yellow;
+}
+
+.modal-body {
+    position: relative;
+    padding: 0 40px 40px 40px;
+}
+
+.modal_form_comment {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #777;
+    font-weight: 400;
+}
+
+.form-control, .form-control:focus  {
+    box-shadow: none;
+    border-radius: 0;
+    border: 0;
+    border-bottom: 2px solid #000;
+    font-size: 18px;
+    line-height: 1.4;
+    color: #333;
+    padding-left: 0;
+}
+
+.form-group {
+    margin-bottom: 40px !important;
+}
+
+.modal-content {
+    border-radius: 0;
+    border: 1px solid #000;
+}
+
+.navbar-nav>li>a {
+    margin: 0 26px;
+    /* Сверху | Справа | Снизу | Слева */
+    padding: 22px 0px 3px 0px !important;
+}
+
+.navbar-nav>li>a:hover {
+    background: none !important;
+    border-bottom: 2px solid red;
+}

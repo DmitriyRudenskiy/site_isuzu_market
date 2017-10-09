@@ -7,7 +7,7 @@
     <h1>Новости</h1>
     <div class="row">
         {% for index,item in list %}
-            <div class="col-lg-4 col-xs-3">
+            <div class="col-lg-4 col-xs-4">
                 <a href="{{ route('front_news_view', {'id': index + 1}) }}" class="thumbnail __news_thumbnail">
                     <img src="{{ item.image }}" alt="...">
                 </a>
