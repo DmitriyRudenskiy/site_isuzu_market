@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Repositories\ProductsRepository;
 use Illuminate\Routing\Controller;
 
 class DashboardController extends Controller
@@ -9,9 +10,16 @@ class DashboardController extends Controller
     /**
      *
      */
-    public function home()
+    public function home(ProductsRepository $productsRepository)
     {
-        return view('front.dashboard.home');
+        $product = $productsRepository->getProductsForHome();
+
+        return view(
+            'front.dashboard.home',
+            [
+                'product' => $product
+            ]
+        );
     }
 
     /**

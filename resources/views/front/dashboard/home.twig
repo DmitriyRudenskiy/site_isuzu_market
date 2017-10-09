@@ -39,26 +39,19 @@
                         <a href="{{ route('front_leasing_view', {id: 1}) }}" class="btn" style="background: none; border: 2px solid red; border-radius: 0; padding: 10px 32px; color: #000000; font-size: 18px;">Оформить заявку</a>
                     </p>
                 </div>
-
             </div>
 
-            <div class="col-lg-6" style="padding-right: 0">
-                <img src="img/3_002.jpg" alt="" style="width: 100%; margin-bottom: 60px;">
-                <p style="color: #000000; font-size: 64px; line-height: 26px;">2 481 000 <span class="glyphicon glyphicon-ruble" aria-hidden="true" style="color: #000000; font-size: 42px;"></span></p>
-                <p  style="padding-top: 7px; padding-bottom: 20px; color: #000000; font-size: 24px;">Бортовой автомобиль ELF 7.5</p>
-                <p>
-                    <a href="{{ route('front_leasing_view', {id: 2}) }}" class="btn" style="background: none; border: 2px solid red; border-radius: 0; padding: 10px 32px; color: #000000; font-size: 18px;">Оформить заявку</a>
-                </p>
-            </div>
 
-            <div class="col-lg-6" style="padding-left: 0">
-                <img src="img/3_003.jpg" alt="" style="width: 100%; margin-bottom: 60px;">
-                <p style="color: #000000; font-size: 64px; line-height: 26px;">2 481 000 <span class="glyphicon glyphicon-ruble" aria-hidden="true" style="color: #000000; font-size: 42px;"></span></p>
-                <p  style="padding-top: 7px; padding-bottom: 20px; color: #000000; font-size: 24px;">Бортовой автомобиль ELF 7.5</p>
-                <p>
-                    <a href="{{ route('front_leasing_view', {id: 3}) }}" class="btn" style="background: none; border: 2px solid red; border-radius: 0; padding: 10px 32px; color: #000000; font-size: 18px;">Оформить заявку</a>
-                </p>
-            </div>
+            {% for item in product %}
+                <div class="col-lg-6" style="{{ cycle(['padding-right','padding-left'],loop.index) }}: 0; margin-bottom: 48px">
+                    <img src="{{ item.img }}" alt="" style="width: 100%; margin-bottom: 60px;">
+                    <p style="color: #000000; font-size: 64px; line-height: 26px;">{{ item.price | number_format(0, '.', ' ')}} <span class="glyphicon glyphicon-ruble" aria-hidden="true" style="color: #000000; font-size: 42px;"></span></p>
+                    <p  style="padding-top: 7px; padding-bottom: 20px; color: #000000; font-size: 24px;">{{ item.title }}</p>
+                    <p>
+                        <a href="{{ route('front_leasing_view', {id: item.id}) }}" class="btn btn-red">Оформить заявку</a>
+                    </p>
+                </div>
+            {% endfor %}
         </div>
     </div>
 

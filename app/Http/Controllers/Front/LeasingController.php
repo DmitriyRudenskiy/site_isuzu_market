@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Repositories\ProductsRepository;
 use Illuminate\Routing\Controller;
 
 class LeasingController extends Controller
@@ -12,9 +13,16 @@ class LeasingController extends Controller
         return view('front.leasing.index');
     }
 
-    public function view($id)
+    public function view($id, ProductsRepository $productsRepository)
     {
-        return view('front.leasing.view');
+        $product = $productsRepository->get($id);
+
+        return view(
+            'front.leasing.view',
+            [
+                'product' => $product
+            ]
+        );
     }
 
     public function calculation()
