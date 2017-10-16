@@ -6,10 +6,11 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
+        "imagine/imagine": "^0.7.1",
         "laravel/framework": "5.4.*",
-        "rcrowe/twigbridge": "^0.9.4",
+        "niklasravnsborg/laravel-pdf": "^1.5",
         "prettus/l5-repository": "^2.6",
-        "imagine/imagine": "^0.7.1"
+        "rcrowe/twigbridge": "^0.9.4"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

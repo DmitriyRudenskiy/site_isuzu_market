@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Repositories\BanksRepository;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use niklasravnsborg\LaravelPdf\Facades\Pdf;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class BankController extends Controller
@@ -44,6 +45,8 @@ class BankController extends Controller
             throw new NotFoundHttpException();
         }
 
+        $data["logo"] = public_path($bank->image);
+
         $data['period'] *= 12;
         $data['precent'] = $bank->precent;
 
@@ -54,9 +57,23 @@ class BankController extends Controller
             $data['advance']
         );
 
+        $filename = $bank->id . "_" . time() . ".pdf";
+
         $data["bank"] = $bank;
 
-        return view('front.bank.pdf', $data);
+        /* @var Pdf $pdf */
+        $pdf = Pdf::loadView('front.bank.pdf', $data);
+
+        /*
+        $html = view('front.bank.pdf', $data)->render();
+
+        dd($html);
+
+        $pdf->mpdf->AddPage();
+        $pdf->mpdf->WriteHTML($html);
+        */
+
+        return $pdf->download($filename);
     }
 
     protected function getInMouth($price, $percent, $period, $advance)
