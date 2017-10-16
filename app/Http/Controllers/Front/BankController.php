@@ -62,15 +62,7 @@ class BankController extends Controller
         $data["bank"] = $bank;
 
         /* @var Pdf $pdf */
-        //$pdf = Pdf::loadView('front.bank.pdf', $data);
-
-
-        $html = view('front.bank.pdf', $data)->render();
-
-        dd($html);
-
-        $pdf->mpdf->AddPage();
-        $pdf->mpdf->WriteHTML($html);
+        $pdf = Pdf::loadView('front.bank.pdf', $data);
 
         return $pdf->download($filename);
     }
