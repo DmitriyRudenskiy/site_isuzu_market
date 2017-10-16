@@ -23,7 +23,7 @@
                     <tbody>
                     {% for item in list %}
                         <tr>
-                            <td><img src="{{ item.image }}bank" alt=""> </td>
+                            <td><img src="{{ item.image }}" alt=""> </td>
                             <td>{{ item.title }}</td>
                             <td>{{ item.precent }} % / год</td>
                             <td class="text-right"><a href="{{ route('front_leasing_pdf_download', {'bank_id': item.id}) }}&{{ data }}" class="btn btn-red">Cкачать</a></td>
