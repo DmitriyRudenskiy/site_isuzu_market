@@ -162,30 +162,31 @@
             <div class="col-md-6">
                 <h2 class="item1">Расчет</h2>
 
-                <form>
+                <form method="get" action="{{ route('front_leasing_select_download') }}">
+                    <input type="hidden" name="price" value="{{ product.price }}">
                 <div class="form-group">
                     <label class="col-sm-12">Срок кредита, мес</label>
                     <div class="col-sm-8 col-md-9">
                         <input name="period" type="range" min="1" max="5" step="1" value="4">
                     </div>
                     <div class="col-sm-4 col-md-3">
-                        <p class="form-control-static">12 мес.</p>
+                        <p class="form-control-static"><span id="preiod_value">48</span> мес.</p>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-sm-12">Первоначальный взнос</label>
                     <div class="col-sm-8 col-md-9">
-                        <input name="price" type="range" min="10" max="50" step="1" value="50">
+                        <input name="advance" type="range" min="10" max="50" step="1" value="50">
                     </div>
                     <div class="col-sm-4 col-md-3">
-                        <p class="form-control-static">50%</p>
+                        <p class="form-control-static"><span id="advance_value">50</span>%</p>
                     </div>
                 </div>
 
                     <div class="form-group">
                         <div class="col-sm-12">
-                            <button type="button" class="btn btn-red">Оформить заявку</button>
+                            <button type="submit" class="btn btn-red">Оформить заявку</button>
                         </div>
                     </div>
                 </form>
@@ -204,4 +205,18 @@
 
 
     </div>
+{% endblock %}
+
+{% block script %}
+<script>
+    $(document).ready(function(){
+        $('[name="period"]').change(function() {
+            $('#preiod_value').text($(this).val() * 12);
+        });
+
+        $('[name="advance"]').change(function() {
+            $('#advance_value').text($(this).val() * 1);
+        });
+    });
+</script>
 {% endblock %}

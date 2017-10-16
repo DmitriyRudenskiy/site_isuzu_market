@@ -46,6 +46,11 @@ p {
     line-height: 1;
 }
 
+.btn-red:hover {
+    background: red;
+    color: #fff;
+}
+
 .btn-red:focus {
     box-shadow: none;
 }

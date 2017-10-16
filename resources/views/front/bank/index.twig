@@ -1,0 +1,37 @@
+{% extends 'front.layouts.app' %}
+
+{% block title %}??? Нужен заголовок{% endblock %}
+
+{% block content %}
+    <style>
+        .sub_title {
+            font-size: 28px;
+            font-weight: 600;
+            text-align: left;
+            color: #000000;
+        }
+    </style>
+
+    <div class="container">
+        <h1>??? Нужен заголовок</h1>
+
+        <div class="row">
+            <div class="col-md-8">
+                <h3 class="sub_title">Сделайте выбор:</h3>
+
+                <table class="table">
+                    <tbody>
+                    {% for item in list %}
+                        <tr>
+                            <td><img src="{{ item.image }}bank" alt=""> </td>
+                            <td>{{ item.title }}</td>
+                            <td>{{ item.precent }} % / год</td>
+                            <td class="text-right"><a href="{{ route('front_leasing_pdf_download', {'bank_id': item.id}) }}&{{ data }}" target="_blank" class="btn btn-red">Cкачать</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

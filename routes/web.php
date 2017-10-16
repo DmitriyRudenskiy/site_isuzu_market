@@ -11,6 +11,9 @@ Route::group(['middleware' => ['web'], 'namespace' => 'Front', 'as' => 'front_']
     Route::get('/leasing/calculation/{price}', 'LeasingController@calculation')->name('leasing_calculation');
     Route::get('/leasing/view/{id}', 'LeasingController@view')->name('leasing_view');
 
+    Route::get('/leasing/select/download', 'BankController@index')->name('leasing_select_download');
+    Route::get('/leasing/pdf/download', 'BankController@downdload')->name('leasing_pdf_download');
+
     Route::get('/news', 'NewsController@index')->name('news_list');
     Route::get('/news/read/{id}', 'NewsController@index')->name('news_view');
 });
