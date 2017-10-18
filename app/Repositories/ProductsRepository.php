@@ -60,31 +60,31 @@ class ProductsRepository extends BaseRepository
                 'id' => 1,
                 'title' => 'ISUZU ELF 3.5 LONG',
                 'price' => 2130000,
-                'img' => '/img/catalog/1.png'
+                'img' => '/img/catalog/2_1.jpg'
             ],
             [
                 'id' => 2,
                 'title' => 'ISUZU ELF 7.5',
                 'price' => 2670000,
-                'img' => '/img/catalog/2.png'
+                'img' => '/img/catalog/2_2.jpg'
             ],
             [
                 'id' => 3,
                 'title' => 'ISUZU ELF 9.5 EXTRALONG',
                 'price' => 3170000,
-                'img' => '/img/catalog/3.png'
+                'img' => '/img/catalog/2_3.jpg'
             ],
             [
                 'id' => 4,
                 'title' => 'GIGA 6x4 SHORT',
                 'price' => 6640000,
-                'img' => '/img/catalog/4.jpg'
+                'img' => '/img/catalog/2_4.jpg'
             ],
             [
                 'id' => 5,
                 'title' => 'GIGA 6x4 NORMAL',
                 'price' => 6690000,
-                'img' => '/img/catalog/5.jpg'
+                'img' => '/img/catalog/2_5.jpg'
             ],
         ];
     }
