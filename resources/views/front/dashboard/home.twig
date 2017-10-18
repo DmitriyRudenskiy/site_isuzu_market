@@ -26,24 +26,25 @@
             <div class="col-lg-12">
                 <h1 class="title_a1">В наличии</h1>
             </div>
+        </div>
 
-            <div class="col-lg-7 col-md-7" style="margin-bottom: 32px">
-                <img src="/img/catalog/3_1.jpg" alt="">
+        <div class="row">
+            <div class="col-lg-7 col-md-8" style="margin-bottom: 32px; padding-left: 0">
+                <img src="/img/catalog/3_1.jpg" alt="" style="width: 100%">
             </div>
 
-            <div class="col-lg-5 col-md-5" style="margin-bottom: 32px">
-                <div style="padding-top: 365px; padding-left: 24px">
-                    <p style="color: #000000; font-size: 64px; line-height: 26px;">2 481 000 <span class="glyphicon glyphicon-ruble" aria-hidden="true" style="color: #000000; font-size: 42px;"></span></p>
-                    <p  style="padding-top: 7px; padding-bottom: 20px; color: #000000; font-size: 24px;">Бортовой автомобиль ELF 7.5</p>
-                    <p>
-                        <a href="{{ route('front_leasing_view', {id: 1}) }}" class="btn" style="background: none; border: 2px solid red; border-radius: 0; padding: 10px 32px; color: #000000; font-size: 18px;">Оформить заявку</a>
-                    </p>
-                </div>
+            <div class="col-lg-5 col-md-4" style="min-height: 100%; margin-bottom: 32px; vertical-align: bottom">
+                <div style="height: 300px"></div>
+                <p style="color: #000000; font-size: 64px; line-height: 26px;">2 481 000 <span class="glyphicon glyphicon-ruble" aria-hidden="true" style="color: #000000; font-size: 42px;"></span></p>
+                <p  style="padding-top: 7px; padding-bottom: 20px; color: #000000; font-size: 24px;">Бортовой автомобиль ELF 7.5</p>
+                <p>
+                    <a href="{{ route('front_leasing_view', {id: 1}) }}" class="btn" style="background: none; border: 2px solid red; border-radius: 0; padding: 10px 32px; color: #000000; font-size: 18px;">Оформить заявку</a>
+                </p>
             </div>
-
-
+        </div>
+        <div class="row">
             {% for item in product %}
-                <div class="col-lg-6" style="{{ cycle(['padding-right','padding-left'],loop.index) }}: 0; margin-bottom: 48px">
+                <div class="col-lg-6 col-md-6 col-xs-12" style="{{ cycle(['padding-right','padding-left'],loop.index) }}: 0; margin-bottom: 48px">
                     <img src="{{ item.img }}" alt="" style="width: 100%; margin-bottom: 60px;">
                     <p style="color: #000000; font-size: 64px; line-height: 26px;">{{ item.price | number_format(0, '.', ' ')}} <span class="glyphicon glyphicon-ruble" aria-hidden="true" style="color: #000000; font-size: 42px;"></span></p>
                     <p  style="padding-top: 7px; padding-bottom: 20px; color: #000000; font-size: 24px;">{{ item.title }}</p>
