@@ -8,8 +8,7 @@
 
     <link href="/fonts/GillSansC.css" rel="stylesheet">
     <link href="/css/bootstrap.css" rel="stylesheet">
-    <link href="/css/header.css" rel="stylesheet">
-    <link href="/css/main.css?v=2017-10-09_001" rel="stylesheet">
+    <link href="/css/main.css?v=2017-10-18_001" rel="stylesheet">
 </head>
 <body>
 <!--
@@ -85,14 +84,15 @@
                 <h5>Обратный звонок</h5>
                 <p class="modal_form_comment">Оставьте свой телефон, чтобы вам перезвонил наш менеджер</p>
 
-                <form style="padding-top: 20px">
+                <form style="padding-top: 20px" id="callback">
+                    {{ csrf_field() }}
                     <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Имя">
+                        <input type="text" name="name" class="form-control" placeholder="Имя" required>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Телефон">
+                        <input type="text" name="phone" class="form-control" placeholder="Телефон" required>
                     </div>
-                    <button type="button" class="btn btn-red">Отправить</button>
+                    <button type="submit" class="btn btn-red">Отправить</button>
                 </form>
             </div>
         </div>
@@ -100,6 +100,23 @@
 </div>
 
 <script src="/js/vendor.js"></script>
+<script>
+    $("#callback").submit(function(){
+
+        var url = "{{ route('front_callback_index') }}";
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: $(this).serialize(),
+            success: function(data) {
+                alert('Сообщение отправленно!');
+            }
+        });
+
+        return false;
+    });
+</script>
 {% block script %}{% endblock %}
 </body>
 </html>

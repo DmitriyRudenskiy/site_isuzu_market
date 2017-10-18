@@ -38,7 +38,7 @@ p {
 
 .btn-red {
     background: #fff;
-    border: 2px solid red;
+    border: 2px solid #ff2500;
     border-radius: 0;
     padding: 19px 50px 15px 50px;
     color: #000000;
@@ -47,8 +47,8 @@ p {
 }
 
 .btn-red:hover {
-    background: red;
-    color: #fff;
+    background: #ff2500;
+    color: #fff !important;
 }
 
 .btn-red:focus {
@@ -56,7 +56,7 @@ p {
 }
 
 .btn-red:active {
-    background: red;
+    background: #ff2500;
     color: #fff;
     box-shadow: none;
 }
