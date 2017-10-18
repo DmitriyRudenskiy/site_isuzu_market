@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Repositories\BanksRepository;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Response;
-use niklasravnsborg\LaravelPdf\Facades\Pdf;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Illuminate\Mail\Message;
 
 class CallbackController extends Controller
 {
