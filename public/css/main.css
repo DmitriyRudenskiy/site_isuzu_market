@@ -1,3 +1,8 @@
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     font-family: ExGillSansC;
     font-size: 18px;
@@ -114,7 +119,8 @@ h5 {
 
 .navbar-nav > li > a {
     margin: 0 26px;
-    padding: 30px 0px 3px 0px !important;
+    padding: 30px 0 0 0 !important;
+    line-height: 14px;
 }
 
 .navbar-nav > li > a:hover {
