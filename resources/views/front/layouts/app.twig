@@ -13,20 +13,11 @@
 <body>
 
 <style>
-    #main_home_logo {
-        display: block;
-        width: 195px;
-        height: 100px;
-        background: #ff2500;
-        position: absolute;
-        top: 0;
-        left: 0;
-        text-align: center;
-    }
+
 </style>
 
-<a href="{{ route('front_home') }}" title="" id="main_home_logo">
-    <img src="/img/logo_white.png" alt="" style="width: 70%; margin-top: 40px">
+<a href="{{ route('front_home') }}" title="" class="main_logo">
+    <img src="/img/logo_white.png" alt="">
 </a>
 
 <!--
@@ -40,15 +31,17 @@
 </div>
 -->
 <!-- header -->
-<div class="container-fluid" style="padding-left: 195px">
+<div class="container-fluid after_main_logo">
 
     <div class="row header_before_menu hidden-xs" style="margin: 0; padding-left: 20px;">
         <div class="col-lg-7 col-xs-7  header_before_menu_info">
             <p>Официальный дилерский центр</p>
         </div>
+        <!--
         <div class="col-lg-5 col-xs-5  text-right" style="padding-top: 10px; padding-right: 45px">
             <strong class="hidden-md">(+7 383) 2222-608</strong> <button class="btn btn-link" data-toggle="modal" data-target="#modal_callback" style="opacity: 0.64; font-size: 16px; color: #4a4a4a;">Обратный звонок</button>
         </div>
+        -->
     </div>
 
     <!-- menu -->

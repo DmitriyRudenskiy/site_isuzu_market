@@ -41,14 +41,17 @@ p {
     font-family: "ExGillSansC" !important;
 }
 
+.btn {
+    border-radius: 0;
+    padding: 19px 50px 15px 50px;
+    font-size: 18px;
+    line-height: 1;
+}
+
 .btn-red {
     background: #fff;
     border: 2px solid #ff2500;
-    border-radius: 0;
-    padding: 19px 50px 15px 50px;
     color: #000000;
-    font-size: 18px;
-    line-height: 1;
 }
 
 .btn-red:hover {
@@ -117,13 +120,6 @@ h5 {
     border: 1px solid #000;
 }
 
-.navbar-nav > li > a {
-    font-size: 16px;
-    margin: 0 26px;
-    padding: 20px 0 0 0 !important;
-    line-height: 14px;
-}
-
 .navbar-nav > li > a:hover {
     background: none !important;
     border-bottom: 2px solid red;
@@ -160,3 +156,174 @@ a {
     padding: 44px 0;
     background: red
 }
+
+.main_logo {
+    display: block;
+    background: #ff2500;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+
+.main_logo img {
+    width: 70%;
+}
+
+.btn-white {
+    background: none;
+    border: 2px solid #ffffff;
+    color: #ffffff !important;
+}
+
+
+@media (min-width: 992px) and (max-width: 1439px) {
+    .main_logo {
+        width: 195px;
+        height: 100px;
+    }
+
+    .main_logo img {
+        margin-top: 40px;
+    }
+
+    .after_main_logo {
+        padding-left: 195px;
+        min-height: 100px;
+    }
+
+    .navbar-nav > li > a {
+        font-size: 16px;
+        margin: 0 26px;
+        padding: 20px 0 0 0 !important;
+        line-height: 14px;
+    }
+
+    .promo_home_left_box {
+        height: 640px;
+        background: url('/img/0_001.jpg') center;
+        background-size: cover;
+        padding-right: 0;
+    }
+
+    .promo_home_left_title {
+        padding-top: 339px;
+        padding-left: 30px;
+        color: #ffffff;
+        font-size: 36px;
+        line-height: 76px;
+    }
+
+    .promo_home_left_text {
+        padding-left: 30px;
+        color: #ffffff;
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .promo_home_left_button {
+        padding-top: 12px;
+        padding-left: 30px;
+    }
+
+    .promo_home_right_image {
+        width: 100%;
+        height: 340px;
+        background: url('/img/0_002.jpg') center;
+        background-size: cover;
+    }
+
+    .promo_home_right_title {
+        padding-left: 20px;
+        color: #000000;
+        font-size: 36px;
+        line-height: 76px;
+    }
+
+    .promo_home_right_text {
+        padding-left: 20px;
+        color: #000000;
+        font-size: 18px;
+    }
+
+    .promo_home_right_button {
+        padding-top: 12px;
+        padding-left: 20px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .main_logo {
+        width: 280px;
+        height: 120px;
+    }
+
+    .main_logo img {
+        margin-top: 47px;
+    }
+
+    .after_main_logo {
+        padding-left: 280px;
+        min-height: 120px;
+    }
+
+    .navbar-nav > li > a {
+        font-size: 18px;
+        margin: 0 26px;
+        padding: 32px 0 0 0 !important;
+        line-height: 14px;
+    }
+
+    .promo_home_left_box {
+        height: 781px;
+        background: url('/img/0_001.jpg') center;
+        background-size: cover;
+        padding-right: 0;
+    }
+
+    .promo_home_left_title {
+        padding-top: 468px;
+        padding-left: 80px;
+        color: #ffffff;
+        font-size: 48px;
+        line-height: 76px;
+    }
+
+    .promo_home_left_text {
+        padding-left: 80px;
+        color: #ffffff;
+        font-size: 22px;
+    }
+
+    .promo_home_left_button {
+        padding-top: 12px;
+        padding-left: 80px;
+    }
+
+    .promo_home_right_image {
+        width: 100%;
+        height: 450px;
+        background: url('/img/0_002.jpg') center;
+        background-size: cover;
+    }
+
+    .promo_home_right_title {
+        padding-left: 15px;
+        color: #000000;
+        font-size: 48px;
+        line-height: 76px;
+    }
+
+    .promo_home_right_text {
+        padding-left: 20px;
+        color: #000000;
+        font-size: 22px;
+    }
+
+    .promo_home_right_button {
+        padding-top: 12px;
+        padding-left: 20px;
+    }
+}
+
+/* background: none; border: 2px solid #ffffff; border-radius: 0; padding: 10px 32px; color: #ffffff; font-size: 18px; */
