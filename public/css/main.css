@@ -459,3 +459,8 @@ a {
         color: #aaa;
     }
 }
+
+
+.btn-link:focus {
+    outline: 0 !important;
+}
