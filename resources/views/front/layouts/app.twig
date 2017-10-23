@@ -13,7 +13,7 @@
 <body>
 
 <a href="{{ route('front_home') }}" title="" class="main_logo">
-    <img src="/img/logo_white.png" alt="">
+    <img src="/img/logo.svg" alt="ISUZU" style="color: yellow">
 </a>
 
 <!-- header -->
@@ -33,7 +33,7 @@
     <nav class="navbar" style="padding-left: 0px; padding-right: 20px; margin-bottom: 0">
         <div id="navbar navbar-make" class="navbar-collapse collapse no-padding-left">
             <ul class="nav navbar-nav">
-                <li><a href="{{ route('front_news_list') }}">Новости</a></li>
+                <li><a href="{{ route('front_news_list') }}" style=" transition: 3s;">Новости</a></li>
                 <li><a href="{{ route('front_leasing_info') }}">Лизинг</a></li>
                 <li><a href="{{ route('front_dashboard_about') }}">О компании</a></li>
                 <li><a href="{{ route('front_dashboard_contacts') }}">Контакты</a></li>
@@ -52,15 +52,13 @@
 <!--/ header -->
 {% block content %}{% endblock %}
 
-<footer class="footer">
+<div class="container footer">
         <div class="row">
             <div class="col-lg-12">
                 © ISUZU 2017<br>Официальный дистрнибьютор автомобилей марки ISUZU
             </div>
-            <div class="col-lg-12 text-right">
-            </div>
         </div>
-</footer>
+</div>
 
 <div class="modal fade" id="modal_callback"  tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
@@ -107,5 +105,28 @@
     });
 </script>
 {% block script %}{% endblock %}
+
+<script>
+    $(document).ready(function () {
+
+        var className = "__effect_zoom_wrap";
+
+        $("img.__effect_zoom").hover(function () {
+            if ($(this).parent().attr("class") !== className) {
+                var parent = $('<div>').addClass(className);
+                parent.width($(this).width());
+                parent.height($(this).height());
+                parent.css("overflow", "hidden");
+
+                parent.on('mouseover', function () {
+                    $(this).find("img").insert($(this));
+                    $(this).remove();
+                });
+
+                $(this).wrap(parent);
+            }
+        });
+    });
+</script>
 </body>
 </html>

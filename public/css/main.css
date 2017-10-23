@@ -175,6 +175,12 @@ a {
     color: #ffffff !important;
 }
 
+.btn-white:hover {
+    background: #ffffff;
+    border: 2px solid #ffffff;
+    color: #000000 !important;
+}
+
 
 @media (min-width: 992px) and (max-width: 1439px) {
     .main_logo {
@@ -313,11 +319,11 @@ a {
 
     .header_before_menu .btn-link {
         padding: 0;
-        padding-left: 15px;
+        margin-left: 15px;
+        text-decoration: none;
         font-size: 16px;
         font-weight: 400 !important;
         line-height: 24px;
-        color: #aaa;
     }
 }
 
@@ -328,7 +334,7 @@ a {
     }
 
     .main_logo img {
-        margin-top: 47px;
+        margin-top: 42px;
     }
 
     .after_main_logo {
@@ -352,11 +358,12 @@ a {
     }
 
     .promo_home_left_title {
-        padding-top: 468px;
+        padding-top: 498px;
         padding-left: 80px;
         color: #ffffff;
         font-size: 48px;
         line-height: 76px;
+        font-weight: 400 !important;
     }
 
     .promo_home_left_text {
@@ -378,21 +385,26 @@ a {
     }
 
     .promo_home_right_title {
+        padding-top: 53px;
         padding-left: 15px;
         color: #000000;
         font-size: 48px;
-        line-height: 76px;
+        line-height: 1;
     }
 
     .promo_home_right_text {
-        padding-left: 20px;
         color: #000000;
         font-size: 22px;
+        padding-right: 100px;
+        line-height: 1.3;
     }
 
     .promo_home_right_button {
         padding-top: 12px;
-        padding-left: 20px;
+    }
+
+    .promo_home_right_space {
+        padding-left: 40px;
     }
 
     footer {
@@ -422,10 +434,10 @@ a {
 
     .__home_item_list img {
         width: 100%;
-        margin-bottom: 60px;
     }
 
     .__home_item_list .price {
+        margin-top: 30px;
         color: #000000;
         font-size: 64px;
         line-height: 26px;
@@ -452,15 +464,54 @@ a {
 
     .header_before_menu .btn-link {
         padding: 0;
-        padding-left: 15px;
+        margin-left: 15px;
         font-size: 16px;
         font-weight: 400 !important;
         line-height: 24px;
-        color: #aaa;
     }
 }
 
 
 .btn-link:focus {
     outline: 0 !important;
+}
+
+.__effect_zoom {
+    cursor: pointer;
+}
+
+/* image animation */
+.__effect_zoom:hover {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+    opacity: 0.2;
+    transition: 1s;
+}
+
+.__effect_zoom_wrap {
+    background: #000000;
+}
+
+
+.footer {
+    padding-bottom: 40px;
+    color: #797979;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.col-space-right {
+    padding-right: 40px;
+}
+
+.header_before_menu .btn-link {
+    text-decoration: none;
+    display: inline-block;
+    border-bottom: 1px solid #ccc;
+    color: #aaa;
+}
+
+.header_before_menu .btn-link:hover {
+    border-bottom: 1px solid #ffffff;
 }
