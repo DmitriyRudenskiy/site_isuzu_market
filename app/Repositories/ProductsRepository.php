@@ -74,6 +74,7 @@ class ProductsRepository extends BaseRepository
                 'price' => 3170000,
                 'img' => '/img/catalog/2_3.jpg'
             ],
+            /*
             [
                 'id' => 4,
                 'title' => 'GIGA 6x4 SHORT',
@@ -86,6 +87,7 @@ class ProductsRepository extends BaseRepository
                 'price' => 6690000,
                 'img' => '/img/catalog/2_5.jpg'
             ],
+            */
         ];
     }
 }

@@ -51,7 +51,7 @@ p {
 .btn-red {
     background: #fff;
     border: 2px solid #ff2500;
-    color: #000000;
+    color: #000000 !important;
 }
 
 .btn-red:hover {
@@ -71,6 +71,12 @@ p {
 
 h5 {
     font-size: 36px;
+}
+
+#modal_callback .close{
+    font-size: 38px;
+    line-height: 1;
+    color: #333;
 }
 
 .modal-header {
@@ -117,7 +123,9 @@ h5 {
 }
 
 .header_before_menu {
-    border-bottom: 1px solid #ccc
+    border-bottom: 1px solid #ccc;
+    margin: 0;
+    padding-left: 18px;
 }
 
 .header_before_menu_info {
@@ -180,6 +188,7 @@ a {
 
     .after_main_logo {
         padding-left: 195px;
+        padding-right: 0;
         min-height: 100px;
     }
 
@@ -254,6 +263,62 @@ a {
     h1 {
         font-size: 48px !important;
     }
+
+    /* первый промо блок */
+    .__home_item_cover_decription {
+
+    }
+
+    .__home_item_cover_decription .price, .__home_item_list .price {
+        font-size: 48px;
+    }
+
+    .__home_item_cover_decription .price {
+        color: #000000;
+        padding-top: 230px;
+        padding-bottom: 7px;
+        line-height: 26px;
+    }
+
+    .__home_item_cover_decription title {
+        font-size: 18px;
+    }
+
+    .__home_item_list {
+        margin-bottom: 48px;
+    }
+
+    .__home_item_list img {
+        width: 100%;
+        margin-bottom: 60px;
+    }
+
+    .__home_item_list .price {
+        color: #000000;
+        line-height: 12px;
+        margin: 0;
+    }
+
+    .__home_item_list title {
+        padding-bottom: 20px;
+        color: #000000;
+        font-size: 18px;
+    }
+
+    .header_before_menu_callback {
+        padding-top: 10px;
+        padding-right: 45px;
+        font-size: 16px;
+    }
+
+    .header_before_menu .btn-link {
+        padding: 0;
+        padding-left: 15px;
+        font-size: 16px;
+        font-weight: 400 !important;
+        line-height: 24px;
+        color: #aaa;
+    }
 }
 
 @media (min-width: 1440px) {
@@ -268,6 +333,7 @@ a {
 
     .after_main_logo {
         padding-left: 280px;
+        padding-right: 0;
         min-height: 120px;
     }
 
@@ -336,5 +402,60 @@ a {
         font-size: 16px;
         line-height: 1.4;
         color: #797979;
+    }
+
+    /* первый промо блок */
+    .__home_item_cover_decription{
+
+    }
+
+    .__home_item_cover_decription .price {
+        color: #000000;
+        padding-top: 280px;
+        font-size: 64px;
+        line-height: 26px;
+    }
+
+    .__home_item_list {
+        margin-bottom: 48px;
+    }
+
+    .__home_item_list img {
+        width: 100%;
+        margin-bottom: 60px;
+    }
+
+    .__home_item_list .price {
+        color: #000000;
+        font-size: 64px;
+        line-height: 26px;
+    }
+
+    .__home_item_list title {
+        padding-top: 7px;
+        padding-bottom: 20px;
+        color: #000000;
+        font-size: 24px;
+    }
+
+    .header_before_menu_callback {
+        padding-top: 10px;
+        padding-right: 45px
+    }
+
+
+    .header_before_menu_callback {
+        padding-top: 10px;
+        padding-right: 45px;
+        font-size: 16px;
+    }
+
+    .header_before_menu .btn-link {
+        padding: 0;
+        padding-left: 15px;
+        font-size: 16px;
+        font-weight: 400 !important;
+        line-height: 24px;
+        color: #aaa;
     }
 }
