@@ -8,7 +8,7 @@
 
     <link href="/fonts/GillSansC.css" rel="stylesheet">
     <link href="/css/bootstrap.css" rel="stylesheet">
-    <link href="/css/main.css?v=2017-10-23_002" rel="stylesheet">
+    <link href="/css/main.css?v=2017-10-24_002" rel="stylesheet">
 </head>
 <body>
 
@@ -109,23 +109,36 @@
 <script>
     $(document).ready(function () {
 
+        function clear() {
+            $(".__effect_zoom_wrap").each(function () {
+
+                $(this).find("img").insertAfter($(this));
+
+                $(this).remove();
+            });
+        }
+
+        $(window).resize(function () {
+            clear()
+        });
+
         var className = "__effect_zoom_wrap";
 
         $("img.__effect_zoom").hover(function () {
             if ($(this).parent().attr("class") !== className) {
+
                 var parent = $('<div>').addClass(className);
                 parent.width($(this).width());
                 parent.height($(this).height());
                 parent.css("overflow", "hidden");
 
                 parent.on('mouseover', function () {
-                    $(this).find("img").insert($(this));
-                    $(this).remove();
+                    clear();
                 });
 
                 $(this).wrap(parent);
             }
-        });
+        }, clear);
     });
 </script>
 </body>
