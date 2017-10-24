@@ -170,21 +170,27 @@
                     <input type="hidden" name="price" value="{{ product.price }}">
                     <div class="form-group" style="padding-top: 24px">
                         <label>Срок кредита, мес</label>
-                        <div class="col-sm-8 col-md-9" style="padding-left: 0">
-                            <input name="period" type="range" min="1" max="5" step="1" value="4">
-                        </div>
-                        <div class="col-sm-4 col-md-3">
-                            <p class="form-control-static"><span id="preiod_value">48</span> мес.</p>
+
+                        <div>
+                            <div class="col-sm-8 col-md-8" style="padding-left: 0">
+                                <input name="period" type="range" min="1" max="5" step="1" value="4">
+                            </div>
+                            <div class="col-sm-4 col-md-4">
+                                <p class="form-control-static"><span id="preiod_value">48</span> мес.</p>
+                            </div>
                         </div>
                     </div>
 
                     <div class="form-group" style="padding-top: 24px">
                         <label>Первоначальный взнос</label>
-                        <div class="col-sm-8 col-md-9" style="padding-left: 0">
-                            <input name="advance" type="range" min="10" max="50" step="1" value="50">
-                        </div>
-                        <div class="col-sm-4 col-md-3">
-                            <p class="form-control-static"><span id="advance_value">50</span>%</p>
+
+                        <div>
+                            <div class="col-sm-8 col-md-9" style="padding-left: 0">
+                                <input name="advance" type="range" min="10" max="50" step="1" value="50">
+                            </div>
+                            <div class="col-sm-4 col-md-3">
+                                <p class="form-control-static"><span id="advance_value">50</span>%</p>
+                            </div>
                         </div>
                     </div>
 
