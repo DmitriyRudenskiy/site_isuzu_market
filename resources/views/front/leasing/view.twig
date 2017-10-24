@@ -140,10 +140,14 @@
     </style>
 
     <div class="container">
-        <h1>Лизинг</h1>
-        <h3>Выгодные условия покупки ISUZU в лизинг</h3>
-
         <div class="row">
+            <div class="col-md-12">
+                <h1>Лизинг</h1>
+                <h3>Выгодные условия покупки ISUZU в лизинг</h3>
+            </div>
+        </div>
+
+        <div class="row" style="padding-bottom: 48px">
             <div class="col-md-4">
                 <p class="leasinf_view_red"><span class="leasinf_view_black">от</span> 12 мес.</p>
                 <p class="leasinf_view_comment">срок лизинга</p>
@@ -164,31 +168,29 @@
 
                 <form method="get" action="{{ route('front_leasing_select_download') }}">
                     <input type="hidden" name="price" value="{{ product.price }}">
-                <div class="form-group">
-                    <label class="col-sm-12">Срок кредита, мес</label>
-                    <div class="col-sm-8 col-md-9">
-                        <input name="period" type="range" min="1" max="5" step="1" value="4">
-                    </div>
-                    <div class="col-sm-4 col-md-3">
-                        <p class="form-control-static"><span id="preiod_value">48</span> мес.</p>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="col-sm-12">Первоначальный взнос</label>
-                    <div class="col-sm-8 col-md-9">
-                        <input name="advance" type="range" min="10" max="50" step="1" value="50">
-                    </div>
-                    <div class="col-sm-4 col-md-3">
-                        <p class="form-control-static"><span id="advance_value">50</span>%</p>
-                    </div>
-                </div>
-
-                    <div class="form-group">
-                        <div class="col-sm-12">
-                            <button type="submit" class="btn btn-red">Оформить заявку</button>
+                    <div class="form-group" style="padding-top: 24px">
+                        <label>Срок кредита, мес</label>
+                        <div class="col-sm-8 col-md-9" style="padding-left: 0">
+                            <input name="period" type="range" min="1" max="5" step="1" value="4">
+                        </div>
+                        <div class="col-sm-4 col-md-3">
+                            <p class="form-control-static"><span id="preiod_value">48</span> мес.</p>
                         </div>
                     </div>
+
+                    <div class="form-group" style="padding-top: 24px">
+                        <label>Первоначальный взнос</label>
+                        <div class="col-sm-8 col-md-9" style="padding-left: 0">
+                            <input name="advance" type="range" min="10" max="50" step="1" value="50">
+                        </div>
+                        <div class="col-sm-4 col-md-3">
+                            <p class="form-control-static"><span id="advance_value">50</span>%</p>
+                        </div>
+                    </div>
+
+                    <p style="padding-top: 48px">
+                        <button type="submit" class="btn btn-red" >Оформить заявку</button>
+                    </p>
                 </form>
             </div>
             <div class="col-md-4">
