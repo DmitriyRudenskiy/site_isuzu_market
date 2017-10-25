@@ -20,6 +20,74 @@
     </div>
     <!--/ promo -->
 
+    <style>
+        .__configurator_item {
+            height: 254px;
+            background-color: #ffffff;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding-top: 185px;
+            border: 1px solid #ebebeb;
+            cursor: pointer;
+            font-size: 20px;
+
+        }
+
+        .__configurator_item:hover {
+            background-color: #ffe9e6;
+        }
+
+        .__configurator_item p {
+            line-height: 1;
+        }
+
+        .__configurator_item:hover p {
+            display: none;
+        }
+
+
+        .btn-red-all {
+            display: none;
+            background: none;
+            border: 2px solid #ff2500;
+            padding: 8px 43px;
+            color: #ff2500;
+            font-size: 16px;
+        }
+
+        .__configurator_item:hover button {
+            display: inline-block;
+            color: #ff2500;
+        }
+
+        .__configurator_description {
+            font-size: 24px;
+            color: #4a4a4a;
+        }
+
+    </style>
+
+    <!-- configurator -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="title_a1">Конфигуратор</h1>
+                <p class="__configurator_description">Выберите тип грузови</p>
+            </div>
+        </div>
+
+        <div class="row">
+            {% for item in types %}
+            <div class="col-md-4 col-lg-3 text-center __configurator_item" style="background-image: url('{{ item.image }}'); ">
+                <p>{{ item.title | raw }}</p>
+                <button class="btn-red-all">Следующий шаг</button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!--/ configurator -->
+
+
     <!-- text -->
     <div class="container">
         <div class="row">
