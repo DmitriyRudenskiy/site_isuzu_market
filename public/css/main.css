@@ -9,11 +9,6 @@ body {
     color: #000
 }
 
-h1 {
-    font-size: 64px;
-    margin-top: 60px
-}
-
 p {
     line-height: 1.7
 }
@@ -517,4 +512,50 @@ a {
 
 .header_before_menu .btn-link:hover {
     border-bottom: 1px solid #ffffff;
+}
+
+
+/* config */
+.__configurator_item {
+    height: 254px;
+    background-color: #ffffff;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 185px;
+    border: 1px solid #ebebeb;
+    cursor: pointer;
+    font-size: 20px;
+
+}
+
+.__configurator_item:hover {
+    background-color: #ffe9e6;
+}
+
+.__configurator_item p {
+    line-height: 1;
+}
+
+.__configurator_item:hover p {
+    display: none;
+}
+
+
+.btn-red-all {
+    display: none;
+    background: none;
+    border: 2px solid #ff2500;
+    padding: 8px 43px;
+    color: #ff2500;
+    font-size: 16px;
+}
+
+.__configurator_item:hover button {
+    display: inline-block;
+    color: #ff2500;
+}
+
+.__configurator_description {
+    font-size: 24px;
+    color: #4a4a4a;
 }

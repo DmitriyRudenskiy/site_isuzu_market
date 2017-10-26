@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Repositories\ProductsRepository;
+use App\Repositories\TypesRepository;
 use Illuminate\Routing\Controller;
 
 class ConfiguratorController extends Controller
@@ -10,14 +10,14 @@ class ConfiguratorController extends Controller
     /**
      *
      */
-    public function home(ProductsRepository $productsRepository)
+    public function types(TypesRepository $typesRepository)
     {
-        $product = $productsRepository->getProductsForHome();
+        $list = $typesRepository->getAll();
 
         return view(
-            'front.dashboard.home',
+            'front.configurator.types',
             [
-                'product' => $product
+                "list" => $list
             ]
         );
     }

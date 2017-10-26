@@ -18,4 +18,6 @@ Route::group(['middleware' => ['web'], 'namespace' => 'Front', 'as' => 'front_']
     Route::get('/news/read/{id}', 'NewsController@index')->name('news_view');
 
     Route::post('/callback', 'CallbackController@index')->name('callback_index');
+
+    Route::get('/configurator', 'ConfiguratorController@types')->name('configurator_index');
 });

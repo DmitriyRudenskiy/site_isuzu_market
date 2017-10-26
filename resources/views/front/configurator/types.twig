@@ -1,0 +1,66 @@
+{% extends 'front.layouts.app' %}
+
+{% block title %}My Site{% endblock %}
+
+{% block content %}
+
+    <style>
+        .__configurator_menu {
+            padding: 0 !important;
+        }
+
+        .__configurator_menu li {
+            padding-bottom: 27px;
+            list-style-type: none;
+            font-size: 18px;
+
+        }
+
+        .__configurator_menu li, .__configurator_menu a {
+            color: #646464;
+        }
+
+        .__base_page_title {
+            padding-top: 64px;
+            padding-bottom: 45px;
+            font-size: 64px;
+            line-height: 1;
+        }
+
+        .__configurator_menu .active a {
+            color: #ff2500 !important;
+        }
+    </style>
+
+    <div class="container">
+
+        <h1 class="__base_page_title">Конфигуратор</h1>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <ul class="__configurator_menu">
+                    <li class="active"><a href="">01 Тип и тоннаж</a></li>
+                    <li><a href="">02 Основные опции</a></li>
+                    <li><a href="">03 Дополнительные опции</a></li>
+                    <li><a href="">04 Лизинг</a></li>
+                    <li><a href="">05 Итог</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-9">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 style="margin-top: 0">Тип грузовика</h2>
+                    </div>
+
+                    {% for item in list %}
+                        <div class="col-lg-4 text-center __configurator_item" style="background-image: url('{{ item.image }}'); ">
+                            <p>{{ item.title | raw }}</p>
+                            <button class="btn-red-all">Следующий шаг</button>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
