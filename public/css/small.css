@@ -33,9 +33,11 @@
 }
 
 .promo_home_left_box {
-    background: url('/img/bg-xs.jpg') top center no-repeat;
-    background-size: contain;
-    padding-top: 280px;
+    background: #fff;
+}
+
+.promo_home_left_box img {
+    width: 100%;
 }
 
 .promo_home_left_title {
