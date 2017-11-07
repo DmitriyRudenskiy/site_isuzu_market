@@ -97,3 +97,28 @@ select.form-control {
     padding-bottom: 0;
     font-size: 16px;
 }
+
+.button-for-call {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: url('/img/phone-menu.png');
+}
+
+.modal-body {
+    padding: 20px !important;
+}
+
+.modal-body h5 {
+    font-size: 30px;
+}
+
+.modal_form_comment {
+    font-size: 16px;
+    line-height: 1.25;
+}
+
+.modal-dialog {
+    height: 100%;
+    margin: 0 !important;
+}
