@@ -1,0 +1,271 @@
+html, body {
+    width: 100%;
+    overflow-x: hidden
+}
+
+body {
+    font-family: ExGillSansC;
+    font-size: 18px;
+    color: #000
+}
+
+p {
+    line-height: 1.7
+}
+
+.__news_date {
+    font-size: 14px;
+    line-height: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #646464
+}
+
+.__news_thumbnail {
+    padding: 0;
+    border: 0
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+    margin-top: 24px
+}
+
+* {
+    font-family: "ExGillSansC" !important
+}
+
+
+
+.btn-red {
+    background: #fff;
+    border: 2px solid #ff2500;
+    color: #000 !important
+}
+
+.btn-red:hover {
+    background: #ff2500;
+    color: #fff !important
+}
+
+.btn-red:focus {
+    box-shadow: none
+}
+
+.btn-red:active {
+    background: #ff2500;
+    color: #fff;
+    box-shadow: none
+}
+
+h5 {
+    font-size: 36px
+}
+
+#modal_callback .close {
+    font-size: 38px;
+    line-height: 1;
+    color: #333
+}
+
+.modal-header {
+    padding-bottom: 0;
+    border: 0;
+    color: #ff0
+}
+
+.modal-body {
+    position: relative;
+    padding: 0 40px 40px
+}
+
+.modal_form_comment {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #777;
+    font-weight: 400
+}
+
+.form-control, .form-control:focus {
+    box-shadow: none;
+    border-radius: 0;
+    border: 0;
+    border-bottom: 2px solid #000;
+    font-size: 18px;
+    line-height: 1.4;
+    color: #333;
+    padding-left: 0
+}
+
+.form-group {
+    margin-bottom: 40px !important
+}
+
+.modal-content {
+    border-radius: 0;
+    border: 0
+}
+
+.navbar-nav > li > a:hover {
+    background: none !important;
+    border-bottom: 2px solid red
+}
+
+.header_before_menu {
+    border-bottom: 1px solid #ccc;
+    margin: 0;
+    padding-left: 18px
+}
+
+.header_before_menu_info {
+    font-size: 14px;
+    padding-top: 10px;
+    color: #4a4a4a
+}
+
+.no-padding-left {
+    padding-left: 0 !important
+}
+
+.navbar-nav li:first-child a {
+    padding-left: 0 !important
+}
+
+.navbar-make {
+    color: #4a4a4a
+}
+
+a {
+    font-size: 20px;
+    color: #4a4a4a !important
+}
+
+.text_logo {
+    min-height: 100px;
+    padding: 44px 0;
+    background: red
+}
+
+.main_logo {
+    display: block;
+    background: #ff2500;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center
+}
+
+.main_logo img {
+    width: 70%
+}
+
+.btn-white {
+    background: none;
+    border: 2px solid #fff;
+    color: #fff !important
+}
+
+.btn-white:hover {
+    background: #fff;
+    border: 2px solid #fff;
+    color: #000 !important
+}
+
+.btn-link:focus {
+    outline: 0 !important
+}
+
+.__effect_zoom {
+    cursor: pointer
+}
+
+.__effect_zoom:hover {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+    opacity: .2;
+    transition: 1s
+}
+
+.__effect_zoom_wrap {
+    background: #000
+}
+
+.footer {
+    padding-bottom: 40px;
+    color: #797979;
+    font-size: 16px;
+    font-weight: 400
+}
+
+.col-space-right {
+    padding-right: 40px
+}
+
+.header_before_menu .btn-link {
+    text-decoration: none;
+    display: inline-block;
+    border-bottom: 1px solid #ccc;
+    color: #aaa
+}
+
+.header_before_menu .btn-link:hover {
+    border-bottom: 1px solid #fff
+}
+
+.__configurator_item {
+    height: 254px;
+    background-color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 185px;
+    border: 1px solid #ebebeb;
+    cursor: pointer;
+    font-size: 20px
+}
+
+.__configurator_item:hover {
+    background-color: #ffe9e6
+}
+
+.__configurator_item p {
+    line-height: 1
+}
+
+.__configurator_item:hover p {
+    display: none
+}
+
+.btn-red-all {
+    display: none;
+    background: none;
+    border: 2px solid #ff2500;
+    padding: 8px 43px;
+    color: #ff2500;
+    font-size: 16px
+}
+
+.__configurator_item:hover button, .__configurator_item:hover a {
+    display: inline-block;
+    color: #ff2500
+}
+
+.__configurator_description {
+    font-size: 24px;
+    color: #4a4a4a
+}
+
+/* menu */
+.navbar-toggle {
+    margin-top: 22px;
+    margin-left: 40px;
+    padding: 0;
+}
+
+.icon-bar {
+    background: black;
+    width: 24px !important;
+    border-radius: 0 !important;
+    margin-bottom: 5px;
+}

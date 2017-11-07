@@ -1,0 +1,145 @@
+.main_logo {
+    width: 195px;
+    height: 100px;
+}
+
+.main_logo img {
+    margin-top: 40px;
+}
+
+.after_main_logo {
+    padding-left: 195px;
+    padding-right: 0;
+    min-height: 100px;
+}
+
+.navbar-nav > li > a {
+    font-size: 16px;
+    margin: 0 26px;
+    padding: 20px 0 3px 0 !important;
+    line-height: 14px;
+}
+
+.promo_home_left_box {
+    height: 640px;
+    background: url('/img/0_001.jpg') center;
+    background-size: cover;
+    padding-right: 0;
+}
+
+.promo_home_left_title {
+    padding-top: 389px;
+    padding-left: 40px;
+    color: #ffffff;
+    font-size: 36px;
+    line-height: 1;
+}
+
+.promo_home_left_text {
+    padding-left: 40px;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 18px;
+}
+
+.promo_home_left_button {
+    padding-top: 12px;
+    padding-left: 40px;
+}
+
+.promo_home_right_image {
+    width: 100%;
+    height: 340px;
+    background: url('/img/0_002.jpg') center;
+    background-size: cover;
+}
+
+.promo_home_right_title {
+    padding-top: 40px;
+    padding-left: 20px;
+    color: #000000;
+    font-size: 36px;
+    line-height: 52px;
+}
+
+.promo_home_right_text {
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #000000;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.promo_home_right_button {
+    padding-top: 12px;
+    padding-left: 20px;
+}
+
+footer {
+    padding-top: 48px;
+    padding-left: 30px;
+    padding-bottom: 40px;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #797979;
+}
+
+h1 {
+    font-size: 48px !important;
+}
+
+/* первый промо блок */
+.__home_item_cover_decription {
+
+}
+
+.__home_item_cover_decription .price, .__home_item_list .price {
+    font-size: 48px;
+}
+
+.__home_item_cover_decription .price {
+    color: #000000;
+    padding-top: 230px;
+    padding-bottom: 7px;
+    line-height: 26px;
+}
+
+.__home_item_cover_decription title {
+    font-size: 18px;
+}
+
+.__home_item_list {
+    margin-bottom: 48px;
+}
+
+.__home_item_list img {
+    width: 100%;
+}
+
+.__home_item_list .price {
+    margin: 0;
+    margin-top: 30px;
+    color: #000000;
+    line-height: 12px;
+}
+
+.__home_item_list title {
+    padding-bottom: 20px;
+    color: #000000;
+    font-size: 18px;
+}
+
+.header_before_menu_callback {
+    padding-top: 10px;
+    padding-right: 45px;
+    font-size: 16px;
+}
+
+.header_before_menu .btn-link {
+    padding: 0;
+    margin-left: 15px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400 !important;
+    line-height: 24px;
+}

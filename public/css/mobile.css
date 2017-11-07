@@ -16,6 +16,10 @@
     }
 
     .header_before_menu {
+        border: 0;
+    }
+
+    .header_before_menu {
         padding-left: 173px;
         padding-right: 0;
         min-height: 60px;
@@ -29,9 +33,7 @@
         padding-right: 0;
     }
 
-    .header_before_menu {
-        border: 0;
-    }
+
 
     .header_before_menu_callback strong {
         display: inline-block;
@@ -41,22 +43,7 @@
         color: #4a4a4a;
     }
 
-    /* menu */
-    .navbar {
-        display: none;
-    }
 
-    .navbar-toggle {
-        margin-top: 20px;
-        margin-left: 40px;
-        padding: 0;
-    }
-
-    .icon-bar {
-        background: black;
-        width: 24px;
-        border-radius: 0;
-    }
 
     /* prono in home */
 
