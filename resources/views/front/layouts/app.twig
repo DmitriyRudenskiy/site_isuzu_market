@@ -9,6 +9,8 @@
     <link href="/fonts/GillSansC.css" rel="stylesheet">
     <link href="/css/bootstrap.css" rel="stylesheet">
     <link href="/css/main.css?v=2017-10-24_002" rel="stylesheet">
+    <link href="/css/mobile.css" rel="stylesheet">
+
 </head>
 <body>
 
@@ -20,12 +22,19 @@
 <div class="container-fluid after_main_logo">
 
     <div class="row header_before_menu">
-        <div class="col-lg-7 col-md-6 col-xs-7  header_before_menu_info">
+        <div class="col-lg-7 col-md-6 col-xs-7 hidden-sm hidden-xs  header_before_menu_info">
             <p>Официальный дилерский центр</p>
         </div>
 
-        <div class="col-lg-5 col-md-6 col-xs-5  text-right header_before_menu_callback">
-            <strong>(+7 383) 2222-608</strong> <button class="btn btn-link" data-toggle="modal" data-target="#modal_callback">Обратный звонок</button>
+        <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12  text-right header_before_menu_callback">
+            <strong>(+7 383) 2222-608</strong> <button class="btn btn-link hidden-sm hidden-xs" data-toggle="modal" data-target="#modal_callback">Обратный звонок</button>
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
         </div>
     </div>
 
@@ -39,13 +48,6 @@
                 <li><a href="{{ route('front_dashboard_about') }}">О компании</a></li>
                 <li><a href="{{ route('front_dashboard_contacts') }}">Контакты</a></li>
             </ul>
-            <!--
-            <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="./" style="color: red">Мой заказ</a></li>
-                <li class="active"><a href="./" ><span style="border:1px solid red; border-radius: 15px; color: red;">3</span></a></li>
-                <li class="active"><a href="./" style="font-size: 24px"><i class="fa fa-bars" aria-hidden="true"></i></a></li>
-            </ul>
-            -->
         </div><!--/.nav-collapse -->
     </nav>
     <!--/ menu -->

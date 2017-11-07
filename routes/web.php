@@ -20,4 +20,6 @@ Route::group(['middleware' => ['web'], 'namespace' => 'Front', 'as' => 'front_']
     Route::post('/callback', 'CallbackController@index')->name('callback_index');
 
     Route::get('/configurator', 'ConfiguratorController@types')->name('configurator_index');
+    Route::get('/configurator/chassis/{alias}', 'ConfiguratorController@chassis')->name('configurator_chassis');
+    Route::get('/configurator/options/{alias}', 'ConfiguratorController@options')->name('configurator_options');
 });

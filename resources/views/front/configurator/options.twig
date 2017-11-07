@@ -1,0 +1,82 @@
+{% set step = 3 %}
+
+{% extends 'front.configurator.layout' %}
+
+{% block configurator %}
+
+    <style>
+        .__configurator_gray {
+            padding: 20px 20px 10px 0;
+            font-size: 20px;
+            color: #646464;
+        }
+
+        .__configurator_black {
+            padding: 20px 20px 10px 0;
+            font-size: 24px;
+            color: #000000;
+        }
+
+
+        .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+            line-height: 1.42857143;
+            padding: 8px;
+            vertical-align: top;
+            border-top: 0;
+        }
+    </style>
+
+    <div class="row">
+        <div class="col-lg-8">
+            <h2 style="margin-top: 0">Вы выбрали:</h2>
+
+            <table>
+                <tbody>
+                <tr>
+                    <td class="__configurator_gray">Модель</td>
+                    <td class="__configurator_black">ISUZU FORWARD</td>
+                </tr>
+                <tr>
+                    <td class="__configurator_gray">Модификация</td>
+                    <td class="__configurator_black">FSR90</td>
+                </tr>
+                <tr>
+                    <td class="__configurator_gray">Полная масса</td>
+                    <td class="__configurator_black">12 т</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-lg-4">
+            <img src="/img/configurator/chassis/SAM_1459.jpg" alt="" style="width: 345px">
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-7">
+            <h2 style="margin-top: 60px">Дополнительные опции</h2>
+
+            <h3 style="padding-top: 12px; color: #646464; font-size: 18px;">Дополнительное обору</h3>
+
+            <table class="table">
+                <tbody>
+                {% for item in base_options %}
+                <tr>
+                    <td style="padding-left: 0"><input type="checkbox" class="forn-control"></td>
+                    <td>{{ item.title }}</td>
+                    <td class="text-right" style="color: #aaa">{{ item.price | number_format(0, '.', ' ')}} <span class="glyphicon glyphicon-ruble" aria-hidden="true"></span></td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+
+
+
