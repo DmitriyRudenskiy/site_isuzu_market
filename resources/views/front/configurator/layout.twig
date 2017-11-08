@@ -46,8 +46,8 @@
                     <li {% if step == 1 %}class="active"{% endif %}><a href="{{ route('front_configurator_index') }}">01 Тип автомобиля</a></li>
                     <li {% if step == 2 %}class="active"{% endif %}><a href="{{ route("front_configurator_chassis", {"alias": 1}) }}">02 Шасси</a></li>
                     <li {% if step == 3 %}class="active"{% endif %}><a href="{{ route("front_configurator_options", {"alias": 1}) }}">03 Дополнительные опции</a></li>
-                    <li><a href="">04 Лизинг</a></li>
-                    <li><a href="">05 Итог</a></li>
+                    <li {% if step == 4 %}class="active"{% endif %}><a href="{{ route("front_configurator_leasing", {"alias": 1}) }}">04 Лизинг</a></li>
+                    <li {% if step == 5 %}class="active"{% endif %}><a href="{{ route("front_configurator_finish", {"alias": 1}) }}">05 Итог</a></li>
                 </ul>
             </div>
 

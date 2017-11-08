@@ -117,4 +117,14 @@ class ConfiguratorController extends Controller
             ]
         );
     }
+
+    public function leasing()
+    {
+        return view('front.configurator.leasing');
+    }
+
+    public function finish()
+    {
+        return view('front.configurator.finish');
+    }
 }

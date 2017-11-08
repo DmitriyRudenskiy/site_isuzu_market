@@ -3,90 +3,49 @@
 {% extends 'front.configurator.layout' %}
 
 {% block configurator %}
-    <style>
-        .__configurator_chassis_item{
-            padding-top: 10px;
-        }
-
-        .__configurator_chassis_item:hover {
-            background-color: #ffe9e6;
-        }
-    </style>
-
     <div class="row">
         <div class="col-lg-12">
             <h2 style="margin-top: 0">Шасси</h2>
-        </div>
-    </div>
 
-    <div class="row">
-        <div class="col-lg-4 __configurator_chassis_item">
-            <p class="text-center"><img src="/img/configurator/chassis/NMR_Chassis_2.jpg" alt="" style="width: 100%"></p>
-            <h3 class="text-center">Малотоннажные<br>(Elf)</h3>
-
-            <div class="radio">
-                <label>
-                    <input type="radio" name="weight" value=""> ELF 7.5 (NPR75) Полная масса 7.5 т
-                </label>
-            </div>
-
-            <div class="radio">
-                <label>
-                    <input type="radio" name="weight" value=""> ELF 9.5 (NQR90) Полная масса 9.5 т
-                </label>
-            </div>
-
-            <div class="radio">
-                <label>
-                    <input type="radio" name="weight" value=""> ELF 7.5 (NPR75) Полная масса 7.5 т Евро-5
-                </label>
-            </div>
-        </div>
-
-        <div class="col-lg-4 __configurator_chassis_item">
-            <p class="text-center"><img src="/img/configurator/chassis/SAM_1459.jpg" alt="" style="width: 100%"></p>
-            <h3 class="text-center">Среднетоннажные<br>(Forward)</h3>
-
-            <div class="radio">
-                <label>
-                    <input type="radio" name="weight" value=""> FORWARD 12.0 (FSR90) Полная масса 12 т
-                </label>
-            </div>
-
-            <div class="radio">
-                <label>
-                    <input type="radio" name="weight" value=""> FORWARD 18.0 (FVR34) Полная масса 18 т
-                </label>
-            </div>
-
-            <div class="radio">
-                <label>
-                    <input type="radio" name="weight" value=""> FORWARD 12.0 (FSR90) Полная масса 12 т Евро-5
-                </label>
-            </div>
-
-            <div class="radio">
-                <label>
-                    <input type="radio" name="weight" value=""> FORWARD 18.0 (FVR34) Полная масса 18 т Евро-5
-                </label>
-            </div>
-        </div>
-
-        <div class="col-lg-4 __configurator_chassis_item">
-            <p class="text-center"><img src="/img/configurator/chassis/giga_white.jpg" alt="" style="width: 100%"></p>
-            <h3 class="text-center">Тяжелая серия<br>(GIGA)</h3>
-
-            <div class="radio">
-                <label>
-                    <input type="radio" name="weight" value=""> ISUZU GIGA 6x4 Шасси, полная масса 33 т
-                </label>
-            </div>
-
-            <div class="radio">
-                <label>
-                    <input type="radio" name="weight" value=""> ISUZU GIGA 6x4 Шасси, полная масса 33 т Евро-5
-                </label>
-            </div>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th><img src="/img/configurator/chassis/NMR_Chassis_2.jpg" alt="" style="width: 100%"></th>
+                    <th><img src="/img/configurator/chassis/SAM_1459.jpg" alt="" style="width: 100%"></th>
+                    <th><img src="/img/configurator/chassis/giga_white.jpg" alt="" style="width: 100%"></th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><h3 class="text-center">Малотоннажные<br>(Elf)</h3></td>
+                        <td><h3 class="text-center">Среднетоннажные<br>(Forward)</h3></td>
+                        <td><h3 class="text-center">Тяжелая серия<br>(GIGA)</h3></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <ul class="nav nav-pills">
+                                <li><a href="{{ route("front_configurator_options", {"alias": 1}) }}">ELF 7.5 (NPR75) Полная масса 7.5 т</a></li>
+                                <li><a href="{{ route("front_configurator_options", {"alias": 1}) }}">ELF 9.5 (NQR90) Полная масса 9.5 т</a></li>
+                                <li><a href="{{ route("front_configurator_options", {"alias": 1}) }}">ELF 7.5 (NPR75) Полная масса 7.5 т Евро-5</a></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="nav nav-pills">
+                                <li><a href="{{ route("front_configurator_options", {"alias": 1}) }}">FORWARD 12.0 (FSR90) Полная масса 12 т</a></li>
+                                <li><a href="{{ route("front_configurator_options", {"alias": 1}) }}">FORWARD 18.0 (FVR34) Полная масса 18 т</a></li>
+                                <li><a href="{{ route("front_configurator_options", {"alias": 1}) }}">FORWARD 12.0 (FSR90) Полная масса 12 т Евро-5</a></li>
+                                <li><a href="{{ route("front_configurator_options", {"alias": 1}) }}">FORWARD 18.0 (FVR34) Полная масса 18 т Евро-5</a></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="nav nav-pills">
+                                <li><a href="{{ route("front_configurator_options", {"alias": 1}) }}">GIGA 6x4 Шасси, полная масса 33 т</a></li>
+                                <li><a href="{{ route("front_configurator_options", {"alias": 1}) }}">GIGA 6x4 Шасси, полная масса 33 т Евро-5</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 {% endblock %}
