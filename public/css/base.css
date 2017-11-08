@@ -3,7 +3,7 @@ html, body {
     overflow-x: hidden
 }
 
-p, h1, h2, h3, h4, h5, input {
+p, h1, h2, h3, h4, h5, input, a {
     font-family: "ExGillSansC" !important
 }
 
@@ -30,10 +30,6 @@ p {
     height: 400px;
     margin-top: 24px
 }
-
-
-
-
 
 
 .btn-red {
@@ -127,9 +123,9 @@ h5 {
 }
 
 /* for menu */
-@media all and (min-width: 991px) {
+@media (min-width: 768px) {
     .navbar-nav li:first-child a {
-        padding-left: 0 !important
+        margin-left: 12px;
     }
 }
 
