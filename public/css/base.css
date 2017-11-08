@@ -3,11 +3,10 @@ html, body {
     overflow-x: hidden
 }
 
-body {
-    font-family: ExGillSansC;
-    font-size: 18px;
-    color: #000
+p, h1, h2, h3, h4, h5, input {
+    font-family: "ExGillSansC" !important
 }
+
 
 p {
     line-height: 1.7
@@ -32,9 +31,8 @@ p {
     margin-top: 24px
 }
 
-* {
-    font-family: "ExGillSansC" !important
-}
+
+
 
 
 
@@ -128,8 +126,11 @@ h5 {
     padding-left: 0 !important
 }
 
-.navbar-nav li:first-child a {
-    padding-left: 0 !important
+/* for menu */
+@media all and (min-width: 991px) {
+    .navbar-nav li:first-child a {
+        padding-left: 0 !important
+    }
 }
 
 .navbar-make {

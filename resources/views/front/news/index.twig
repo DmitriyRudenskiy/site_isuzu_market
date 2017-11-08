@@ -4,15 +4,15 @@
 
 {% block content %}
 <div class="container">
-    <h1>Новости</h1>
+    <h1 class="title_a1">Новости</h1>
     <div class="row">
         {% for index,item in list %}
-            <div class="col-lg-4 col-xs-4">
+            <div class="col-lg-4 col-xs-12">
                 <a href="{{ route('front_news_view', {'id': index + 1}) }}" class="thumbnail __news_thumbnail">
                     <img src="{{ item.image }}" alt="...">
                 </a>
-                <p class="__news_date">{{ item.date }}</p>
-                <h3>{{ item.title }}</h3>
+                <p class="__news_date space-xs">{{ item.date }}</p>
+                <h3 class="space-xs">{{ item.title }}</h3>
             </div>
         {% endfor %}
     </div>
