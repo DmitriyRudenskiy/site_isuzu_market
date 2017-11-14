@@ -41,7 +41,7 @@
         <h1 class=" title_a1">Конфигуратор</h1>
 
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-3 visible-lg">
                 <ul class="__configurator_menu">
                     <li {% if step == 1 %}class="active"{% endif %}><a href="{{ route('front_configurator_index') }}">01 Тип автомобиля</a></li>
                     <li {% if step == 2 %}class="active"{% endif %}><a href="{{ route("front_configurator_chassis", {"alias": 1}) }}">02 Шасси</a></li>
@@ -51,7 +51,7 @@
                 </ul>
             </div>
 
-            <div class="col-lg-9">
+            <div class="col-lg-9 col-md-12">
                 {% block configurator %}{% endblock %}
             </div>
         </div>

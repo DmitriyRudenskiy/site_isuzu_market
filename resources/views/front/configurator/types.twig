@@ -9,7 +9,7 @@
         </div>
 
         {% for item in list %}
-            <div class="col-lg-4 text-center __configurator_item" style="background-image: url('{{ item.image }}'); ">
+            <div class="col-lg-4 col-md-4 text-center __configurator_item" style="background-image: url('{{ item.image }}'); ">
                 <p>{{ item.title | raw }}</p>
                 <a href="{{ route("front_configurator_chassis", {"alias": item.id}) }}" class="btn-red-all">Следующий шаг</a>
             </div>
