@@ -1,3 +1,7 @@
+h3 {
+    font-size: 24px;
+}
+
 .btn {
     border-radius: 0;
     padding: 10px 41px 8px;
@@ -120,4 +124,8 @@ select.form-control {
 .modal-dialog {
     height: 100%;
     margin: 0 !important;
+}
+
+.__leasing_view {
+    padding-bottom: 24px
 }

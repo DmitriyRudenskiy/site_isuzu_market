@@ -143,3 +143,7 @@ h1 {
     font-weight: 400 !important;
     line-height: 24px;
 }
+
+.__leasing_view {
+    padding-top: 48px
+}
