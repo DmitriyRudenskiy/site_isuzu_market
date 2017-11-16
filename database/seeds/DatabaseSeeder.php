@@ -11,6 +11,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
+        BanksTableSeeder::class,
+        CarBasesTableSeeder::class,
+        CarCategoriesTableSeeder::class,
+        CarPricesTableSeeder::class,
+        CarTypesTableSeeder::class
     }
 }

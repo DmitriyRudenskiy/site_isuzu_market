@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Repositories\Car\TypesRepository;
 use App\Repositories\ProductsRepository;
-use App\Repositories\TypesRepository;
 use Illuminate\Routing\Controller;
 
 class DashboardController extends Controller
@@ -14,7 +14,7 @@ class DashboardController extends Controller
     public function home(ProductsRepository $productsRepository, TypesRepository $typesRepository)
     {
         $product = $productsRepository->getProductsForHome();
-        $types = $typesRepository->getAll();
+        $types = $typesRepository->getList();
 
         return view(
             'front.dashboard.home',

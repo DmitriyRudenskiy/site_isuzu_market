@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Repositories\TypesRepository;
+use App\Repositories\Car\TypesRepository;
 use Illuminate\Routing\Controller;
 
 class ConfiguratorController extends Controller
 {
     public function types(TypesRepository $typesRepository)
     {
-        $list = $typesRepository->getAll();
+        $list = $typesRepository->getList();
 
         return view(
             'front.configurator.types',
@@ -21,6 +21,8 @@ class ConfiguratorController extends Controller
 
     public function chassis($alias)
     {
+        dd($alias);
+
         return view('front.configurator.chassis');
     }
 

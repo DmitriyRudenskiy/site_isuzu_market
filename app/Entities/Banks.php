@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Banks extends Model
 {
-    protected $table = 'banks';
+    protected $table = "banks";
 
     protected $fillable = [
-        "title",
-        "image",
+        "visible",
+        "position",
         "precent",
-        "show"
+        "title",
+        "image"
     ];
 }
-

@@ -26,3 +26,9 @@ php vendor/bin/phpunit
 php artisan key:generate
 php artisan migrate
 php artisan create:user
+
+php artisan db:seed --class=BanksTableSeeder
+php artisan db:seed --class=CarTypesTableSeeder
+php artisan db:seed --class=CarCategoriesTableSeeder
+php artisan db:seed --class=CarBasesTableSeeder
+php artisan db:seed --class=CarPricesTableSeeder
