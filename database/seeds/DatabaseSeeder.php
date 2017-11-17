@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
         BanksTableSeeder::class,
         CarBasesTableSeeder::class,
         CarCategoriesTableSeeder::class,
+        CarImagesTableSeeder::class,
         CarPricesTableSeeder::class,
         CarTypesTableSeeder::class
     }
