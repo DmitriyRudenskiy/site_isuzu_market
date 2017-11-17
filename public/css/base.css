@@ -3,7 +3,7 @@ html, body {
     overflow-x: hidden
 }
 
-p, h1, h2, h3, h4, h5, input, a {
+p, h1, h2, h3, h4, h5, input, a, td {
     font-family: "ExGillSansC" !important
 }
 

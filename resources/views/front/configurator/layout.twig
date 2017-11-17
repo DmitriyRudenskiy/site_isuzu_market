@@ -37,11 +37,14 @@
     </style>
 
     <div class="container">
-
-        <h1 class="title_a1">Конфигуратор</h1>
-
         <div class="row">
-            <div class="col-lg-3 visible-lg">
+            <div class="visible-md" style="height: 55px"></div>
+
+            <div class="col-lg-12">
+                <h1 class="title_a1">Конфигуратор</h1>
+            </div>
+
+            <div class="col-lg-3 col-md-12">
                 <ul class="__configurator_menu">
                     <li {% if step == 1 %}class="active"{% endif %}><a href="{{ route('front_configurator_index') }}">01 Тип автомобиля</a></li>
                     <li {% if step == 2 %}class="active"{% endif %}><a href="{{ route("front_configurator_chassis", {"alias": 1}) }}">02 Шасси</a></li>

@@ -147,3 +147,35 @@ h1 {
 .__leasing_view {
     padding-top: 48px
 }
+
+/* menu configurator */
+.__configurator_menu {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+
+.__configurator_menu li {
+    display: inline-block;
+}
+
+.__configurator_menu a {
+    font-size: 18px;
+    padding-right: 60px;
+}
+
+.__strong_value {
+    font-size: 24px;
+}
+
+.__configurator_black {
+    font-size: 24px !important;
+}
+
+.__configurator_gray, .__configurator_black {
+    padding-top: 10px !important;
+}
+
+.__configurator_table_item {
+    font-size: 18px;
+}

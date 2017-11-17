@@ -27,7 +27,7 @@
     </style>
 
     <div class="row">
-        <div class="col-lg-8 col-md-9">
+        <div class="col-lg-8 col-md-8">
             <h2 style="margin-top: 0">Вы выбрали:</h2>
 
             <table>
@@ -48,14 +48,14 @@
             </table>
         </div>
 
-        <div class="col-lg-4 col-md-3">
+        <div class="col-lg-4 col-md-4">
             <img src="{{ base.getCategory().image }}" alt="" style="max-width: 345px; width: 100%">
         </div>
     </div>
 
 
     <div class="row">
-        <div class="col-lg-7 col-md-9">
+        <div class="col-lg-7 col-md-7">
             <h2 style="margin-top: 60px">Дополнительные опции</h2>
 
             <h3 style="padding-top: 12px; color: #646464; font-size: 18px;">Дополнительное обору</h3>
@@ -65,8 +65,8 @@
                 {% for item in base_options %}
                 <tr>
                     <td style="padding-left: 0"><input type="checkbox" class="forn-control"></td>
-                    <td>{{ item.title }}</td>
-                    <td class="text-right" style="color: #aaa">{{ item.price | number_format(0, '.', ' ')}} <span class="glyphicon glyphicon-ruble" aria-hidden="true"></span></td>
+                    <td class="__configurator_table_item">{{ item.title }}</td>
+                    <td class="__configurator_table_item text-right" style="color: #aaa">{{ item.price | number_format(0, '.', ' ')}} <span class="glyphicon glyphicon-ruble" aria-hidden="true"></span></td>
                 </tr>
                 {% endfor %}
                 </tbody>
