@@ -90,7 +90,7 @@
             <div class="row add-space-for-md">
                 <div class="col-lg-12" style="padding-bottom: 80px">
                     <p style="color: #646464; font-size: 18px;">Итоговая цена</p>
-                    <p class="price_big">{{ price | number_format(0, '.', ' ') }} ₽</p>
+                    <p class="price_big">{{ (price * 0.98) | number_format(0, '.', ' ') }} ₽</p>
                     <p style="padding-top: 12px"><button type="button" class="btn btn-red" data-toggle="modal" data-target="#modal_callback">Продолжить</button></p>
                 </div>
             </div>
@@ -123,7 +123,7 @@
             <h2 class="item1">Расчет</h2>
 
             <form method="get" action="{{ route('front_leasing_select_download') }}">
-                <input type="hidden" name="price" value="{{ price }}">
+                <input type="hidden" name="price" value="{{ (price * 0.98) }}">
                 <div class="form-group" style="padding-top: 24px">
                     <label>Срок кредита, мес</label>
 
@@ -162,7 +162,7 @@
             <h2>{{ product.title }}</h2>
             <p>Кузов: <span>шасси, 2 дв, 2013 м.г.</span></p>
             <p>Двигатель: <span>5.2 л., 155 л.с.</span></p>
-            <p style="color: #000000; font-size: 48px;">{{ price | number_format(0, '.', ' ') }} <span class="glyphicon glyphicon-ruble" aria-hidden="true" style="color: #000000; font-size: 42px;"></span></p>
+            <p style="color: #000000; font-size: 48px;">{{ (price * 0.98) | number_format(0, '.', ' ') }} <span class="glyphicon glyphicon-ruble" aria-hidden="true" style="color: #000000; font-size: 42px;"></span></p>
         </div>
     </div>
 
