@@ -11,7 +11,7 @@ class CarPricesTableSeeder extends Seeder
      */
     public function run()
     {
-        $filename = storage_path('import/price.csv');
+        $filename = storage_path('import/price_002.csv');
 
         if (!file_exists($filename)) {
             throw new RuntimeException();
