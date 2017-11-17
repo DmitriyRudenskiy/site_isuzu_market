@@ -24,17 +24,23 @@ class CarCategoriesTableSeeder extends Seeder
             [
                 "id" => 1,
                 "position" => 10,
-                "title" => "Малотоннажные (Elf)"
+                "title" => "Elf",
+                "description" => "Малотоннажные",
+                "image" => "/img/configurator/chassis/NMR_Chassis_2.jpg"
             ],
             [
                 "id" => 2,
                 "position" => 20,
-                "title" => "Среднетоннажные (Forward)"
+                "title" => "Forward",
+                "description" => "Среднетоннажные",
+                "image" => "/img/configurator/chassis/SAM_1459.jpg"
             ],
             [
                 "id" => 3,
                 "position" => 30,
-                "title" => "Тяжелая серия (GIGA)"
+                "title" => "GIGA",
+                "description" => "Тяжелая серия",
+                "image" => "/img/configurator/chassis/giga_white.jpg"
             ]
 
         ];

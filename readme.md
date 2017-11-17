@@ -8,7 +8,7 @@ docker run --name work-php \
     --link  work-mysql:db -p 8085:8085  \
     -v '/Users/user/PhpstormProjects/site_isuzu_market:/app' \
     -w '/app' \
-    --rm -i -t my/php sh
+    --rm -i -t my/php php -S 0.0.0.0:8085
 
 ## Check format code
 cd test

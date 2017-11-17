@@ -21,7 +21,7 @@ Route::group(['middleware' => ['web'], 'namespace' => 'Front', 'as' => 'front_']
 
     Route::get('/configurator', 'ConfiguratorController@types')->name('configurator_index');
     Route::get('/configurator/chassis/{alias}', 'ConfiguratorController@chassis')->name('configurator_chassis');
-    Route::get('/configurator/options/{alias}', 'ConfiguratorController@options')->name('configurator_options');
-    Route::get('/configurator/leasing', 'ConfiguratorController@leasing')->name('configurator_leasing');
+    Route::get('/configurator/options/{typeId}/{baseId}', 'ConfiguratorController@options')->name('configurator_options');
+    Route::get('/configurator/leasing/{typeId}/{baseId}', 'ConfiguratorController@leasing')->name('configurator_leasing');
     Route::get('/configurator/finish', 'ConfiguratorController@finish')->name('configurator_finish');
 });

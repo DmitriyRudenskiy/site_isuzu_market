@@ -18,10 +18,14 @@ class CreateCarBasesTable extends Migration
             $table->integer('position')->default(10);
             $table->integer('category_id')->unsigned();
             $table->string('title', 255);
+            $table->string("code");
+            $table->decimal('mass', 5, 2);
 
             $table->foreign('category_id')->references('id')->on('car_categories');
         });
     }
+
+
 
     /**
      * Reverse the migrations.

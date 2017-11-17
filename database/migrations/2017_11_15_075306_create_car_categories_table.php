@@ -17,6 +17,8 @@ class CreateCarCategoriesTable extends Migration
             $table->increments('id');
             $table->integer('position')->default(10);
             $table->string('title', 255);
+            $table->string('description', 255);
+            $table->string('image', 255);
         });
     }
 

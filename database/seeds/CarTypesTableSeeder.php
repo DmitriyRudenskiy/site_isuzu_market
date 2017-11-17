@@ -44,7 +44,7 @@ class CarTypesTableSeeder extends Seeder
             ],
             [
                 "id" => 4,
-                "visible" => true,
+                "visible" => false,
                 "position" => 40,
                 "image" => "/img/configurator/types/4.png",
                 "title" => "Фургон рефрижераторный"
@@ -93,21 +93,21 @@ class CarTypesTableSeeder extends Seeder
             ],
             [
                 "id" => 11,
-                "visible" => true,
+                "visible" => false,
                 "position" => 110,
                 "image" => "/img/configurator/types/11.png",
                 "title" => "Мусоровоз"
             ],
             [
                 "id" => 12,
-                "visible" => true,
+                "visible" => false,
                 "position" => 120,
                 "image" => "/img/configurator/types/12.png",
                 "title" => "Автоцистерна"
             ],
             [
                 "id" => 13,
-                "visible" => true,
+                "visible" => false,
                 "position" => 130,
                 "image" => "/img/configurator/types/13.png",
                 "title" => "Автобетоносмеситель"
@@ -121,7 +121,7 @@ class CarTypesTableSeeder extends Seeder
             ],
             [
                 "id" => 15,
-                "visible" => true,
+                "visible" => false,
                 "position" => 150,
                 "image" => "/img/configurator/types/15.png",
                 "title" => "Мультилифт / Бункеровоз"

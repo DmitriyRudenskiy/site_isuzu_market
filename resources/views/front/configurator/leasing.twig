@@ -34,15 +34,15 @@
                 <tbody>
                 <tr>
                     <td class="__configurator_gray">Модель</td>
-                    <td class="__configurator_black">ISUZU FORWARD</td>
+                    <td class="__configurator_black">ISUZU {{ base.getCategory().title }}</td>
                 </tr>
                 <tr>
                     <td class="__configurator_gray">Модификация</td>
-                    <td class="__configurator_black">FSR90</td>
+                    <td class="__configurator_black">{{ base.code }}</td>
                 </tr>
                 <tr>
                     <td class="__configurator_gray">Полная масса</td>
-                    <td class="__configurator_black">12 т</td>
+                    <td class="__configurator_black">{{ base.mass | number_format(0, '.', ' ') }} т</td>
                 </tr>
                 </tbody>
             </table>
@@ -75,22 +75,22 @@
             <div class="row">
                 <div class="col-lg-4">
                     <p style="color: #646464; font-size: 18px;">Базовая модель</p>
-                    <p class="price">2 990 000 ₽</p>
+                    <p class="price">{{ price | number_format(0, '.', ' ') }} ₽</p>
                 </div>
                 <div class="col-lg-4">
                     <p style="color: #646464; font-size: 18px;">Выбранные опции</p>
-                    <p class="price">2 990 000 ₽</p>
+                    <p class="price">{{ price | number_format(0, '.', ' ') }} ₽</p>
                 </div>
                 <div class="col-lg-4">
                     <p style="color: #646464; font-size: 18px;">Дополнительные опции</p>
-                    <p class="price">2 990 000 ₽</p>
+                    <p class="price">{{ price | number_format(0, '.', ' ') }} ₽</p>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-lg-12" style="padding-bottom: 80px">
                     <p style="color: #646464; font-size: 18px;">Итоговая цена</p>
-                    <p class="price_big">3 000 050 ₽</p>
+                    <p class="price_big">{{ price | number_format(0, '.', ' ') }} ₽</p>
                     <p style="padding-top: 12px"><a href="" class="btn btn-red">Продолжить</a></p>
                 </div>
             </div>
@@ -123,7 +123,7 @@
             <h2 class="item1">Расчет</h2>
 
             <form method="get" action="{{ route('front_leasing_select_download') }}">
-                <input type="hidden" name="price" value="{{ product.price }}">
+                <input type="hidden" name="price" value="{{ price }}">
                 <div class="form-group" style="padding-top: 24px">
                     <label>Срок кредита, мес</label>
 
@@ -162,7 +162,7 @@
             <h2>{{ product.title }}</h2>
             <p>Кузов: <span>шасси, 2 дв, 2013 м.г.</span></p>
             <p>Двигатель: <span>5.2 л., 155 л.с.</span></p>
-            <p style="color: #000000; font-size: 48px;">{{ product.price | number_format(0, '.', ' ')}} <span class="glyphicon glyphicon-ruble" aria-hidden="true" style="color: #000000; font-size: 42px;"></span></p>
+            <p style="color: #000000; font-size: 48px;">{{ price | number_format(0, '.', ' ') }} <span class="glyphicon glyphicon-ruble" aria-hidden="true" style="color: #000000; font-size: 42px;"></span></p>
         </div>
     </div>
 {% endblock %}

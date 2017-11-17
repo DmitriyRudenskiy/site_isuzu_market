@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Repositories\Car\BasesRepository;
 use App\Repositories\Car\TypesRepository;
 use Illuminate\Routing\Controller;
 
@@ -19,18 +20,47 @@ class ConfiguratorController extends Controller
         );
     }
 
-    public function chassis($alias)
+    public function chassis($alias, BasesRepository $repository)
     {
-        dd($alias);
+        $typeId = (int)$alias;
 
-        return view('front.configurator.chassis');
+        $list = $repository->getList($typeId);
+
+        $elf = array_filter($list, function($base) {
+            return $base->category_id == 1;
+        });
+
+        $forward =  array_filter($list, function($base) {
+            return $base->category_id == 2;
+        });
+
+        $giga =  array_filter($list, function($base) {
+            return $base->category_id == 3;
+        });
+
+        return view(
+            'front.configurator.chassis',
+            [
+                'elf' => $elf,
+                'forward' => $forward,
+                'giga' => $giga,
+                'type_id' => $typeId
+            ]
+        );
     }
 
     /**
      *
      */
-    public function options()
+    public function options($typeId, $baseId, BasesRepository $basesRepository)
     {
+        $base = $basesRepository->find($baseId);
+        $price = $base->getPrice($typeId)->first();
+
+        if ($price == null) {
+            throw new \RuntimeException();
+        }
+
         $baseOptions = [
             [
                 "title" => "Дефлекторы на боковые стекла",
@@ -115,14 +145,33 @@ class ConfiguratorController extends Controller
         return view(
             'front.configurator.options',
             [
-                "base_options" => $baseOptions
+                "base_options" => $baseOptions,
+                "base" => $base,
+                "price" => $price->price,
+                "type_id" => $typeId,
+                "base_id" => $baseId
             ]
         );
     }
 
-    public function leasing()
+    public function leasing($typeId, $baseId, BasesRepository $basesRepository)
     {
-        return view('front.configurator.leasing');
+        $base = $basesRepository->find($baseId);
+        $price = $base->getPrice($typeId)->first();
+
+        if ($price == null) {
+            throw new \RuntimeException();
+        }
+
+        return view(
+            'front.configurator.leasing',
+            [
+                "base" => $base,
+                "price" => $price->price,
+                "type_id" => $typeId,
+                "base_id" => $baseId
+            ]
+        );
     }
 
     public function finish()
