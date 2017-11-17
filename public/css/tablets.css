@@ -179,3 +179,8 @@ h1 {
 .__configurator_table_item {
     font-size: 18px;
 }
+
+
+.add-space-for-md {
+    padding-left: 8px;
+}
