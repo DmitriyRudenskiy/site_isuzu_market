@@ -106,7 +106,7 @@
             data: $(this).serialize(),
             success: function(data) {
                 $("#alert_send_message").show();
-                $("#modal_callback").close();
+                $("#modal_callback").modal('hide');
             }
         });
 
