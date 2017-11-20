@@ -10,7 +10,7 @@
 
             {% if elf is not empty %}
             <div class="col-lg-4 col-md-4">
-                <img src="/img/configurator/chassis/NMR_Chassis_2.jpg" alt="" style="width: 100%">
+                <img src="/img/configurator/products/{{ type_id }}_{{ elf.0.id }}_1.jpg" alt="" style="width: 100%">
                 <h3 class="text-center">Elf</h3>
 
                 <ul class="nav nav-pills">
@@ -23,8 +23,8 @@
 
             {% if forward is not empty %}
                 <div class="col-lg-4 col-md-4">
-                    <img src="/img/configurator/chassis/SAM_1459.jpg" alt="" style="width: 100%">
-                    <h3 class="text-center">Forward</h3>
+                    <img src="/img/configurator/products/{{ type_id }}_{{ forward.0.id }}_1.jpg" alt="" style="width: 100%">
+                    <h3 class="text-center">Forward {{ forward | json_encode }}</h3>
 
                     <ul class="nav nav-pills">
                         {% for item in forward %}
@@ -36,7 +36,7 @@
 
             {% if giga is not empty %}
                 <div class="col-lg-4 col-md-4">
-                    <img src="/img/configurator/chassis/giga_white.jpg" alt="" style="width: 100%">
+                    <img src="/img/configurator/products/{{ type_id }}_{{ giga.0.id }}_1.jpg" alt="" style="width: 100%">
                     <h3 class="text-center">GIGA</h3>
 
                     <ul class="nav nav-pills">

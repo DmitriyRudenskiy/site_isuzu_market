@@ -34,9 +34,13 @@ class ConfiguratorController extends Controller
             return $base->category_id == 2;
         });
 
+        $forward = array_values($forward);
+
         $giga =  array_filter($list, function($base) {
             return $base->category_id == 3;
         });
+
+        $giga = array_values($giga);
 
         return view(
             'front.configurator.chassis',
