@@ -8,9 +8,17 @@ use Illuminate\Routing\Controller;
 class LeasingController extends Controller
 {
 
-    public function index()
+    public function index(ProductsRepository $productsRepository)
     {
-        return view('front.leasing.index');
+        $id = 1;
+        $product = $productsRepository->get($id);
+
+        return view(
+            'front.leasing.index',
+            [
+                'product' => $product
+            ]
+        );
     }
 
     public function view($id, ProductsRepository $productsRepository)
@@ -23,10 +31,5 @@ class LeasingController extends Controller
                 'product' => $product
             ]
         );
-    }
-
-    public function calculation()
-    {
-        return view('front.leasing.calculation');
     }
 }

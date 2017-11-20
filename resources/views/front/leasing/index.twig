@@ -4,26 +4,90 @@
 
 {% block content %}
     <div class="container">
-        <h1>Лизинг</h1>
         <div class="row">
-            <div class="col-md-6">
-                <p>АО «ИСУЗУ РУС» (бывшее ЗАО «СОЛЛЕРС-ИСУЗУ») – это официальный производитель и дистрибьютер автомобильной марки ISUZU в России. Компания основана совместными усилиями двух японских корпораций — Isuzu Motors Limited (74% акций) и Sojitz Corporation (26% акций).</p>
-            </div>
-            <div class="col-md-6">
-                <p>Область деятельности компании – производство и продажа полного модельного ряда коммерческой техники ISUZU полной массой от 3,5 до 33 тонн через национальную дилерскую сеть, которая на данный момент насчитывает более 50 дилерских центров. Производственные мощности АО «ИСУЗУ РУС» расположены в г. Ульяновск.</p>
-            </div>
-        </div>
-
-        <div class="row" style="padding: 24px 0">
             <div class="col-md-12">
-                <img src="/img/about_001.jpg" alt="">
+                <h1 class="title_a1">Лизинг</h1>
+                <h3 class="space-xs">Выгодные условия покупки ISUZU в лизинг</h3>
+            </div>
+        </div>
+
+        <div class="row" style="padding-bottom: 48px">
+            <div class="col-md-4">
+                <p class="leasinf_view_red"><span class="leasinf_view_black space-xs">от</span> 12 мес.</p>
+                <p class="leasinf_view_comment"><sapn class="space-xs">срок лизинга</sapn></p>
+            </div>
+            <div class="col-md-4">
+                <p class="leasinf_view_red"><span class="leasinf_view_black space-xs">от</span> 10%</p>
+                <p class="leasinf_view_comment"><sapn class="space-xs">первый платеж</sapn></p>
+            </div>
+            <div class="col-md-4">
+                <p class="leasinf_view_red"><sapn class="space-xs">1 день</sapn></p>
+                <p class="leasinf_view_comment"><sapn class="space-xs">первый платеж</sapn></p>
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-6">
-                <p>Грузовики Isuzu известны во всём мире и пользуются заслуженной популярностью. Свою репутацию они заслужили не только благодаря успешной маркетинговой политике и грамотному менеджменту. Главное их достоинство-долговечность, надежность и выносливость в сочетании с доступностью и простотой в эксплуатации. Все это делает автомобили ISUZU востребованными во всех регионах России.</p>
+                <h2 class="item1 space-xs">Расчет</h2>
+                <form method="get" action="{{ route('front_leasing_select_download') }}">
+                    <input type="hidden" name="price" value="{{ product.price }}">
+                    <div class="form-group" style="padding-top: 24px">
+                        <label class="space-xs">Срок кредита, мес</label>
+
+                        <div class="space-xs">
+                            <div class="col-sm-8 col-md-8" style="padding-left: 0">
+                                <input name="period" type="range" min="1" max="5" step="1" value="4">
+                            </div>
+                            <div class="col-sm-4 col-md-4">
+                                <p class="form-control-static"><span id="preiod_value">48</span> мес.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="padding-top: 24px">
+                        <label class="space-xs">Первоначальный взнос</label>
+
+                        <div class="space-xs">
+                            <div class="col-sm-8 col-md-9" style="padding-left: 0">
+                                <input name="advance" type="range" min="10" max="50" step="1" value="50">
+                            </div>
+                            <div class="col-sm-4 col-md-3">
+                                <p class="form-control-static"><span id="advance_value">50</span>%</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="__leasing_view space-xs">
+                        <button type="submit" class="btn btn-red" >Оформить заявку</button>
+                    </p>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <img src="{{ product.img }}" alt="..." style="width: 100%">
+
+                <h2 class="space-xs">{{ product.title }}</h2>
+                <p class="space-xs">Кузов: <span>шасси, 2 дв, 2013 м.г.</span></p>
+                <p class="space-xs">Двигатель: <span>5.2 л., 155 л.с.</span></p>
+                <p class="space-xs" style="color: #000000; font-size: 48px;">{{ product.price | number_format(0, '.', ' ')}} <span class="glyphicon glyphicon-ruble" aria-hidden="true" style="color: #000000; font-size: 42px;"></span></p>
+
+                <p class="space-xs"><a href="{{ route('front_configurator_index') }}" class="btn btn-red" >Выбрать другой</a></p>
             </div>
         </div>
+
+
     </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        $(document).ready(function(){
+            $('[name="period"]').change(function() {
+                $('#preiod_value').text($(this).val() * 12);
+            });
+
+            $('[name="advance"]').change(function() {
+                $('#advance_value').text($(this).val() * 1);
+            });
+        });
+    </script>
 {% endblock %}
