@@ -4,10 +4,11 @@
 
 {% block configurator %}
     <div class="row">
-        <div class="col-lg-12">
-            <h2 style="margin-top: 0">Шасси</h2>
+        <div class="col-lg-12 col-md-12">
 
+            <h2 class="" style="margin-top: 0; padding-left: 5px">Шасси</h2>
 
+            <div class="row">
             {% if elf is not empty %}
             <div class="col-lg-4 col-md-4">
                 <img src="/img/configurator/products/{{ type_id }}_{{ elf.0.id }}_1.jpg" alt="" style="width: 100%">
@@ -46,6 +47,7 @@
                     </ul>
                 </div>
             {% endif %}
+            </div>
         </div>
     </div>
 {% endblock %}
