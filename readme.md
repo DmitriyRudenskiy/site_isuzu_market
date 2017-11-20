@@ -8,7 +8,7 @@ docker run --name work-php \
     --link  work-mysql:db -p 8085:8085  \
     -v '/Users/user/PhpstormProjects/site_isuzu_market:/app' \
     -w '/app' \
-    --rm -i -t my/php php -S 0.0.0.0:8085
+    --rm -i -t -d my/php php -S 0.0.0.0:8085 -t /public
 
 ## Check format code
 cd test
@@ -32,3 +32,4 @@ php artisan db:seed --class=CarTypesTableSeeder
 php artisan db:seed --class=CarCategoriesTableSeeder
 php artisan db:seed --class=CarBasesTableSeeder
 php artisan db:seed --class=CarPricesTableSeeder
+
