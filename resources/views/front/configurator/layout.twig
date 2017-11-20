@@ -44,9 +44,20 @@
                 <h1 class="title_a1">Конфигуратор</h1>
             </div>
 
+            <style>
+                .__configurator_menu a {
+                    cursor: default;
+                }
+
+                .__configurator_menu a:hover {
+                    border: 0;
+                    text-decoration: none;
+                }
+            </style>
+
             <div class="col-lg-3 col-md-12">
                 <ul class="__configurator_menu">
-                    <li {% if step == 1 %}class="active"{% endif %}><a href="{{ route('front_configurator_index') }}">01 Тип автомобиля</a></li>
+                    <li {% if step == 1 %}class="active"{% endif %}><a href="#" style="">01 Тип автомобиля</a></li>
                     <li {% if step == 2 %}class="active"{% endif %}><a href="{{ route("front_configurator_chassis", {"alias": 1}) }}">02 Шасси</a></li>
                     <!--<li {% if step == 3 %}class="active"{% endif %}><a href="#">03 Дополнительные опции</a></li>-->
                     <li {% if step == 4 %}class="active"{% endif %}><a href="#">03 Лизинг</a></li>
