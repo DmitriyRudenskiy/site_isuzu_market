@@ -149,3 +149,15 @@ footer {
 .__leasing_view {
     padding-top: 48px
 }
+
+.leasing_price {
+    font-size: 18px;
+    line-height: 1.78;
+    color: #000000;
+}
+
+.leasing_price_big {
+    font-size: 64px;
+    line-height: 1;
+    color: #000000;
+}
