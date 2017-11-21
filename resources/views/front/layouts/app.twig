@@ -189,14 +189,14 @@
         var element = $(".pay_in_month");
 
         element.each(function(){
-            element.html(getInMouth());
+            element.html('от ' + getInMouth() + ' <span class="glyphicon glyphicon-ruble" aria-hidden="true" style="font-size: 32px;"></span>');
 
             $('[name="price"]').bind('change', function(){
-                element.html(getInMouth());
+                element.html('от ' + getInMouth() + ' <span class="glyphicon glyphicon-ruble" aria-hidden="true" style="font-size: 32px;"></span>');
             });
 
             $('[name="period"]').bind('change', function(){
-                element.html(getInMouth());
+                element.html('от ' + getInMouth() + ' <span class="glyphicon glyphicon-ruble" aria-hidden="true" style="font-size: 32px;"></span>');
             });
         });
     });
