@@ -5,10 +5,12 @@
 
 {% block configurator %}
     <div class="row">
-        <div class="col-lg-12">
-            <h2 style="margin-top: 0" class="space-xs">Тип грузовика</h2>
+        <div class="col-lg-12 col-xs-12">
+            <h2 style="margin-top: 0; " class="space-xs xs_add_5">Тип грузовика</h2>
         </div>
+    </div>
 
+    <div class="row">
         {% for item in list %}
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 text-center __configurator_item" style="background-image: url('{{ item.image }}'); ">
                 <p>{{ item.title | raw }}</p>

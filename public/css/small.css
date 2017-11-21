@@ -136,3 +136,12 @@ h3 {
 .__leasing_view {
     padding-bottom: 24px
 }
+
+.__configurator_menu {
+    margin-left: 20px;
+    margin-top: 24px;
+}
+
+.xs_add_5 {
+    margin-left: 5px;
+}
