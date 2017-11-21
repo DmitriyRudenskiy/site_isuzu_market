@@ -41,6 +41,29 @@
                 center: [55.102264, 82.978707],
                 zoom: 17
             });
+
+            // Создаем геообъект с типом геометрии "Точка".
+            var myGeoObject = new ymaps.GeoObject({
+                // Описание геометрии.
+                geometry: {
+                    type: "Point",
+                    coordinates: [55.102264, 82.978707]
+                },
+                // Свойства.
+                properties: {
+                    // Контент метки.
+                    iconContent: 'Я тащусь',
+                    hintContent: 'Ну давай уже тащи'
+                }
+            }, {
+                // Опции.
+                // Иконка метки будет растягиваться под размер ее содержимого.
+                preset: 'islands#blackStretchyIcon',
+                // Метку можно перемещать.
+                draggable: true
+            });
+
+            myMap.geoObjects.add(myGeoObject);
         }
     </script>
 {% endblock %}
