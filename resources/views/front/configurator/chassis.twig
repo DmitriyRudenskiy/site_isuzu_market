@@ -1,14 +1,15 @@
 {% set step = 2 %}
+{% block title %}Конфигурация кузовной надстройки Исузу{% endblock %}
 
 {% extends 'front.configurator.layout' %}
 
 {% block configurator %}
     <div class="row">
-        <div class="col-lg-12 col-md-12">
+        <div class="col-lg-12 col-md-12 col-xs-12">
 
-            <h2 class="" style="margin-top: 0; padding-left: 5px">Шасси</h2>
+            <h2 class="xs-padding-25" style="margin-top: 0;">Шасси</h2>
 
-            <div class="row">
+            <div class="row xs-padding-15">
             {% if elf is not empty %}
             <div class="col-lg-4 col-md-4">
                 <img src="/img/configurator/products/{{ type_id }}_{{ elf.0.id }}_1.jpg" alt="" style="width: 100%">

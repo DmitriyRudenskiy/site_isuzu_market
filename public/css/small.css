@@ -145,3 +145,16 @@ h3 {
 .xs_add_5 {
     margin-left: 5px;
 }
+
+a {
+    font-size: 16px;
+    color: #4a4a4a !important;
+}
+
+.xs-padding-15 {
+     padding-left: 15px;
+ }
+
+.xs-padding-25 {
+    padding-left: 25px;
+}
