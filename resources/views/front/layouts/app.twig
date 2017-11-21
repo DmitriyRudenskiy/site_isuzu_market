@@ -189,14 +189,14 @@
         var element = $(".pay_in_month");
 
         element.each(function(){
-            element.html(getInMouth() + ' <span class="glyphicon glyphicon-ruble" aria-hidden="true" style="font-size: 48px;"></span>');
+            element.html(getInMouth());
 
             $('[name="price"]').bind('change', function(){
-                element.html(getInMouth() + ' <span class="glyphicon glyphicon-ruble" aria-hidden="true" style="font-size: 48px;"></span>');
+                element.html(getInMouth());
             });
 
             $('[name="period"]').bind('change', function(){
-                element.html(getInMouth() + ' <span class="glyphicon glyphicon-ruble" aria-hidden="true" style="font-size: 48px;"></span>');
+                element.html(getInMouth());
             });
         });
     });
