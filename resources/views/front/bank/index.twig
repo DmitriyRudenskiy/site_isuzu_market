@@ -13,13 +13,13 @@
     </style>
 
     <div class="container">
-        <h1>Лизинговые расчеты</h1>
+        <h1 class="title_a1">Лизинговые расчеты</h1>
 
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-8 hidden-xs">
                 <h3 class="sub_title">Сделайте выбор:</h3>
 
-                <table class="table">
+                <table class="table hidden-xs">
                     <tbody>
                     {% for item in list %}
                         <tr>
@@ -32,6 +32,14 @@
                     </tbody>
                 </table>
             </div>
+
+            {% for item in list %}
+                <div class="col-xs-12 visible-xs text-center" style="padding-bottom: 32px">
+                    <p><img src="{{ item.image }}" alt=""><br></p>
+                    <a href="{{ route('front_leasing_pdf_download', {'bank_id': item.id}) }}&{{ data }}" class="btn btn-red">Cкачать</a>
+                </div>
+            {% endfor %}
+
         </div>
     </div>
 {% endblock %}
