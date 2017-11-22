@@ -24,4 +24,6 @@ Route::group(['middleware' => ['web'], 'namespace' => 'Front', 'as' => 'front_']
     Route::get('/configurator/options/{typeId}/{baseId}', 'ConfiguratorController@options')->name('configurator_options');
     Route::get('/configurator/leasing/{typeId}/{baseId}', 'ConfiguratorController@leasing')->name('configurator_leasing');
     Route::get('/configurator/finish', 'ConfiguratorController@finish')->name('configurator_finish');
+
+    Route::get('/cart', 'CartController@index')->name('cart_index');
 });

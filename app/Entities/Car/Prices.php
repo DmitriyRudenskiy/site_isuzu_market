@@ -15,4 +15,9 @@ class Prices extends Model
     ];
 
     public $timestamps = false;
+
+    public function base()
+    {
+        return $this->hasOne(Bases::class, 'id', 'base_id');
+    }
 }

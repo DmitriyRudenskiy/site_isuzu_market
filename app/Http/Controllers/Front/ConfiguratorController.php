@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Repositories\Car\BasesRepository;
 use App\Repositories\Car\TypesRepository;
+use App\Services\CartService;
 use Illuminate\Routing\Controller;
 
 class ConfiguratorController extends Controller
@@ -158,10 +159,12 @@ class ConfiguratorController extends Controller
         );
     }
 
-    public function leasing($typeId, $baseId, BasesRepository $basesRepository)
+    public function leasing($typeId, $baseId, BasesRepository $basesRepository, CartService $service)
     {
         $base = $basesRepository->find($baseId);
         $price = $base->getPrice($typeId)->first();
+
+        $service->add($price);
 
         if ($price == null) {
             throw new \RuntimeException();
