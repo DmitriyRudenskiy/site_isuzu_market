@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Entities\Car\Bases;
 use App\Repositories\Car\BasesRepository;
 use App\Repositories\Car\TypesRepository;
 use App\Services\CartService;
@@ -27,17 +28,17 @@ class ConfiguratorController extends Controller
 
         $list = $repository->getList($typeId);
 
-        $elf = array_filter($list, function($base) {
+        $elf = array_filter($list, function(Bases $base) {
             return $base->category_id == 1;
         });
 
-        $forward =  array_filter($list, function($base) {
+        $forward =  array_filter($list, function(Bases $base) {
             return $base->category_id == 2;
         });
 
         $forward = array_values($forward);
 
-        $giga =  array_filter($list, function($base) {
+        $giga =  array_filter($list, function(Bases $base) {
             return $base->category_id == 3;
         });
 
@@ -62,7 +63,7 @@ class ConfiguratorController extends Controller
         $base = $basesRepository->find($baseId);
         $price = $base->getPrice($typeId)->first();
 
-        if ($price == null) {
+        if (empty($price)) {
             throw new \RuntimeException();
         }
 
