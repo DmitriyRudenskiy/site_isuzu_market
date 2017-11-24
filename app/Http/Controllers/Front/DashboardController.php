@@ -41,8 +41,14 @@ class DashboardController extends Controller
         return view('front.dashboard.contacts');
     }
 
-    protected function getTypes()
+    public function service()
     {
-
+        return view('front.dashboard.service');
     }
+
+    public function parts()
+    {
+        return view('front.dashboard.parts');
+    }
+
 }
