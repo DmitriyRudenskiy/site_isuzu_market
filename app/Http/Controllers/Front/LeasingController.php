@@ -16,7 +16,7 @@ class LeasingController extends Controller
         return view(
             'front.leasing.index',
             [
-                'price' => $product->price,
+                'price' => $product ["price"],
                 'product' => $product
             ]
         );
