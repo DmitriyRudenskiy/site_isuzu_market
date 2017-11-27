@@ -3,29 +3,66 @@
 {% block title %}Контакты{% endblock %}
 
 {% block content %}
-    <div class="container">
-        <h1 class="title_a1">Сервис</h1>
+
+<style>
+    p, li {
+        font-size: 18px;
+    }
+</style>
+    <div class="container" style="padding-top: 70px">
 
         <div class="row">
             <div class="col-md-6">
-                <p class="space-xs"><img src="/img/content/service_001.jpg" alt="" style="width: 100%"></p>
-                <p class="space-xs">Автосервис «Автодиагностика54» — это коллектив профессионалов, обладающих значительным опытом ремонта автомобилей. Здесь предоставляется полный комплекс услуг: от диагностики до ремонта. Все работы производятся с использованием профессионального оборудования. Перечень работ включает ремонт электроники, обновление программного обеспечения, установку и ремонт автосигнализаций и многое другое.</p>
-                <p class="space-xs"><img src="/img/content/service_003.jpg" alt="" style="width: 100%"></p>
-            </div>
-            <div class="col-md-6">
+                <h1 class="title_a1">Сервис</h1>
                 <h3>Вид работ</h3>
                 <p class="space-xs">замена масла, заправка кондиционера, кузовной ремонт, ремонт автокондиционеров, ремонт акпп, ремонт выхлопных систем, ремонт грузовых авто, ремонт двигателя, ремонт дизельных двигателей, ремонт карбюраторов, ремонт подвески, ремонт топливной аппаратуры дизельных двигателей, ремонт электронных систем управления автомобиля, ремонт электрооборудования, тюнинг, тюнинг двигателя, установка автозвука, установка ксенона</p>
-                <h3>Тип</h3>
-                <p class="space-xs">автосалон, автосервис, автостанция, автостоянка, прокат автомобилей, тюнинг-ателье</p>
-                <p class="space-xs"><img src="/img/content/service_002.jpg" alt="" style="width: 100%"></p>
+                <p class="space-xs"> <a href="{{ route('front_leasing_view', {id: item.id}) }}" class="btn btn-red">Оформить заявку</a></p>
+            </div>
+            <div class="col-md-6">
+                <p class="space-xs"><img src="/img/content/service_001.jpg" alt="" style="width: 100%"></p>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-md-12" id="map"></div>
+            <div style="width: 100%; height: 530px; background: url('/tmp_001.png') repeat-y; margin: 80px 0"></div>
+
+            <h3>Сервисные контракты</h3>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <p class="space-xs">
+                <ul>
+                    <li>Профессиональное обслуживание автомобиля</li>
+                    <li>Оригинальные запасные части</li>
+                    <li>Индивидуальный план ТО с учетом условий эксплуатации</li>
+                    <li>Сокращение простоев техники</li>
+                    <li>Гарантия на запасные части и работы</li>
+                </ul>
+                </p>
+            </div>
+            <div class="col-md-6">
+                <p class="space-xs">
+                <ul>
+                    <li>Обслуживание в любом официальном сервисном центре Isuzu в России</li>
+                    <li>Гибкая система оплаты: ежемесячные платежи, квартальные платежи, полная оплата, либо оплата, включенная в лизинговый платёж</li>
+                    <li>Простой документооборот, снижение административной нагрузки</li>
+                    <li>Гибкий пересмотр условий контракта при изменении условий эксплуатации</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+
+        <div class="row" style="padding-top: 48px">
+            <div class="col-md-12 text-center">
+                <p class="space-xs"> <a href="{{ route('front_leasing_view', {id: item.id}) }}" class="btn btn-red">Оформить заявку</a></p>
+            </div>
         </div>
     </div>
 {% endblock %}
+
+
 
 
 
