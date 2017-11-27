@@ -28,18 +28,18 @@ class ConfiguratorController extends Controller
 
         $list = $repository->getList($typeId);
 
-        $elf = array_filter($list, function(Bases $base) {
-            return $base->category_id == 1;
+        $elf = array_filter($list, function($base) {
+            return !empty($base->category_id) && $base->category_id == 1;
         });
 
-        $forward =  array_filter($list, function(Bases $base) {
-            return $base->category_id == 2;
+        $forward =  array_filter($list, function($base) {
+            return !empty($base->category_id) && $base->category_id == 2;
         });
 
         $forward = array_values($forward);
 
-        $giga =  array_filter($list, function(Bases $base) {
-            return $base->category_id == 3;
+        $giga =  array_filter($list, function($base) {
+            return !empty($base->category_id) && $base->category_id == 3;
         });
 
         $giga = array_values($giga);

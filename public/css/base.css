@@ -400,3 +400,6 @@ input[type=range]:focus::-ms-fill-upper {
     color: #000000;
 }
 
+.__leasing_data_period, .__leasing_data_advance {
+    cursor: pointer;
+}
