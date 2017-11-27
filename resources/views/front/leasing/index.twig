@@ -64,17 +64,3 @@
 
     </div>
 {% endblock %}
-
-{% block script %}
-    <script>
-        $(document).ready(function(){
-            $('[name="period"]').change(function() {
-                $('#preiod_value').text($(this).val() * 12);
-            });
-
-            $('[name="advance"]').change(function() {
-                $('#advance_value').text($(this).val() * 1);
-            });
-        });
-    </script>
-{% endblock %}

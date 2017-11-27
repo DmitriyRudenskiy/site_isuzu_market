@@ -403,3 +403,9 @@ input[type=range]:focus::-ms-fill-upper {
 .__leasing_data_period, .__leasing_data_advance {
     cursor: pointer;
 }
+
+.__leasing_label_advance {
+    display: block;
+    clear: both;
+    margin-top: 24px;
+}

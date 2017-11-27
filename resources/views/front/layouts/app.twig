@@ -176,6 +176,8 @@
 </script>
 
 <script>
+
+    /* Leasing calculator */
     $(document).ready(function () {
 
         function getInMouth() {
@@ -188,21 +190,48 @@
             return Math.floor((((price * (percent / 100)) * (period / 12) + price) -  (price / 100 * advance)) / period);
         }
 
+
+        $('[data-period=' + parseInt($('[name="period"]').val()) + ']' ).css('color', 'red');
+        $('[data-advance=' + parseInt($('[name="advance"]').val()) + ']' ).css('color', 'red');
+
+
         var element = $(".pay_in_month");
 
         element.each(function(){
             element.html(getInMouth());
+        });
 
-            $('[name="price"]').bind('change', function(){
-                element.html(getInMouth());
-            });
+        $('[name="period"]').change(function() {
+            $('#preiod_value').text($(this).val() * 12);
+            element.html(getInMouth());
+        });
 
-            $('[name="period"]').bind('change', function(){
-                element.html(getInMouth());
-            });
+        $('[name="advance"]').change(function() {
+            $('#advance_value').text($(this).val() * 1);
+            element.html(getInMouth());
+        });
+
+        /* bottom label */
+        $(".__leasing_data_period").click(function(){
+            var value = parseInt($(this).attr('data-period'));
+
+            $('[name="period"]').val(value);
+            $('[name="period"]').change();
+
+            $(".__leasing_data_period").css('color', 'black');
+            $(this).css('color', 'red');
+        });
+
+        $(".__leasing_data_advance").click(function(){
+            var value = parseInt($(this).attr('data-advance'));
+
+            $('[name="advance"]').val(value);
+            $('[name="advance"]').change();
+
+            $(".__leasing_data_advance").css('color', 'black');
+            $(this).css('color', 'red');
         });
     });
-
 </script>
 
 <!-- Yandex.Metrika counter -->

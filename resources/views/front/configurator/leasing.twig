@@ -96,65 +96,7 @@
         <div class="col-md-6">
             <h2 class="item1">Расчет</h2>
 
-            <form method="get" action="{{ route('front_leasing_select_download') }}">
-                <input type="hidden" name="price" value="{{ (price * 0.98) }}">
-                <div class="form-group" style="padding-top: 24px">
-                    <label>Срок кредита, мес</label>
-
-                    <div>
-                        <div class="col-sm-8 col-md-8" style="padding-left: 0">
-                            <input name="period" type="range" min="1" max="5" step="1" value="4">
-
-                            <table style="width: 100%; text-align: center">
-                                <tbody>
-                                <tr>
-                                    <td class="__leasing_data_period" data-period="1">12</td>
-                                    <td class="__leasing_data_period" data-period="2">24</td>
-                                    <td class="__leasing_data_period" data-period="3">36</td>
-                                    <td class="__leasing_data_period" data-period="4">48</td>
-                                    <td class="__leasing_data_period" data-period="5">60</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="col-sm-4 col-md-4">
-                            <p class="form-control-static"><span id="preiod_value">48</span> мес.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group" style="padding-top: 24px">
-                    <label>Первоначальный взнос</label>
-
-                    <div>
-                        <div class="col-sm-8 col-md-9" style="padding-left: 0">
-                            <input name="advance" type="range" min="10" max="50" step="1" value="50">
-                            <table style="width: 100%; text-align: center">
-                                <tbody>
-                                <tr>
-                                    <td class="__leasing_data_advance" data-advance="10">10</td>
-                                    <td class="__leasing_data_advance" data-advance="15">15</td>
-                                    <td class="__leasing_data_advance" data-advance="20">20</td>
-                                    <td class="__leasing_data_advance" data-advance="25">25</td>
-                                    <td class="__leasing_data_advance" data-advance="30">30</td>
-                                    <td class="__leasing_data_advance" data-advance="35">35</td>
-                                    <td class="__leasing_data_advance" data-advance="40">40</td>
-                                    <td class="__leasing_data_advance" data-advance="45">45</td>
-                                    <td class="__leasing_data_advance" data-advance="50">60</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="col-sm-4 col-md-3">
-                            <p class="form-control-static"><span id="advance_value">50</span>%</p>
-                        </div>
-                    </div>
-                </div>
-
-                <p style="padding-top: 48px">
-                    <button type="submit" class="btn btn-red" >Оформить заявку</button>
-                </p>
-            </form>
+            {% include 'front.leasing._block_form.twig' %}
         </div>
 
         <div class="col-md-4">
@@ -168,28 +110,6 @@
     </div>
 
     <div class="visible-md" style="height: 55px"></div>
-{% endblock %}
-
-{% block script %}
-    <script>
-        $(document).ready(function(){
-            $(".__leasing_data_period").click(function(){
-                var value = parseInt($(this).attr('data-period'));
-
-                $('[name="period"]').val(value);
-                $('[name="period"]').change();
-            });
-
-            $(".__leasing_data_advance").click(function(){
-                var value = parseInt($(this).attr('data-advance'));
-
-                $('[name="advance"]').val(value);
-                $('[name="advance"]').change();
-            });
-        });
-
-
-    </script>
 {% endblock %}
 
 

@@ -16,38 +16,7 @@
         <div class="row">
             <div class="col-md-6">
                 <h2 class="item1 space-xs">Расчет</h2>
-                <form method="get" action="{{ route('front_leasing_select_download') }}">
-                    <input type="hidden" name="price" value="{{ product.price }}">
-                    <div class="form-group" style="padding-top: 24px">
-                        <label class="space-xs">Срок кредита, мес</label>
-
-                        <div class="space-xs">
-                            <div class="col-sm-8 col-md-8" style="padding-left: 0">
-                                <input name="period" type="range" min="1" max="5" step="1" value="4">
-                            </div>
-                            <div class="col-sm-4 col-md-4">
-                                <p class="form-control-static"><span id="preiod_value">48</span> мес.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group" style="padding-top: 24px">
-                        <label class="space-xs">Первоначальный взнос</label>
-
-                        <div class="space-xs">
-                            <div class="col-sm-8 col-md-9" style="padding-left: 0">
-                                <input name="advance" type="range" min="10" max="50" step="1" value="50">
-                            </div>
-                            <div class="col-sm-4 col-md-3">
-                                <p class="form-control-static"><span id="advance_value">50</span>%</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <p class="__leasing_view space-xs">
-                        <button type="submit" class="btn btn-red" >Оформить заявку</button>
-                    </p>
-                </form>
+                {% include 'front.leasing._block_form.twig' %}
             </div>
             <div class="col-md-4">
                 <img src="{{ product.img }}" alt="..." style="width: 100%">
@@ -61,18 +30,4 @@
 
 
     </div>
-{% endblock %}
-
-{% block script %}
-<script>
-    $(document).ready(function(){
-        $('[name="period"]').change(function() {
-            $('#preiod_value').text($(this).val() * 12);
-        });
-
-        $('[name="advance"]').change(function() {
-            $('#advance_value').text($(this).val() * 1);
-        });
-    });
-</script>
 {% endblock %}
