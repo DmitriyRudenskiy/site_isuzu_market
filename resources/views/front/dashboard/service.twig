@@ -1,22 +1,60 @@
 {% extends 'front.layouts.app' %}
 
-{% block title %}Контакты{% endblock %}
+{% block title %}Сервисный центр ISUZU{% endblock %}
 
 {% block content %}
 
 <style>
-    p, li {
-        font-size: 18px;
+    @media (min-width: 992px) and (orientation: landscape) {
+        p, li {
+            font-size: 18px;
+        }
+
+        .carousel-control {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 35px;
+            text-align: center;
+            opacity: 1;
+            color: #fff;
+        }
+
+        .carousel-control .ion-ios-arrow-left, .carousel-control .ion-ios-arrow-right {
+            position: absolute;
+            z-index: 5;
+            top: 50%;
+            display: inline-block;
+            margin-top: -24px;
+            font-size: 48px;
+            line-height: 0;
+        }
+
+        #carousel-example-generic {
+            width: 100%; height: 530px; margin: 80px 0
+        }
     }
+
+    @media (max-width: 478px) {
+
+    }
+
+
+
+
+
+
+
 </style>
     <div class="container" style="padding-top: 70px">
 
         <div class="row">
             <div class="col-md-6">
-                <h1 class="title_a1">Сервис</h1>
-                <h3>Вид работ</h3>
-                <p class="space-xs">замена масла, заправка кондиционера, кузовной ремонт, ремонт автокондиционеров, ремонт акпп, ремонт выхлопных систем, ремонт грузовых авто, ремонт двигателя, ремонт дизельных двигателей, ремонт карбюраторов, ремонт подвески, ремонт топливной аппаратуры дизельных двигателей, ремонт электронных систем управления автомобиля, ремонт электрооборудования, тюнинг, тюнинг двигателя, установка автозвука, установка ксенона</p>
-                <p class="space-xs"> <a href="{{ route('front_leasing_view', {id: item.id}) }}" class="btn btn-red">Оформить заявку</a></p>
+                <h1 class="title_a1">Сервисный центр ISUZU</h1>
+                <h3 class="space-xs">Сертифицированный центр официального дилера</h3>
+                <p class="space-xs">Специалисты автосервиса помогут вам быстро подобрать необходимые запасные части, вовремя устранить неисправность и помочь без потерь для бизнеса вернуть автомобиль в строй, максимально снизив время простоя</p>
+                <p class="space-xs"> <a href="{{ route('front_leasing_view', {id: item.id}) }}" class="btn btn-red">Запись в автосервис</a></p>
             </div>
             <div class="col-md-6">
                 <p class="space-xs"><img src="/img/content/service_001.jpg" alt="" style="width: 100%"></p>
@@ -25,10 +63,8 @@
 
         <div class="row">
 
-            <div class="col-md-12" style="width: 100%; height: 530px; margin: 80px 0">
-
+            <div class="col-md-12">
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
                         <div class="item active">
@@ -47,17 +83,17 @@
 
                     <!-- Controls -->
                     <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="glyphicon ion-ios-arrow-left" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
                     <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="glyphicon ion-ios-arrow-right" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
             </div>
 
-            <h3>Сервисные контракты</h3>
+            <h3 class="space-xs">Сервисные контракты</h3>
         </div>
 
         <div class="row">
@@ -91,9 +127,60 @@
             </div>
         </div>
     </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="space-xs">АО «ИСУЗУ РУС» (бывшее ЗАО «СОЛЛЕРС-ИСУЗУ») – это официальный производитель и дистрибьютер автомобильной марки ISUZU в России. Компания основана совместными усилиями двух японских корпораций — Isuzu Motors Limited (74% акций) и Sojitz Corporation (26% акций).</p>
+            </div>
+            <div class="col-md-6">
+                <p class="space-xs">Область деятельности компании – производство и продажа полного модельного ряда коммерческой техники ISUZU полной массой от 3,5 до 33 тонн через национальную дилерскую сеть, которая на данный момент насчитывает более 50 дилерских центров. Производственные мощности АО «ИСУЗУ РУС» расположены в г. Ульяновск.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" id="map"></div>
+        </div>
+    </div>
 {% endblock %}
 
 
+{% block script %}
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 
+    <script type="text/javascript">
+        ymaps.ready(init);
+        var myMap;
+
+        function init(){
+            myMap = new ymaps.Map("map", {
+                center: [55.102264, 82.978707],
+                zoom: 17
+            });
+
+            // Создаем геообъект с типом геометрии "Точка".
+            var myGeoObject = new ymaps.GeoObject({
+                // Описание геометрии.
+                geometry: {
+                    type: "Point",
+                    coordinates: [55.102264, 82.978707]
+                },
+                // Свойства.
+                properties: {
+                    // Контент метки.
+                    iconContent: 'Официальный дилер ISUZU',
+                }
+            }, {
+                // Опции.
+                // Иконка метки будет растягиваться под размер ее содержимого.
+                preset: 'islands#blackStretchyIcon',
+                // Метку можно перемещать.
+                draggable: true
+            });
+
+            myMap.geoObjects.add(myGeoObject);
+        }
+    </script>
+{% endblock %}
 
 
