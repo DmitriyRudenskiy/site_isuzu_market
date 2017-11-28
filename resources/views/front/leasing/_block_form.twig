@@ -1,13 +1,13 @@
 <form method="get" action="{{ route('front_leasing_select_download') }}">
     <input type="hidden" name="price" value="{{ (price * 0.98) }}">
     <div class="form-group" style="padding-top: 24px">
-        <label>Срок кредита, мес</label>
+        <label class="space-xs">Срок кредита, мес</label>
 
         <div>
-            <div class="col-sm-8 col-md-8" style="padding-left: 0">
+            <div class="col-sm-8 col-md-8 col-xs-12 space-xs">
                 <input name="period" type="range" min="1" max="5" step="1" value="4">
 
-                <table style="width: 100%; text-align: center">
+                <table class="space-xs" style="width: 100%; text-align: center">
                     <tbody>
                     <tr>
                         <td class="__leasing_data_period" data-period="1">12</td>
@@ -19,17 +19,17 @@
                     </tbody>
                 </table>
             </div>
-            <div class="col-sm-4 col-md-4">
+            <div class="col-sm-4 col-md-4 hidden-sm hidden-xs">
                 <p class="form-control-static"><span id="preiod_value">48</span> мес.</p>
             </div>
         </div>
     </div>
 
     <div class="form-group" style="padding-top: 24px">
-        <label class="__leasing_label_advance">Первоначальный взнос</label>
+        <label class="__leasing_label_advance space-xs">Первоначальный взнос</label>
 
         <div>
-            <div class="col-sm-8 col-md-9" style="padding-left: 0">
+            <div class="col-sm-8 col-md-8 col-xs-12 space-xs">
                 <input name="advance" type="range" min="10" max="50" step="1" value="50">
                 <table style="width: 100%; text-align: center">
                     <tbody>
@@ -47,13 +47,13 @@
                     </tbody>
                 </table>
             </div>
-            <div class="col-sm-4 col-md-3">
+            <div class="col-sm-4 col-md-4 hidden-sm hidden-xs">
                 <p class="form-control-static"><span id="advance_value">50</span>%</p>
             </div>
         </div>
     </div>
 
-    <p style="padding-top: 48px">
+    <p class="space-xs" style="padding-top: 48px">
         <button type="submit" class="btn btn-red" >Оформить заявку</button>
     </p>
 </form>
