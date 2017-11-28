@@ -39,13 +39,6 @@
     @media (max-width: 478px) {
 
     }
-
-
-
-
-
-
-
 </style>
     <div class="container" style="padding-top: 70px">
 
@@ -55,7 +48,7 @@
                 <h3 class="space-xs">Сертифицированный центр официального дилера</h3>
                 <p class="space-xs">Специалисты автосервиса помогут вам быстро подобрать необходимые запасные части, вовремя устранить неисправность и помочь без потерь для бизнеса вернуть автомобиль в строй, максимально снизив время простоя.</p>
                 <p class="space-xs">Наши специалисты прошли профессиональную подготовку ISUZU по диагностике, ремонту и техническому обслуживанию грузовых автомобилей ISUZU полного модельного ряда.</p>
-                <p class="space-xs"><br><a href="{{ route('front_leasing_view', {id: item.id}) }}" class="btn btn-red">Запись в автосервис</a></p>
+                <p class="space-xs"><br><button type="button" class="btn btn-red" data-toggle="modal" data-target="#modal_callback">Запись в автосервис</button></p>
             </div>
             <div class="col-md-6">
                 <p class="space-xs"><img src="/service_303.jpg" alt="" style="width: 100%"></p>
@@ -155,7 +148,7 @@
 
         <div class="row" style="padding: 48px 0">
             <div class="col-md-12">
-                <p class="space-xs"> <a href="{{ route('front_leasing_view', {id: item.id}) }}" class="btn btn-red">Оформить заявку</a></p>
+                <p class="space-xs"><button type="button" class="btn btn-red" data-toggle="modal" data-target="#modal_callback">Оформить заявку</button></p>
             </div>
         </div>
     </div>
