@@ -409,3 +409,9 @@ input[type=range]:focus::-ms-fill-upper {
     clear: both;
     margin-top: 24px;
 }
+
+.btn-clear {
+    background: none;
+    border: 0;
+    border-radius: 0;
+}
