@@ -129,13 +129,15 @@
 
             <div class="col-lg-6 col-md-6 col-xs-12 __home_item_list">
                 <img src="/parts_003.jpg" alt="" class="__effect_zoom">
-                <p class="price space-xs">{{ item.price | number_format(0, '.', ' ')}} <span class="glyphicon glyphicon-ruble" aria-hidden="true"></span></p>
-                <p class="title space-xs">{{ item.title }}</p>
+                <p class="price space-xs">Консультация специалиста</p>
+                <p class="title space-xs">Специалист по продаже запчастей ответит на любые вопросы </p>
                 <p class="space-xs">
-                    <a href="{{ route('front_leasing_view', {id: item.id}) }}" class="btn btn-red">Оформить заявку</a>
+                    <a href="{{ route('front_leasing_view', {id: item.id}) }}" class="btn btn-red">Заказать звонок</a>
                 </p>
             </div>
         </div>
+
+
 
         <div class="row">
             <div class="col-md-12">
