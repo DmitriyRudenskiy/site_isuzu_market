@@ -17,11 +17,12 @@ class CallbackController extends Controller
         //
         $name = $request->get('name');
         $phone = $request->get('phone');
+        $message = $request->get('comment');
 
         //
         $name = mb_substr($name, 0, 255);
         $phone = preg_replace('/[^0-9]/', '', $phone);
-        $message = !empty($message) ? $message : null;
+        $message = !empty($message) ? 'Запчасти: ' . $message : null;
 
         if (!empty($name) && strlen($phone) > 4) {
             $this->sendMail($name, $phone, $message, $request->getHost());
