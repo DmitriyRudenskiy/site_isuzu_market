@@ -112,7 +112,7 @@
                 <h5>Запрос по VIN номеру</h5>
                 <p class="modal_form_comment">Просто напишите VIN номер и запчасти, которые вам нужны</p>
 
-                <form style="padding-top: 20px" id="callback">
+                <form style="padding-top: 20px" id="callback_2">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <input type="text" name="name" class="form-control" placeholder="VIN" required>
@@ -130,11 +130,39 @@
     </div>
 </div>
 
+<!-- order find part -->
+<div class="modal fade" id="modal_find_part"  tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
 
+            <div class="modal-body">
+                <h5>Подбор по наименованию запчасти</h5>
+                <p class="modal_form_comment">Просто напишите запчасти, которые вам нужны</p>
+
+                <form style="padding-top: 20px" id="callback_3">
+                    {{ csrf_field() }}
+                    <div class="form-group">
+                        <input type="text" name="comment" class="form-control" placeholder="Запчасти" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="Имя" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="phone" class="form-control" placeholder="Телефон" required>
+                    </div>
+                    <button type="submit" class="btn btn-red">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="/js/vendor.js"></script>
 <script>
-    $("#callback").submit(function(){
+    $("#callback, #callback_2, #callback_3").submit(function(){
 
         var url = "{{ route('front_callback_index') }}";
 

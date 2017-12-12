@@ -184,3 +184,7 @@ h1 {
 .add-space-for-md {
     padding-left: 8px;
 }
+
+.__home_item_list .title {
+    line-height: 1.6;
+}
