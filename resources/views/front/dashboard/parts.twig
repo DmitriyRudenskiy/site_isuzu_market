@@ -1,6 +1,6 @@
 {% extends 'front.layouts.app' %}
 
-{% block title %}Сервисный центр ISUZU{% endblock %}
+{% block title %}Запчасти ISUZU от официального дилера{% endblock %}
 
 {% block content %}
 
@@ -86,7 +86,7 @@
     </style>
     <div class="container" style="padding-top: 70px">
 
-        <h1 class="title_a1">Сервисный центр ISUZU</h1>
+        <h1 class="title_a1">Запчасти ISUZU от официального дилера</h1>
 
         <div class="row">
             <div class="col-md-6">
@@ -132,7 +132,7 @@
                 <p class="price space-xs">Ответ специалиста</p>
                 <p class="title space-xs">Специалист по продаже запчастей ответит на любые вопросы </p>
                 <p class="space-xs">
-                    <a href="{{ route('front_leasing_view', {id: item.id}) }}" class="btn btn-red">Заказать звонок</a>
+                    <button type="button" class="btn btn-red" data-toggle="modal" data-target="#modal_callback">Оставить запрос</button>
                 </p>
             </div>
         </div>
