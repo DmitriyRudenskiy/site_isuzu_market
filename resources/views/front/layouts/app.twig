@@ -73,6 +73,7 @@
         </div>
 </div>
 
+<!-- for callback -->
 <div class="modal fade" id="modal_callback"  tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -98,6 +99,38 @@
         </div>
     </div>
 </div>
+
+<!-- order auto part -->
+<div class="modal fade" id="modal_order"  tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+
+            <div class="modal-body">
+                <h5>Запрос по VIN номеру</h5>
+                <p class="modal_form_comment">Просто напишите VIN номер и запчасти, которые вам нужны</p>
+
+                <form style="padding-top: 20px" id="callback">
+                    {{ csrf_field() }}
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="VIN" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="comment" class="form-control" placeholder="Запчасти" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="phone" class="form-control" placeholder="Телефон" required>
+                    </div>
+                    <button type="submit" class="btn btn-red">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <script src="/js/vendor.js"></script>
 <script>
