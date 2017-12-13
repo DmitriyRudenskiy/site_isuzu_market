@@ -8,6 +8,7 @@ Route::group(['middleware' => ['web'], 'namespace' => 'Front', 'as' => 'front_']
     Route::get('/contacts', 'DashboardController@contacts')->name('dashboard_contacts');
     Route::get('/service', 'DashboardController@service')->name('dashboard_service');
     Route::get('/parts', 'DashboardController@parts')->name('dashboard_parts');
+    Route::get('/credit', 'DashboardController@credit')->name('dashboard_credit');
 
     Route::get('/leasing/info', 'LeasingController@index')->name('leasing_info');
     Route::get('/leasing/calculation/{price}', 'LeasingController@calculation')->name('leasing_calculation');
