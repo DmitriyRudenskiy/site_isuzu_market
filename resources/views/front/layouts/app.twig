@@ -173,7 +173,7 @@
             data: $(this).serialize(),
             success: function(data) {
                 $("#alert_send_message").show();
-                $("#modal_callback").modal('hide');
+                $(this).parents('.modal').modal('hide');
             }
         });
 
