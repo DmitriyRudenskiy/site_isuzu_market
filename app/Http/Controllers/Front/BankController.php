@@ -10,9 +10,6 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class BankController extends Controller
 {
-    /**
-     * Список новостей
-     */
     public function index(BanksRepository $banksRepository, Request $request)
     {
         $list = $banksRepository->getList();
