@@ -1,0 +1,21 @@
+{% extends 'front.layouts.app' %}
+
+{% block content %}
+    <!-- promo -->
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 promo_home_left_box" style="background: url('/img/finance_003.jpg') center !important; background-size: cover;">
+            <img src="/img/finance_003.jpg" alt="" class="visible-xs">
+            <h3 class="promo_home_left_title space-xs">Выберите тип грузовика ISUZU</h3>
+            <p class="promo_home_left_text space-xs">удобный конфигуратор кузовных надстроек</p>
+            <p class="promo_home_left_button space-xs"><a href="{{ route('front_configurator_index') }}" class="btn btn-white">Подробнее</a></p>
+        </div>
+
+        <div class="col-xs-12 col-md-6 col-lg-6 hidden-xs" style="padding-left: 0">
+            <div class="promo_home_right_image" style="background: url('/img/finance_005.jpg') center !important; background-size: cover;"></div>
+            <h3 class="promo_home_right_title promo_home_right_space">Выгодный лизинг</h3>
+            <p class="promo_home_right_text promo_home_right_space">Специальная программа финансирования автомобилей для оптимальных условий покупки автомобиля</p>
+            <p class="promo_home_right_button promo_home_right_space"><a href="{{ route('front_leasing_info') }}" class="btn btn-red">Подробнее</a></p>
+        </div>
+    </div>
+    <!--/ promo finance -->
+{% endblock %}

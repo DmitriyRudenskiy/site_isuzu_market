@@ -55,4 +55,10 @@ class DashboardController extends Controller
     {
         return view('front.dashboard.credit');
     }
+
+    public function finance()
+    {
+        return view('front.dashboard.finance');
+    }
+
 }
