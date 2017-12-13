@@ -252,6 +252,12 @@
             var advance = parseInt($('[name="advance"]').val());
             var percent =  6.5;
 
+            if (advance < 1) {
+                advance = 1;
+            }
+
+            console.log(['debug: cal in mouth', price, period, advance]);
+
             return Math.floor((((price * (percent / 100)) * (period / 12) + price) -  (price / 100 * advance)) / period);
         }
 

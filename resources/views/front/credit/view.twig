@@ -1,0 +1,107 @@
+{% extends 'front.layouts.app' %}
+
+{% block title %}Кредит{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="title_a1">Кредит</h1>
+                <h3 class="space-xs">Выгодные условия покупки ISUZU в кредит</h3>
+            </div>
+        </div>
+
+        <div class="row add-space-for-md">
+            <div class="col-md-4">
+                <p class="leasinf_view_red xs-padding-5"><span class="leasinf_view_black space-xs">от </span>12 мес.</p>
+                <p class="leasinf_view_comment xs-padding-5"><span class="space-xs">срок кредита</span></p>
+            </div>
+            <div class="col-md-4">
+                <p class="leasinf_view_red xs-padding-5"><span class="leasinf_view_black space-xs">от </span>0%</p>
+                <p class="leasinf_view_comment xs-padding-5"><span class="space-xs">авансовый платеж</span></p>
+            </div>
+            <div class="col-md-4">
+                <p class="leasinf_view_red xs-padding-5"><span class="leasinf_view_black space-xs">от </span><span class="pay_in_month"></span> <span class="glyphicon glyphicon-ruble" aria-hidden="true" style="font-size: 42px; line-height: 0;"></span></p>
+                <p class="leasinf_view_comment xs-padding-5"><sapn class="space-xs">платеж в месяц</sapn></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="item1 space-xs">Расчет</h2>
+                <form method="get" action="{{ route('front_leasing_select_download') }}">
+                    <input type="hidden" name="price" value="{{ (product.price * 0.98) }}">
+                    <div class="form-group" style="padding-top: 24px">
+                        <label class="space-xs">Срок кредита, мес</label>
+
+                        <div>
+                            <div class="col-sm-8 col-md-8 col-xs-12 space-xs">
+                                <input name="period" type="range" min="1" max="5" step="1" value="4">
+
+                                <table class="space-xs" style="width: 100%; text-align: center">
+                                    <tbody>
+                                    <tr>
+                                        <td class="__leasing_data_period" data-period="1">12</td>
+                                        <td class="__leasing_data_period" data-period="2">24</td>
+                                        <td class="__leasing_data_period" data-period="3">36</td>
+                                        <td class="__leasing_data_period" data-period="4">48</td>
+                                        <td class="__leasing_data_period" data-period="5">60</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-sm-4 col-md-4 hidden-sm hidden-xs">
+                                <p class="form-control-static"><span id="preiod_value">48</span> мес.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="padding-top: 24px">
+                        <label class="__leasing_label_advance space-xs">Авансовый платеж</label>
+
+                        <div>
+                            <div class="col-sm-8 col-md-8 col-xs-12 space-xs">
+                                <input name="advance" type="range" min="0" max="50" step="1" value="0">
+                                <table style="width: 100%; text-align: center">
+                                    <tbody>
+                                    <tr>
+                                        <td class="__leasing_data_advance" data-advance="0">0</td>
+                                        <td class="__leasing_data_advance" data-advance="10">10</td>
+                                        <td class="__leasing_data_advance" data-advance="15">15</td>
+                                        <td class="__leasing_data_advance" data-advance="20">20</td>
+                                        <td class="__leasing_data_advance" data-advance="25">25</td>
+                                        <td class="__leasing_data_advance" data-advance="30">30</td>
+                                        <td class="__leasing_data_advance" data-advance="35">35</td>
+                                        <td class="__leasing_data_advance" data-advance="40">40</td>
+                                        <td class="__leasing_data_advance" data-advance="45">45</td>
+                                        <td class="__leasing_data_advance" data-advance="50">50</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-sm-4 col-md-4 hidden-sm hidden-xs">
+                                <p class="form-control-static"><span id="advance_value">50</span>%</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="space-xs" style="padding-top: 48px">
+                        <button type="submit" class="btn btn-red" >Оформить заявку</button>
+                    </p>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <img src="{{ product.img }}" alt="..." style="width: 100%">
+
+                <h2 class="space-xs">{{ product.title }}</h2>
+                <p class="space-xs">Кузов: <span>шасси, 2 дв, 2013 м.г.</span></p>
+                <p class="space-xs">Двигатель: <span>5.2 л., 155 л.с.</span></p>
+                <p class="space-xs" style="color: #000000; font-size: 48px;">{{ product.price | number_format(0, '.', ' ')}} <span class="glyphicon glyphicon-ruble" aria-hidden="true" style="color: #000000; font-size: 42px;"></span></p>
+            </div>
+        </div>
+
+
+    </div>
+{% endblock %}
+
+
