@@ -14,9 +14,6 @@ class CreditController extends Controller
     public function view($id, ProductsRepository $productsRepository, BasesRepository $basesRepository)
     {
         if (strpos('_', $id) !== false) {
-            $product = $productsRepository->get($id);
-        } elseif ($id > 0) {
-
             list($typeId, $baseId) = explode('_', $id);
 
             $base = $basesRepository->find($baseId);
@@ -32,10 +29,11 @@ class CreditController extends Controller
                 "price" => $price->price * 0.98
             ];
 
+        } elseif ($id > 0) {
+            $product = $productsRepository->get($id);
         } else {
             throw new NotFoundHttpException();
         }
-
 
         return view(
             'front.credit.view',
