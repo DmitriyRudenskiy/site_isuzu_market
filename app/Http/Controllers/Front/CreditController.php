@@ -13,7 +13,7 @@ class CreditController extends Controller
 {
     public function view($id, ProductsRepository $productsRepository, BasesRepository $basesRepository)
     {
-        if (strpos('_', $id) !== false) {
+        if (strpos($id, '_') !== false) {
             list($typeId, $baseId) = explode('_', $id);
 
             $base = $basesRepository->find($baseId);
