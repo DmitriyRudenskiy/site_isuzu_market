@@ -1,5 +1,9 @@
 <form method="get" action="{{ route('front_leasing_select_download') }}">
-    <input type="hidden" name="price" value="{{ (price * 0.98) }}">
+    {% if price is not empty %}
+        <input type="hidden" name="price" value="{{ (price * 0.98) }}">
+    {% else %}
+        <input type="hidden" name="price" value="{{ (product.price * 0.98) }}">
+    {% endif %}
     <div class="form-group" style="padding-top: 24px">
         <label class="space-xs">Срок кредита, мес</label>
 

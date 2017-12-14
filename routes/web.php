@@ -18,7 +18,7 @@ Route::group(['middleware' => ['web'], 'namespace' => 'Front', 'as' => 'front_']
 
 
     // Route::get('/credit', 'DashboardController@credit')->name('dashboard_credit');
-    Route::get('/credit', 'CreditController@view')->name('credit_view');
+    Route::get('/credit/view/{id}', 'CreditController@view')->name('credit_view');
     Route::get('/credit/banks', 'CreditController@banks')->name('credit_banks');
 
     Route::get('/news', 'NewsController@index')->name('news_list');

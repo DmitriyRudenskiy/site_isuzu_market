@@ -25,6 +25,8 @@
                 <p class="space-xs">Кузов: <span>шасси, 2 дв, 2013 м.г.</span></p>
                 <p class="space-xs">Двигатель: <span>5.2 л., 155 л.с.</span></p>
                 <p class="space-xs" style="color: #000000; font-size: 48px;">{{ product.price | number_format(0, '.', ' ')}} <span class="glyphicon glyphicon-ruble" aria-hidden="true" style="color: #000000; font-size: 42px;"></span></p>
+
+                <p class="space-xs"><a href="{{ route('front_configurator_index') }}" class="btn btn-red" >Выбрать другую модель</a></p>
             </div>
         </div>
 

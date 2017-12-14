@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Repositories\Car\BasesRepository;
 use App\Repositories\ProductsRepository;
 use Illuminate\Routing\Controller;
 
@@ -22,9 +23,30 @@ class LeasingController extends Controller
         );
     }
 
-    public function view($id, ProductsRepository $productsRepository)
+    public function view($id, ProductsRepository $productsRepository, BasesRepository $basesRepository)
     {
-        $product = $productsRepository->get($id);
+        if (strpos('_', $id) !== false) {
+            $product = $productsRepository->get($id);
+        } elseif ($id > 0) {
+
+            list($typeId, $baseId) = explode('_', $id);
+
+            $base = $basesRepository->find($baseId);
+            $price = $base->getPrice($typeId)->first();
+
+            if (empty($price)) {
+                throw new \RuntimeException();
+            }
+
+            $product = (object)[
+                "img" => sprintf("/img/configurator/products/%s_%s_1.jpg", $typeId, $baseId),
+                "title" => $base->title,
+                "price" => $price->price * 0.98
+            ];
+
+        } else {
+            throw new NotFoundHttpException();
+        }
 
         return view(
             'front.leasing.view',

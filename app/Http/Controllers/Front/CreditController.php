@@ -3,17 +3,39 @@
 namespace App\Http\Controllers\Front;
 
 use App\Repositories\BanksRepository;
+use App\Repositories\Car\BasesRepository;
 use App\Repositories\ProductsRepository;
 use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class CreditController extends Controller
 {
-    public function view(ProductsRepository $productsRepository)
+    public function view($id, ProductsRepository $productsRepository, BasesRepository $basesRepository)
     {
-        $id = 1;
+        if (strpos('_', $id) !== false) {
+            $product = $productsRepository->get($id);
+        } elseif ($id > 0) {
 
-        $product = $productsRepository->get($id);
+            list($typeId, $baseId) = explode('_', $id);
+
+            $base = $basesRepository->find($baseId);
+            $price = $base->getPrice($typeId)->first();
+
+            if (empty($price)) {
+                throw new \RuntimeException();
+            }
+
+            $product = (object)[
+                "img" => sprintf("/img/configurator/products/%s_%s_1.jpg", $typeId, $baseId),
+                "title" => $base->title,
+                "price" => $price->price * 0.98
+            ];
+
+        } else {
+            throw new NotFoundHttpException();
+        }
+
 
         return view(
             'front.credit.view',
