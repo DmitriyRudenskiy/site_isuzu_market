@@ -87,7 +87,7 @@
     <div class="row add-space-for-md xs-padding-5 hidden-xs">
         <div class="col-lg-12" style="padding-bottom: 80px">
             <p style="padding-top: 12px">
-                <button type="button" class="btn btn-red" data-toggle="modal" data-target="#modal_callback">Продолжить</button>
+                <button type="button" class="btn btn-gray-link btn-space-right" data-toggle="modal" data-target="#modal_get_bonus">Получить скидку</button>
                 <a href="{{ route('front_leasing_view', {"id": type_id ~ "_" ~ base.id }) }}" class="btn btn-red">Купить в лизинг</a>
                 <a href="{{ route('front_credit_view', {"id": type_id ~ "_" ~ base.id }) }}" class="btn btn-red">Купить в кредит</a>
             </p>
@@ -96,7 +96,7 @@
 
     <div class="row add-space-for-md xs-padding-5 visible-xs">
         <div class="col-lg-12">
-            <p class="space-xs"><button type="button" class="btn btn-red btn-block" data-toggle="modal" data-target="#modal_callback">Продолжить</button></p>
+            <p class="space-xs text-center"><button type="button" class="btn btn-gray-link" data-toggle="modal" data-target="#modal_get_bonus">Получить скидку</button></p>
             <p class="space-xs"><a href="{{ route('front_leasing_view', {"id": type_id ~ "_" ~ base.id }) }}" class="btn btn-red btn-block">Купить в лизинг</a></p>
             <p class="space-xs"><a href="{{ route('front_credit_view', {"id": type_id ~ "_" ~ base.id }) }}" class="btn btn-red btn-block">Купить в кредит</a></p>
         </div>

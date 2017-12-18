@@ -416,3 +416,15 @@ input[type=range]:focus::-ms-fill-upper {
     border-radius: 0;
     padding: 0;
 }
+
+.btn-gray-link {
+    background: #fff;
+    color: #4a4a4a;
+    text-decoration: underline;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.btn-space-right {
+    margin-right: 24px;
+}

@@ -67,24 +67,34 @@
             </div>
 
             <div class="col-lg-5 col-md-4 __home_item_cover_decription">
-                <p class="price space-xs">2 481 000 <span class="glyphicon glyphicon-ruble" aria-hidden="true"></span></p>
+                <p class="price space-xs">2 850 538 ₽</p>
                 <p class="title space-xs">Бортовой автомобиль ELF 7.5</p>
                 <p class="space-xs">
-                    <a href="{{ route('front_leasing_view', {id: 1}) }}" class="btn btn-red">Оформить заявку</a>
+                    <a href="{{ route('front_configurator_leasing', {typeId: 3, baseId: 4 }) }}" class="btn btn-red btn-space-right">Оформить заявку</a>
+                    <button type="button" class="btn btn-gray-link" data-toggle="modal" data-target="#modal_get_bonus">Получить скидку</button>
                 </p>
             </div>
         </div>
         <div class="row">
-            {% for item in product %}
-                <div class="col-lg-6 col-md-6 col-xs-12 __home_item_list">
-                    <img src="{{ item.img }}" alt="" class="__effect_zoom">
-                    <p class="price space-xs">{{ item.price | number_format(0, '.', ' ')}} <span class="glyphicon glyphicon-ruble" aria-hidden="true"></span></p>
-                    <p class="title space-xs">{{ item.title }}</p>
-                    <p class="space-xs">
-                        <a href="{{ route('front_leasing_view', {id: item.id}) }}" class="btn btn-red">Оформить заявку</a>
-                    </p>
-                </div>
-            {% endfor %}
+            <div class="col-lg-6 col-md-6 col-xs-12 __home_item_list">
+                <img src="/img/catalog/2_2.jpg" alt="" class="__effect_zoom">
+                <p class="price space-xs">2 606 800 ₽</p>
+                <p class="title space-xs">ISUZU ELF 7.5</p>
+                <p class="space-xs">
+                    <a href="{{ route('front_configurator_leasing', {typeId: 2, baseId: 4 }) }}" class="btn btn-red btn-space-right">Оформить заявку</a>
+                    <button type="button" class="btn btn-gray-link" data-toggle="modal" data-target="#modal_get_bonus">Получить скидку</button>
+                </p>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-xs-12 __home_item_list">
+                <img src="/img/catalog/2_3.jpg" alt="" class="__effect_zoom">
+                <p class="price space-xs">4 811 800 ₽</p>
+                <p class="title space-xs">ISUZU ELF 9.5 EXTRALONG</p>
+                <p class="space-xs">
+                    <a href="{{ route('front_configurator_leasing', {typeId: 10, baseId: 5 }) }}" class="btn btn-red btn-space-right">Оформить заявку</a>
+                    <button type="button" class="btn btn-gray-link" data-toggle="modal" data-target="#modal_get_bonus">Получить скидку</button>
+                </p>
+            </div>
         </div>
     </div>
 

@@ -161,9 +161,36 @@
     </div>
 </div>
 
+<!-- get bonus -->
+<div class="modal fade" id="modal_get_bonus"  tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+
+            <div class="modal-body">
+                <h5>Получить скидку</h5>
+                <p class="modal_form_comment">Оставьте свои телефон и мы сделаем вам персональную скидку на автомобиль</p>
+
+                <form style="padding-top: 20px">
+                    {{ csrf_field() }}
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="Имя" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="phone" class="form-control" placeholder="Телефон" required>
+                    </div>
+                    <button type="submit" class="btn btn-red">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="/js/vendor.js"></script>
 <script>
-    $("#modal_callback form, #modal_order form, #modal_find_part form").submit(function(){
+    $("#modal_callback form, #modal_order form, #modal_find_part form, #modal_get_bonus form").submit(function(){
 
         var url = "{{ route('front_callback_index') }}";
 
@@ -172,7 +199,7 @@
             url: url,
             data: $(this).serialize(),
             success: function(data) {
-                $("#modal_callback, #modal_order, #modal_find_part").modal('hide');
+                $("#modal_callback, #modal_order, #modal_find_part, #modal_get_bonus").modal('hide');
                 $("#alert_send_message").show();
             }
         });
