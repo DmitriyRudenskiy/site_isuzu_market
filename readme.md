@@ -10,6 +10,8 @@ docker run --name work-php \
     -w '/app' \
     --rm -i -t -d my/php php -S 0.0.0.0:8085 -t public/
 
+docker exec -it work-php sh
+
 ## Check format code
 cd test
 ../bin/phing

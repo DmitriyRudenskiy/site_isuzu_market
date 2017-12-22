@@ -34,3 +34,24 @@ Route::group(['middleware' => ['web'], 'namespace' => 'Front', 'as' => 'front_']
 
     Route::get('/cart', 'CartController@index')->name('cart_index');
 });
+
+Route::group(['middleware' => 'web', 'namespace' => 'Admin'], function() {
+    Route::post('/admin/login',  'LoginController@login');
+    Route::get('/admin/login',  'LoginController@showLoginForm')->name('login');
+    Route::get('logout',  'LoginController@logout')->name('logout');
+});
+
+Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin_'], function () {
+    Route::get('/', 'DashboardController@index')->name('dashboard');
+
+    Route::group(['prefix' => 'products', 'as' => 'products_'], function () {
+        Route::get('/', 'ProductsController@index')->name('index');
+        Route::get('add', 'ProductsController@add')->name('add');
+        Route::get('edit/{id}', 'ProductsController@edit')->name('edit');
+        Route::post('insert', 'ProductsController@insert')->name('insert');
+        Route::post('update', 'ProductsController@update')->name('update');
+        Route::get('hide/{id}', 'ProductsController@hide')->name('hide');
+        Route::get('show/{id}', 'ProductsController@show')->name('show');
+        Route::post('cover', 'ProductsController@cover')->name('cover');
+    });
+});

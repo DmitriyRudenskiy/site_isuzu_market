@@ -1,27 +1,121 @@
+{% set title = 'Создать новую товар' %}
+
 {% extends "admin.layouts.app" %}
 
-{% block title %}Создать новую "Шапку"{% endblock %}
+{% block title %}{{ title }}{% endblock %}
+
 {% block content %}
     <div class="row">
         <div class="col-lg-5 col-md-7">
-            <h1>Создать новую "Шапку"</h1>
+            <h1>{{ title }}</h1>
 
-            <form method="post" action="{{ route('admin_products_insert') }}">
+            {% block load_image %}{% endblock %}
+
+            {% if product.id > 0 %}
+            <form class="form-horizontal" method="post" action="{{ route('admin_products_update') }}">
+                <input type="hidden" name="id" value="{{ product.id }}">
+            {% else %}
+            <form class="form-horizontal" method="post" action="{{ route('admin_products_insert') }}">
+            {% endif %}
                 {{ csrf_field() }}
-                {% for item in label %}
-                {% if item.visible < 1 %}
 
-                <div class="form-group has-error">
-                    {% else %}
-                    <div class="form-group">
-                        {% endif %}
-
-                        <label>{{ item.label }}</label>
-                        <input type="text" name="{{ item.name }}" value="-" class="form-control">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Название</label>
+                    <div class="col-md-9">
+                        <input type="text" name="title" value="{{ product.title }}" class="form-control" required>
                     </div>
-                {% endfor %}
+                </div>
 
-                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Создать</button>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Цена</label>
+                    <div class="col-md-9">
+                        <input type="text" name="price" value="{{ product.price }}" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Short</label>
+                    <div class="col-md-9">
+                        <input type="text" name="size_small" value="{{ product.size_small }}" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Long</label>
+                    <div class="col-md-9">
+                        <input type="text" name="size_big" value="{{ product.size_big }}" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Тип грузовика</label>
+                    <div class="col-md-9">
+                        {% for item in types %}
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="type_id" value="{{ item.id }}" {% if loop.first or item.id==product.type_id %}checked{% endif %}> {{ item.title }}
+                                </label>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Модель</label>
+                    <div class="col-md-9">
+                        {% for item in categories %}
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="category_id" value="{{ item.id }}" {% if loop.first or item.id==product.category_id %}checked{% endif %}> {{ item.title }}
+                                </label>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Тоннаж</label>
+                    <div class="col-md-9">
+                        {% for item in ton %}
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="ton" value="{{ item }}" {% if loop.first or item==product.ton %}checked{% endif %}> {{ item / 10 }}
+                                </label>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">В наличии</label>
+                    <div class="col-md-9">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="in_stock" value="1" {% if loop.first or product.in_stock is not empty %}checked{% endif %}> Есть на складе
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="in_stock" value="0"{% if product.in_stock < 1 %}checked{% endif %}> Ожидается
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Описание</label>
+                    <div class="col-md-9">
+                        <textarea class="form-control" rows="7" name="description" required>{{ product.description }}</textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-3 col-md-9">
+                        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Создать</button>
+                    </div>
+                </div>
+
+
             </form>
         </div>
     </div>
