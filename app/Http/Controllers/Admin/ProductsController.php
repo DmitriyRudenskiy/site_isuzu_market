@@ -24,7 +24,7 @@ class ProductsController extends Controller
     {
         $data = [
             'product' => new Products(),
-            'ton' => [35, 52, 75, 95],
+            'ton' => [35, 52, 75, 95, 120, 180],
             'categories' => Categories::all(),
             'types' => Types::all()
         ];
@@ -38,7 +38,7 @@ class ProductsController extends Controller
 
         $data = [
             'product' => $product,
-            'ton' => [35, 52, 75, 95],
+            'ton' => [35, 52, 75, 95, 120, 180],
             'categories' => Categories::all(),
             'types' => Types::all()
         ];
