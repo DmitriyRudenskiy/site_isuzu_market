@@ -33,6 +33,8 @@ Route::group(['middleware' => ['web'], 'namespace' => 'Front', 'as' => 'front_']
     Route::get('/configurator/finish', 'ConfiguratorController@finish')->name('configurator_finish');
 
     Route::get('/cart', 'CartController@index')->name('cart_index');
+
+    Route::get('search', 'SearchController@index')->name('search_index');
 });
 
 Route::group(['middleware' => 'web', 'namespace' => 'Admin'], function() {

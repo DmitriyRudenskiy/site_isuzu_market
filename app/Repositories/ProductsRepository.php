@@ -1,8 +1,7 @@
 <?php
 namespace App\Repositories;
 
-use App\Entities\Titles;
-use App\Entities\Users;
+use App\Entities\Products;
 use Prettus\Repository\Eloquent\BaseRepository;
 
 class ProductsRepository extends BaseRepository
@@ -12,7 +11,12 @@ class ProductsRepository extends BaseRepository
      */
     public function model()
     {
-        return Users::class;
+        return Products::class;
+    }
+
+    public function getListForSearch()
+    {
+        return $this->all();
     }
 
     public function getProductsForHome()
