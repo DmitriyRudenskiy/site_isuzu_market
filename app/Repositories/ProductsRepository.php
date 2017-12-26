@@ -16,7 +16,7 @@ class ProductsRepository extends BaseRepository
 
     public function getListForSearch()
     {
-        return $this->all();
+        return $this->orderBy('price')->findWhere(['visible' => true]);
     }
 
     public function getProductsForHome()

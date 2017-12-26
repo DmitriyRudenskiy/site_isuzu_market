@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Entities\Car\Categories;
 use App\Entities\Car\Types;
 use App\Entities\Products;
+use App\Repositories\ProductsRepository;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -96,18 +97,28 @@ class ProductsController extends Controller
         return redirect()->route('admin_products_edit', ['id' => $product->id]);
     }
 
-    public function hide($id, BenefitsRepository $repository)
+    public function hide($id, ProductsRepository $repository)
     {
-        $repository->update(['visible' => false], $id);
+        $product = $repository->find($id);
 
-        return redirect()->route('admin_benefits_index');
+        if ($product !== null) {
+            $product->visible = 0;
+            $product->save();
+        }
+
+        return redirect()->route('admin_products_index');
     }
 
-    public function show($id, BenefitsRepository $repository)
+    public function show($id, ProductsRepository $repository)
     {
-        $repository->update(['visible' => true], $id);
+        $product = $repository->find($id);
 
-        return redirect()->route('admin_benefits_index');
+        if ($product !== null) {
+            $product->visible = 1;
+            $product->save();
+        }
+
+        return redirect()->route('admin_products_index');
     }
 
     public function cover(Request $request, Filesystem $filesystem, Products $repository)
