@@ -4,54 +4,44 @@
 
 {% block content %}
 
+    <style>
+        .__search_result_item {
+            margin-bottom: 48px;
+        }
+    </style>
+
     <div class="container">
         <h1 class="title_a1">Грузовики</h1>
 
-
-    {% for item in list %}
-    <div class="row">
-        <div class="col-md-5">
-            <img src="{{ item.path() }}" alt="" width="415">
-        </div>
-        <div class="col-md-7">
-            <h3>{{ item.title }}</h3>
-            <p class="price space-xs">{{ item.price }} ₽</p>
-        </div>
-    </div>
-        {% endfor %}
-
         <div class="row">
-            <div class="col-md-12 hidden-xs">
-                <h3 class="sub_title">Вы выбрали: </h3>
-
-                {% if list is empty %}
-                <p>В вашей корзине пусто? Это не страшно!</p>
-                <p>Если Вы зарегистрированы у нас на сайте и в вашей корзине были товары, то чтобы их увидеть необходимо авторизоваться</p>
-                <p>ПЕРЕЙТИ К ПОКУПКАМ</p>
-                {% endif %}
-
-                <table class="table hidden-xs">
-                    <tbody>
-                    {% for item in list %}
-                        <tr>
-                            <td style="padding-top: 42px"><input type="checkbox" name="product[]" value="{{ item.price }}"></td>
-                            <td><img src="/img/configurator/products/{{ item.type_id }}_{{ item.base_id }}_1.jpg" alt="" style="width: 115px"></td>
-                            <td><h3>{{ item.base.title }}</h3></td>
-                            <td class="leasing_price_big">{{ item.price | number_format(0, '.', ' ')}}<span class="glyphicon glyphicon-ruble" aria-hidden="true" style="font-size: 42px;"></span></td>
-                            <td class="text-right"><a href="{{ route('front_leasing_pdf_download', {'bank_id': item.id}) }}&{{ data }}" class="btn btn-link">Удалить</a></td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+            <!-- filter -->
+            <div class="col-md-3">
+                <h3>Тип грузовика</h3>
+                <h3>Модель</h3>
+                <h3>Тоннаж</h3>
             </div>
+            <!--/ filter -->
 
-            {% for item in list %}
-                <div class="col-xs-12 visible-xs text-center" style="padding-bottom: 32px">
-                    <p><img src="{{ item.image }}" alt=""><br></p>
-                    <a href="{{ route('front_leasing_pdf_download', {'bank_id': item.id}) }}&{{ data }}" class="btn btn-red">Cкачать</a>
-                </div>
-            {% endfor %}
-
+            <!-- result -->
+            <div class="col-md-9">
+                {% for item in list %}
+                    <div class="row __search_result_item">
+                        <div class="col-md-5">
+                            <img src="{{ item.path() }}" alt="" width="415">
+                        </div>
+                        <div class="col-md-7">
+                            <h3>{{ item.title }}</h3>
+                            <p class="price space-xs">{{ item.price }} ₽</p>
+                            <p class="space-xs">
+                                <a href="{{ route('front_configurator_leasing', {typeId: 2, baseId: 4 }) }}" class="btn btn-red btn-space-right">Добавить в Мои заказ</a>
+                                <button type="button" class="btn btn-gray-link" data-toggle="modal" data-target="#modal_get_bonus">Открыть в Конфигураторе</button>
+                            </p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <!--/ result -->
         </div>
     </div>
 {% endblock %}
+
