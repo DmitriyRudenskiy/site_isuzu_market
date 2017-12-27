@@ -207,6 +207,7 @@ h1 {
 }
 
 .__search_result_item_title {
+    color: #000000;
     margin-top: 10px;
     font-size: 30px;
     line-height: 1;
