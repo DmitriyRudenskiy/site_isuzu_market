@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Entities\Car\Categories;
+use App\Entities\Car\Types;
 use App\Repositories\ProductsRepository;
 use App\Repositories\TonsRepository;
 use Illuminate\Routing\Controller;
@@ -16,7 +18,9 @@ class SearchController extends Controller
             'front.search.index',
             [
                 'list' => $list,
-                'tons' => $tonsRepository->getList()
+                'tons' => $tonsRepository->getList(),
+                'categories' => Categories::all(),
+                'types' => Types::all()
             ]
         );
     }

@@ -24,44 +24,53 @@
             line-height: 1.5;
         }
 
+        .__search_result_item_action {
+            font-size: 20px;
+            color: #646464;
+        }
     </style>
 
     <div class="container">
         <h1 class="title_a1">Грузовики</h1>
+
+
+        <div class="row">
+            <div class="col-md-3">
+                <p class="__search_result_item_action">Фильтр <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></p>
+            </div>
+            <div class="col-md-4">
+                <p class="__search_result_item_action">Найдено 25 грузовико</p>
+            </div>
+
+            <div class="col-md-5">
+                <p class="__search_result_item_action text-right">Сортировать по цене <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></p>
+            </div>
+        </div>
+
 
         <div class="row">
             <!-- filter -->
             <div class="col-md-3">
                 <h3>Тип грузовика</h3>
 
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" value="">
-                        Option one is this and that&mdash;be sure to include why it's great
-                    </label>
-                </div>
-                <div class="checkbox disabled">
-                    <label>
-                        <input type="checkbox" value="" disabled>
-                        Option two is disabled
-                    </label>
-                </div>
+                {% for item in types %}
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="type_id" value="{{ item.id }}" {% if loop.first or item.id==product.type_id %}checked{% endif %}> {{ item.title | striptags }}
+                        </label>
+                    </div>
+                {% endfor %}
 
 
                 <h3>Модель</h3>
 
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" value="">
-                        Option one is this and that&mdash;be sure to include why it's great
-                    </label>
-                </div>
-                <div class="checkbox disabled">
-                    <label>
-                        <input type="checkbox" value="" disabled>
-                        Option two is disabled
-                    </label>
-                </div>
+                    {% for item in categories %}
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="category_id" value="{{ item.id }}"> {{ item.title }}
+                            </label>
+                        </div>
+                    {% endfor %}
 
                 <h3>Тоннаж</h3>
 
@@ -93,7 +102,14 @@
                                 {% endfor %}
                             </p>
 
-
+                            <p class="space-xs">
+                                <label class="radio-inline">
+                                    <input type="radio" disabled checked> Short 4735 x 1855 x 21855, м
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" disabled> Long 6020 x 1855 x 21855, м
+                                </label>
+                            </p>
 
                             <p class="space-xs __search_result_item_price">{{ item.price }} ₽</p>
 
