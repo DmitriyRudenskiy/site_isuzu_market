@@ -8,7 +8,7 @@
         <h1 class="title_a1">Грузовики</h1>
 
 
-        <div class="row">
+        <div class="row hidden-xs">
             <div class="col-md-3">
                 <p class="__search_result_item_action">Фильтр <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></p>
             </div>
@@ -24,7 +24,7 @@
 
         <div class="row">
             <!-- filter -->
-            <div class="col-md-3">
+            <div class="col-md-3 hidden-xs">
                 <h3>Тип грузовика</h3>
 
                 {% for item in types %}
@@ -59,14 +59,14 @@
             <!--/ filter -->
 
             <!-- result -->
-            <div class="col-md-9 __search_result_box">
+            <div class="col-md-9 col-xs-12 __search_result_box">
                 {% for item in list %}
                     <div class="row __search_result_item">
                         <div class="col-md-5">
                             <img src="{{ item.path() }}" alt="" class="__search_result_item_image">
                         </div>
                         <div class="col-md-7">
-                            <h3 class="__search_result_item_title">{{ item.title }}</h3>
+                            <h3 class="__search_result_item_title space-xs">{{ item.title }}</h3>
 
                             <p class="space-xs __search_result_text">
                                 <span class="_text_gray">Тоннаж</span><br>
