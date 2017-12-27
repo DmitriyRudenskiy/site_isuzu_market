@@ -28,6 +28,10 @@
             font-size: 20px;
             color: #646464;
         }
+
+        .__search_result_box {
+            padding-top: 24px;
+        }
     </style>
 
     <div class="container">
@@ -85,7 +89,7 @@
             <!--/ filter -->
 
             <!-- result -->
-            <div class="col-md-9">
+            <div class="col-md-9 __search_result_box">
                 {% for item in list %}
                     <div class="row __search_result_item">
                         <div class="col-md-5">
