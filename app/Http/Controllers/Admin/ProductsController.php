@@ -5,6 +5,7 @@ use App\Entities\Car\Categories;
 use App\Entities\Car\Types;
 use App\Entities\Products;
 use App\Repositories\ProductsRepository;
+use App\Repositories\TonsRepository;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -21,11 +22,11 @@ class ProductsController extends Controller
         return view('admin.products.index', ['list' => $list]);
     }
 
-    public function add()
+    public function add(TonsRepository $tonsRepository)
     {
         $data = [
             'product' => new Products(),
-            'ton' => [35, 52, 75, 95, 120, 180],
+            'ton' =>  $tonsRepository->getList(),
             'categories' => Categories::all(),
             'types' => Types::all()
         ];

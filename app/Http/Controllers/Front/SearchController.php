@@ -3,14 +3,21 @@
 namespace App\Http\Controllers\Front;
 
 use App\Repositories\ProductsRepository;
+use App\Repositories\TonsRepository;
 use Illuminate\Routing\Controller;
 
 class SearchController extends Controller
 {
-    public function index(ProductsRepository $repository)
+    public function index(ProductsRepository $productsRepository, TonsRepository $tonsRepository)
     {
-        $list = $repository->getListForSearch();
+        $list = $productsRepository->getListForSearch();
 
-        return view('front.search.index', ['list' => $list]);
+        return view(
+            'front.search.index',
+            [
+                'list' => $list,
+                'tons' => $tonsRepository->getList()
+            ]
+        );
     }
 }
