@@ -161,3 +161,44 @@ footer {
     line-height: 1;
     color: #000000;
 }
+
+.title_a1 {
+    margin-top: 54px;
+}
+
+.__search_result_item {
+    margin-bottom: 48px;
+}
+
+.__search_result_item_image {
+    width: 415px;
+}
+
+.__search_result_item_title {
+    margin-top: 10px;
+    font-size: 30px;
+    line-height: 1.5;
+}
+
+.__search_result_item_price {
+    color: #000000;
+    font-size: 36px;
+    line-height: 1.5;
+}
+
+.__search_result_item_action {
+    font-size: 20px;
+    color: #646464;
+}
+
+.__search_result_box {
+    padding-top: 24px;
+}
+
+.__search_result_text {
+    font-size: 16px;
+}
+
+._text_gray {
+    color: #646464;
+}

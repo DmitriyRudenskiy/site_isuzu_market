@@ -4,36 +4,6 @@
 
 {% block content %}
 
-    <style>
-        .title_a1 {
-            margin-top: 54px;
-        }
-
-        .__search_result_item {
-            margin-bottom: 48px;
-        }
-
-        .__search_result_item_title {
-            font-size: 30px;
-            line-height: 1.5;
-        }
-
-        .__search_result_item_price {
-            color: #000000;
-            font-size: 36px;
-            line-height: 1.5;
-        }
-
-        .__search_result_item_action {
-            font-size: 20px;
-            color: #646464;
-        }
-
-        .__search_result_box {
-            padding-top: 24px;
-        }
-    </style>
-
     <div class="container">
         <h1 class="title_a1">Грузовики</h1>
 
@@ -93,12 +63,14 @@
                 {% for item in list %}
                     <div class="row __search_result_item">
                         <div class="col-md-5">
-                            <img src="{{ item.path() }}" alt="" width="415">
+                            <img src="{{ item.path() }}" alt="" class="__search_result_item_image">
                         </div>
                         <div class="col-md-7">
                             <h3 class="__search_result_item_title">{{ item.title }}</h3>
 
-                            <p class="space-xs">
+                            <p class="space-xs __search_result_text">
+                                <span class="_text_gray">Тоннаж</span><br>
+
                                 {% for item in tons %}
                                 <label class="radio-inline">
                                     <input type="radio" {% if item==item.ton %}checked{% endif %} disabled > {{ item / 10 }}
@@ -106,7 +78,8 @@
                                 {% endfor %}
                             </p>
 
-                            <p class="space-xs">
+                            <p class="space-xs __search_result_text">
+                                <span class="_text_gray">Габариты</span><br>
                                 <label class="radio-inline">
                                     <input type="radio" disabled checked> Short 4735 x 1855 x 21855, м
                                 </label>
@@ -129,4 +102,3 @@
         </div>
     </div>
 {% endblock %}
-
