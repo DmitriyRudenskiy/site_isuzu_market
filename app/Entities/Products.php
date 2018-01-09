@@ -17,7 +17,8 @@ class Products extends Model
         "category_id",
         "ton",
         "in_stock",
-        "description"
+        "description",
+        "config_url"
     ];
 
     public $timestamps = false;

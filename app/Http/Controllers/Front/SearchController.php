@@ -24,4 +24,16 @@ class SearchController extends Controller
             ]
         );
     }
+
+    public function view($id, ProductsRepository $productsRepository)
+    {
+        $product = $productsRepository->find($id);
+
+        return view(
+            'front.search.view',
+            [
+                "product" => $product
+            ]
+        );
+    }
 }

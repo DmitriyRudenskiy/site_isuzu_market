@@ -35,6 +35,7 @@ Route::group(['middleware' => ['web'], 'namespace' => 'Front', 'as' => 'front_']
     Route::get('/cart', 'CartController@index')->name('cart_index');
 
     Route::get('search', 'SearchController@index')->name('search_index');
+    Route::get('/catalog/truck/{id}', 'SearchController@view')->name('search_view');
 });
 
 Route::group(['middleware' => 'web', 'namespace' => 'Admin'], function() {

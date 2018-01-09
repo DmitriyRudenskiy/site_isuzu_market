@@ -9,14 +9,16 @@
 
 
         <div class="row hidden-xs">
+            <!--
             <div class="col-md-3">
                 <p class="__search_result_item_action">Фильтр <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></p>
             </div>
             <div class="col-md-4">
                 <p class="__search_result_item_action">Найдено 25 грузовико</p>
             </div>
+            -->
 
-            <div class="col-md-5">
+            <div class="col-md-12">
                 <p class="__search_result_item_action text-right">Сортировать по цене <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></p>
             </div>
         </div>
@@ -30,12 +32,13 @@
                 {% for item in types %}
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="type_id" value="{{ item.id }}" {% if loop.first or item.id==product.type_id %}checked{% endif %}> {{ item.title | striptags }}
+                            <input type="checkbox" name="type_id" value="{{ item.id }}" checked> {{ item.title | striptags }}
                         </label>
                     </div>
                 {% endfor %}
 
 
+                <!--
                 <h3>Модель</h3>
 
                     {% for item in categories %}
@@ -55,6 +58,7 @@
                         </label>
                     </div>
                 {% endfor %}
+                -->
             </div>
             <!--/ filter -->
 
@@ -71,28 +75,29 @@
                             <p class="space-xs __search_result_text">
                                 <span class="_text_gray">Тоннаж</span><br>
 
-                                {% for item in tons %}
-                                <label class="radio-inline">
-                                    <input type="radio" {% if item==item.ton %}checked{% endif %} disabled > {{ item / 10 }}
-                                </label>
+                                {% for value in tons %}
+                                    {% if value==item.ton %}
+                                    <label class="radio-inline">
+                                        <input type="radio" checked disabled > {{ value / 10 }}
+                                    </label>
+                                    {% endif %}
                                 {% endfor %}
                             </p>
 
                             <p class="space-xs __search_result_text">
                                 <span class="_text_gray">Габариты</span><br>
                                 <label class="radio-inline">
-                                    <input type="radio" disabled checked> Short 4735 x 1855 x 21855, м
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" disabled> Long 6020 x 1855 x 21855, м
+                                    <input type="radio" checked disabled> {{ item.size_small }}, м
                                 </label>
                             </p>
 
-                            <p class="space-xs __search_result_item_price">{{ item.price }} ₽</p>
+                            <p class="space-xs __search_result_item_price">{{ item.price }} <i class="fa fa-rub" aria-hidden="true"></i></p>
 
                             <p class="space-xs">
-                                <a href="{{ route('front_configurator_leasing', {typeId: 2, baseId: 4 }) }}" class="btn btn-red btn-space-right">Добавить в Мои заказ</a>
-                                <button type="button" class="btn btn-gray-link" data-toggle="modal" data-target="#modal_get_bonus">Открыть в Конфигураторе</button>
+                                <a href="{{ route('front_search_view', {id: item.id }) }}" class="btn btn-red btn-space-right">Подробнее</a>
+                                {% if item.config_url %}
+                                <a href="{{ item.config_url }}" class="btn btn-gray-link">Открыть в Конфигураторе</a>
+                                {% endif %}
                             </p>
                         </div>
                     </div>

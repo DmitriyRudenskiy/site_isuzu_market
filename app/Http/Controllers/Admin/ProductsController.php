@@ -59,7 +59,8 @@ class ProductsController extends Controller
             "category_id",
             "ton",
             "in_stock",
-            "description"
+            "description",
+            "config_url"
         ]);
 
         $data = array_map('trim', $data);
@@ -88,7 +89,8 @@ class ProductsController extends Controller
             "category_id",
             "ton",
             "in_stock",
-            "description"
+            "description",
+            "config_url"
         ]);
 
         $data = array_map('trim', $data);
