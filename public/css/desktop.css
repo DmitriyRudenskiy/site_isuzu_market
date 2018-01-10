@@ -201,5 +201,33 @@ footer {
 }
 
 ._text_gray {
-    color: #646464;
+    color: #777;
+}
+
+/* catalog view */
+
+.__catalog_view_image {
+    width: 100%;
+    margin-top: 54px;
+}
+
+.__catalog_view_description {
+    font-size: 18px;
+    line-height: 1.56;
+}
+
+.__catalog_view_price {
+    font-size: 48px;
+    color: #000;
+    padding-top: 35px;
+}
+
+.__catalog_view_title {
+    margin-top: 54px;
+    font-size: 48px;
+}
+
+.__catalog_view_sub_title {
+    margin-top: 0px;
+    font-size: 30px;
 }

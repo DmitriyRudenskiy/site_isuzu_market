@@ -3,35 +3,27 @@
 {% block title %}Лизинговые расчеты{% endblock %}
 
 {% block content %}
-
-    <style>
-        .__catalog_view_image {
-            width: 100%;
-            margin-top: 54px;
-        }
-
-        .__catalog_view_description {
-            font-size: 18px;
-            line-height: 1.56;
-        }
-
-        .__catalog_view_price {
-
-        }
-    </style>
-
     <div class="container">
-        <div class="row hidden-xs">
+        <div class="row">
 
-            <div class="col-md-6">
-                <h1 class="title_a1">ISUZU ELF 3.5 S</h1>
-                <h3>Бортовой автомобиль с КМУ</h3>
-                <p class="__catalog_view_description">Автомобиль оборудован бортовой платформой и крано-манипуляторной установкой. Позволяет перевозить в жестком кузове до 800кг. грузов различного назначения не требующих специальных условий перевозки. Погрузо-разгрузочные работы могут производиться одним человеком – водителем автомобиля . Компактный автомобиль удобен для маневрирования в плотном потоке.</p>
+            <div class="col-md-6 col-xs-12">
+                <h2 class="__catalog_view_title space-xs">ISUZU ELF 3.5 S</h2>
+                <h3 class="__catalog_view_sub_title space-xs">Бортовой автомобиль с КМУ</h3>
+                <p class="__catalog_view_description space-xs">Автомобиль оборудован бортовой платформой и крано-манипуляторной установкой. Позволяет перевозить в жестком кузове до 800кг. грузов различного назначения не требующих специальных условий перевозки. Погрузо-разгрузочные работы могут производиться одним человеком – водителем автомобиля . Компактный автомобиль удобен для маневрирования в плотном потоке.</p>
 
-                <p class="__catalog_view_price">{{ product.price }} <i class="fa fa-rub" aria-hidden="true"></i></p>
+                <p class="__catalog_view_price space-xs">
+                    {{ product.price }} <i class="fa fa-rub" aria-hidden="true"></i>
+                    <button type="button" class="btn btn-red btn-space-right pull-right">Добавить в Мои заказы</button>
+                </p>
+
+                <p class="space-xs">
+                    {% if item.config_url %}
+                        <a href="{{ item.config_url }}" class="btn btn-gray-link">Открыть в Конфигураторе</a>
+                    {% endif %}
+                </p>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-6 col-xs-12 space-xs">
                 <img src="{{ product.path() }}" alt="" class="__catalog_view_image">
             </div>
         </div>
