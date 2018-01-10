@@ -19,7 +19,11 @@
             -->
 
             <div class="col-md-12">
-                <p class="__search_result_item_action text-right">Сортировать по цене <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></p>
+                <p class="__search_result_item_action text-right">
+                    <a href="{% if selectTypes is empty or item.selected %}?s=1{% else %}&s=1{% endif %}">
+                        Сортировать по цене <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
+                    </a>
+                </p>
             </div>
         </div>
 
@@ -27,15 +31,22 @@
         <div class="row">
             <!-- filter -->
             <div class="col-md-3 hidden-xs">
+
+                <form method="get" action="">
                 <h3>Тип грузовика</h3>
 
                 {% for item in types %}
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="type_id" value="{{ item.id }}" checked> {{ item.title | striptags }}
+                            {% if selectTypes is empty or item.selected %}
+                                <input type="checkbox" name="t[]" value="{{ item.id }}" checked onchange="this.form.submit()"> {{ item.title | replace({'<br>': " "}) }}
+                            {% else %}
+                                <input type="checkbox" name="t[]" value="{{ item.id }}" onchange="this.form.submit()"> {{ item.title | replace({'<br>': " "}) }}
+                            {% endif %}
                         </label>
                     </div>
                 {% endfor %}
+                </form>
 
 
                 <!--

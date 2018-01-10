@@ -19,12 +19,37 @@ class ProductsRepository extends BaseRepository
         return $this->orderBy('price')->findWhere(['visible' => true]);
     }
 
+    public function getListForSearchParams($types, $sort)
+    {
+        $query = Products::where('visible', '=', true);
+
+        if (!empty($sort)) {
+            $query->orderBy('price', 'desc');
+        } else {
+            $query->orderBy('price', 'asc');
+        }
+
+        if (!empty($types)) {
+            $query->whereIn('type_id', $types);
+        }
+
+        return $query->get();
+    }
+
     public function getProductsForHome()
     {
         $data = $this->getData();
         unset($data[0]);
 
         return $data;
+    }
+
+    public function getAllTypes()
+    {
+        return Products::select('type_id')
+            ->where('visible', true)
+            ->groupBy('type_id')
+            ->get();
     }
 
     public function get($productId)
