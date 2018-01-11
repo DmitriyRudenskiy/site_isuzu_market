@@ -16,4 +16,9 @@ class Types extends Model
     ];
 
     public $timestamps = false;
+
+    public function __toString()
+    {
+        return $this->title;
+    }
 }

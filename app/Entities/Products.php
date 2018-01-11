@@ -2,6 +2,7 @@
 
 namespace App\Entities;
 
+use App\Entities\Car\Types;
 use Illuminate\Database\Eloquent\Model;
 
 class Products extends Model
@@ -30,5 +31,10 @@ class Products extends Model
         . 'products'
         . DIRECTORY_SEPARATOR
         . $this->cover;
+    }
+
+    public function type()
+    {
+        return $this->hasOne(Types::class, 'id', 'type_id');
     }
 }
