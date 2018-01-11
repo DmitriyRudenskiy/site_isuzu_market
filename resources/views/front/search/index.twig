@@ -153,7 +153,7 @@
                                 </label>
                             </p>
 
-                            <p class="space-xs __search_result_item_price">{{ item.price }} <i class="fa fa-rub" aria-hidden="true"></i></p>
+                            <p class="space-xs __search_result_item_price">{{ item.price | number_format(0, '.', ' ') }} <i class="fa fa-rub" aria-hidden="true"></i></p>
 
                             <p class="space-xs">
                                 <a href="{{ route('front_search_view', {id: item.id }) }}" class="btn btn-red btn-space-right">Подробнее</a>

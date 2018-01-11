@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-xs-12 space-xs" style="padding: 0 30px">
+            <div class="col-xs-12 space-xs visible-xs" style="padding: 0 30px">
                 <p><br><img src="{{ product.path() }}" alt="" style="width: 100%"></p>
             </div>
 
@@ -18,7 +18,7 @@
 
                 <div class="row __catalog_view_price_top">
                     <div class="col-md-7 col-xs-12">
-                        <p class="__catalog_view_price space-xs">{{ product.price }} <i class="fa fa-rub" aria-hidden="true"></i></p>
+                        <p class="__catalog_view_price space-xs">{{ product.price | number_format(0, '.', ' ') }} <i class="fa fa-rub" aria-hidden="true"></i></p>
                     </div>
                     <div class="col-md-5 col-xs-12 text-right">
                         <p class="space-xs">
