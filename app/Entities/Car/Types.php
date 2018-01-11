@@ -19,6 +19,6 @@ class Types extends Model
 
     public function __toString()
     {
-        return $this->title;
+        return str_replace('<br>', ' ', $this->title);
     }
 }
