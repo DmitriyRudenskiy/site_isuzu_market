@@ -70,5 +70,12 @@
         line-height: 18px;
     }
 
+    /* Search result */
+
+    .__search_result_item {
+        margin-bottom: 48px;
+    }
+
+
 
 }

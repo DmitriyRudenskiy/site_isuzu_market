@@ -14,7 +14,7 @@ class SearchController extends Controller
     public function index(ProductsRepository $productsRepository, TonsRepository $tonsRepository, Request $request)
     {
         $selectTypes = $request->get('t');
-        $sort = (int)$request->get('s', 0);
+        $sort = (int)!empty($request->get('s'));
 
         if ((is_array($selectTypes) && sizeof($selectTypes) > 0) || $sort > 0) {
             $list = $productsRepository->getListForSearchParams($selectTypes, $sort);
@@ -34,6 +34,11 @@ class SearchController extends Controller
             );
         }
 
+
+        $sortUrl = http_build_query(["t" => $selectTypes, "s" => abs($sort - 1)]);
+
+        //dd($sortUrl);
+
         return view(
             'front.search.index',
             [
@@ -41,7 +46,9 @@ class SearchController extends Controller
                 'tons' => $tonsRepository->getList(),
                 'categories' => Categories::all(),
                 'types' => $types,
-                'selectTypes' => $types
+                'selectTypes' => $types,
+                'sortUrl' => $sortUrl,
+                'isSort' => empty($sort)
             ]
         );
     }

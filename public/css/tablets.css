@@ -251,6 +251,9 @@ h1 {
 .__catalog_view_price {
     font-size: 48px;
     color: #000;
+}
+
+.__catalog_view_price_top {
     padding-top: 35px;
 }
 

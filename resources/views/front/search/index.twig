@@ -20,12 +20,18 @@
 
             <div class="col-md-12">
                 <p class="__search_result_item_action text-right">
-                    <a href="{% if selectTypes is empty or item.selected %}?s=1{% else %}&s=1{% endif %}">
-                        Сортировать по цене <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
+                    <a href="{{ route('front_search_index') }}?{{ sortUrl }}">
+                        Сортировать по цене
+                        {% if isSort %}
+                            <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
+                        {% else %}
+                            <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
+                        {% endif %}
                     </a>
                 </p>
             </div>
         </div>
+
 
 
         <div class="row">
@@ -71,17 +77,61 @@
                     </div>
                 {% endfor %}
                 -->
+
+
             </div>
             <!--/ filter -->
+
+            <!-- filter for mobil -->
+            <div class="row visible-xs">
+                <div class="col-xs-12">
+                    <div class="__search_result_filter_button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        Фильтр <span class="glyphicon glyphicon-menu-down pull-right" aria-hidden="true"></span>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 collapse" id="collapseExample" style="padding-left: 45px">
+                        <form method="get" action="">
+                            <h3>Тип грузовика</h3>
+
+                            {% for item in types %}
+                                <div class="checkbox">
+                                    <label>
+                                        {% if selectTypes is empty or item.selected %}
+                                            <input type="checkbox" name="t[]" value="{{ item.id }}" checked onchange="this.form.submit()"> {{ item.title | replace({'<br>': " "}) }}
+                                        {% else %}
+                                            <input type="checkbox" name="t[]" value="{{ item.id }}" onchange="this.form.submit()"> {{ item.title | replace({'<br>': " "}) }}
+                                        {% endif %}
+                                    </label>
+                                </div>
+                            {% endfor %}
+                        </form>
+                </div>
+
+                <div class="col-xs-12">
+                    <a class="__search_result_filter_button" href="{{ route('front_search_index') }}?{{ sortUrl }}">
+                        Сортировать по цене
+                        {% if isSort %}
+                            <span class="glyphicon glyphicon-menu-up pull-right" aria-hidden="true"></span>
+                        {% else %}
+                            <span class="glyphicon glyphicon-menu-down pull-right" aria-hidden="true"></span>
+                        {% endif %}
+                    </a>
+                </div>
+
+                <div class="col-xs-12">
+                    <p class="__search_result_filter_count">{{ list | length }} найдено</p>
+                </div>
+            </div>
 
             <!-- result -->
             <div class="col-md-9 col-xs-12 __search_result_box">
                 {% for item in list %}
                     <div class="row __search_result_item">
-                        <div class="col-md-5">
-                            <img src="{{ item.path() }}" alt="" class="__search_result_item_image">
+                        <div class="col-md-5 col-xs-12">
+                            <p class="space-xs"><img src="{{ item.path() }}" alt="" class="__search_result_item_image"></p>
                         </div>
-                        <div class="col-md-7">
+                        <div class="col-md-7 col-xs-12">
                             <h3 class="__search_result_item_title space-xs">{{ item.title }}</h3>
 
                             <p class="space-xs __search_result_text">

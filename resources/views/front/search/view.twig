@@ -11,10 +11,17 @@
                 <h3 class="__catalog_view_sub_title space-xs">Бортовой автомобиль с КМУ</h3>
                 <p class="__catalog_view_description space-xs">Автомобиль оборудован бортовой платформой и крано-манипуляторной установкой. Позволяет перевозить в жестком кузове до 800кг. грузов различного назначения не требующих специальных условий перевозки. Погрузо-разгрузочные работы могут производиться одним человеком – водителем автомобиля . Компактный автомобиль удобен для маневрирования в плотном потоке.</p>
 
-                <p class="__catalog_view_price space-xs">
-                    {{ product.price }} <i class="fa fa-rub" aria-hidden="true"></i>
-                    <button type="button" class="btn btn-red btn-space-right pull-right">Добавить в Мои заказы</button>
-                </p>
+
+                <div class="row __catalog_view_price_top">
+                    <div class="col-md-7 col-xs-12">
+                        <p class="__catalog_view_price space-xs">{{ product.price }} <i class="fa fa-rub" aria-hidden="true"></i></p>
+                    </div>
+                    <div class="col-md-5 col-xs-12 text-right">
+                        <p class="space-xs">
+                            <button type="button" class="btn btn-red btn-block" data-toggle="modal" data-target="#modal_get_bonus">Получить скидку</button>
+                        </p>
+                    </div>
+                </div>
 
                 <p class="space-xs">
                     {% if product.config_url %}
