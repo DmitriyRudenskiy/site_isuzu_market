@@ -57,4 +57,17 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'namespace' => 'Adm
         Route::get('show/{id}', 'ProductsController@show')->name('show');
         Route::post('cover', 'ProductsController@cover')->name('cover');
     });
+
+    Route::group(['prefix' => 'parts', 'as' => 'parts_'], function () {
+        Route::get('/', 'PartsController@index')->name('index');
+        Route::get('add', 'PartsController@add')->name('add');
+        Route::get('edit/{id}', 'PartsController@edit')->name('edit');
+        Route::post('insert', 'PartsController@insert')->name('insert');
+        Route::post('update', 'PartsController@update')->name('update');
+        Route::get('hide/{id}', 'PartsController@hide')->name('hide');
+        Route::get('show/{id}', 'PartsController@show')->name('show');
+        Route::post('image', 'PartsController@image')->name('image');
+
+        Route::post('import', 'PartsController@import')->name('import');
+    });
 });
