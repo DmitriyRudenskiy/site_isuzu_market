@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Front;
 
 use App\Repositories\Car\TypesRepository;
+use App\Repositories\PartsRepository;
 use App\Repositories\ProductsRepository;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
 class DashboardController extends Controller
@@ -46,9 +48,15 @@ class DashboardController extends Controller
         return view('front.dashboard.service');
     }
 
-    public function parts()
+    public function parts(Request $request, PartsRepository $repository)
     {
-        return view('front.dashboard.parts');
+        $list = [];
+
+        if ($request->get('t') !== null) {
+            $list = $repository->all();
+        }
+
+        return view('front.dashboard.parts', ['list' => $list]);
     }
 
     public function finance()

@@ -1,12 +1,8 @@
 <?php
 namespace App\Http\Controllers\Admin;
 
-use App\Entities\Car\Categories;
-use App\Entities\Car\Types;
-use App\Entities\Products;
 use App\Repositories\PartsRepository;
 use App\Repositories\ProductsRepository;
-use App\Repositories\TonsRepository;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
