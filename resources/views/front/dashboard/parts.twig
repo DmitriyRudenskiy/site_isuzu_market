@@ -185,7 +185,7 @@
                                     <a href="{% if item.alias is empty %}{{ route('front_parts_view', {'id': item.id}) }}{% else %}{{ route('front_parts_find', {'alias': item.alias}) }}{% endif %}"> {{ item.title }}</a>
                                 </td>
                                 <td>
-                                    <a href="{% if item.alias is empty %}{{ route('front_parts_view', {'id': item.id}) }}{% else %}{{ route('front_parts_find', {'alias': item.alias}) }}{% endif %}">{{ item.price }}</a>
+                                    <a href="{% if item.alias is empty %}{{ route('front_parts_view', {'id': item.id}) }}{% else %}{{ route('front_parts_find', {'alias': item.alias}) }}{% endif %}">{{ item.price * 1.25 }}</a>
                                 </td>
                                 <td class="hidden-xs">
                                     <a href="{% if item.alias is empty %}{{ route('front_parts_view', {'id': item.id}) }}{% else %}{{ route('front_parts_find', {'alias': item.alias}) }}{% endif %}">шт</a>
