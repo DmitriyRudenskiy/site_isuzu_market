@@ -1,0 +1,34 @@
+{% extends 'front.layouts.app' %}
+
+{% block title %}Лизинговые расчеты{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row" style="padding-bottom: 240px">
+
+            <div class="col-xs-12 space-xs hidden-lg hidden-md" style="padding: 0 30px">
+                <p><br><img src="{{ part.path() }}" alt="" style="width: 100%"></p>
+            </div>
+
+            <div class="col-md-6 col-xs-12">
+                <h2 class="__catalog_view_title space-xs">{{ part.vendor_code }}</h2>
+                <h3 class="__catalog_view_sub_title space-xs">{{ part.title }}</h3>
+
+                <div class="row __catalog_view_price_top">
+                    <div class="col-md-7 col-xs-12">
+                        <p class="__catalog_view_price space-xs">{{ part.price | number_format(2, '.', ' ') }} <i class="fa fa-rub" aria-hidden="true"></i></p>
+                    </div>
+                    <div class="col-md-5 col-xs-12 text-right">
+                        <p class="space-xs">
+                            <button type="button" class="btn btn-red btn-block" data-toggle="modal" data-target="#modal_order">Оставить запрос</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 hidden-xs">
+                <img src="{{ part.path() }}" alt="" class="__catalog_view_image">
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -167,7 +167,9 @@
                         </tr>
                         </thead>
                         <tbody>
+
                         {% for item in list %}
+
                             <tr>
                                 <td class="hidden-xs">
                                     {% if item.image is not empty %}
@@ -176,12 +178,23 @@
                                         <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
                                     {% endif %}
                                 </td>
-                                <td><a href="" target="_blank">{{ item.vendor_code }}</a></td>
-                                <td><a href="" target="_blank">{{ item.title }}</a></td>
-                                <td>{{ item.price }}</td>
-                                <td class="hidden-xs">шт</td>
-                                <td class="hidden-xs">{{ item.amount }}</td>
+                                <td>
+                                    <a href="{% if item.alias is empty %}{{ route('front_parts_view', {'id': item.id}) }}{% else %}{{ route('front_parts_find', {'alias': item.alias}) }}{% endif %}">{{ item.vendor_code }}</a>
+                                </td>
+                                <td>
+                                    <a href="{% if item.alias is empty %}{{ route('front_parts_view', {'id': item.id}) }}{% else %}{{ route('front_parts_find', {'alias': item.alias}) }}{% endif %}"> {{ item.title }}</a>
+                                </td>
+                                <td>
+                                    <a href="{% if item.alias is empty %}{{ route('front_parts_view', {'id': item.id}) }}{% else %}{{ route('front_parts_find', {'alias': item.alias}) }}{% endif %}">{{ item.price }}</a>
+                                </td>
+                                <td class="hidden-xs">
+                                    <a href="{% if item.alias is empty %}{{ route('front_parts_view', {'id': item.id}) }}{% else %}{{ route('front_parts_find', {'alias': item.alias}) }}{% endif %}">шт</a>
+                                </td>
+                                <td class="hidden-xs">
+                                    <a href="{% if item.alias is empty %}{{ route('front_parts_view', {'id': item.id}) }}{% else %}{{ route('front_parts_find', {'alias': item.alias}) }}{% endif %}">{{ item.amount }}</a>
+                                </td>
                             </tr>
+
                         {% endfor %}
                         </tbody>
                     </table>
