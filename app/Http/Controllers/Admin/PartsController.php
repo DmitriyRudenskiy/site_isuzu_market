@@ -67,7 +67,8 @@ class PartsController extends Controller
             "title",
             "price",
             "amount",
-            "priority"
+            "priority",
+            "description"
         ]);
 
         $data = array_map('trim', $data);
