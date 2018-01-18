@@ -215,3 +215,8 @@ a {
     text-align: left;
     color: #777 !important;
 }
+
+.__catalog_view_price {
+    font-size: 36px;
+    color: #000;
+}
