@@ -1,6 +1,6 @@
 {% extends 'front.layouts.app' %}
 
-{% block title %}Лизинговые расчеты{% endblock %}
+{% block title %}ISUZU {{ part.vendor_code }} {{ part.title }}{% endblock %}
 
 {% block content %}
     <div class="container">
@@ -12,7 +12,7 @@
 
             <div class="col-md-6 col-xs-12">
                 <h2 class="__catalog_view_title space-xs">{{ part.vendor_code }}</h2>
-                <h3 class="__catalog_view_sub_title space-xs">{{ part.title }} подходит для моделей:</h3>
+                <h3 class="__catalog_view_sub_title space-xs">{{ part.title }} подходит для моделей</h3>
                 {% if part.description is not empty %}
                 <p class="__catalog_view_description space-xs">{{ part.description }}</p>
                 {% endif %}
