@@ -34,42 +34,20 @@
             </div>
         </div>
 
+        {% if (part.images | length) > 0 %}
         <div class="row">
-
             <div class="col-md-12 col-xs-12">
                 <h3 class="space-xs">Запчасть выделена на схеме красным цветом</h3>
             </div>
 
-
-            <div class="col-md-6 col-xs-12">
-                <p class="space-xs">
-                    <img src="/tmp/1.bmp" alt="{{ part.vendor_code }}" style="width: 100%">
-                </p>
-            </div>
-
-            <div class="col-md-6 col-xs-12">
-                <p class="space-xs">
-                    <img src="/tmp/2.bmp" alt="{{ part.vendor_code }}" style="width: 100%">
-                </p>
-            </div>
-
-            <div class="col-md-6 col-xs-12">
-                <p class="space-xs">
-                    <img src="/tmp/3.bmp" alt="{{ part.vendor_code }}" style="width: 100%">
-                </p>
-            </div>
-
-            <div class="col-md-6 col-xs-12">
-                <p class="space-xs">
-                    <img src="/tmp/4.bmp" alt="{{ part.vendor_code }}" style="width: 100%">
-                </p>
-            </div>
-
-            <div class="col-md-6 col-xs-12">
-                <p class="space-xs">
-                    <img src="/tmp/5.bmp" alt="{{ part.vendor_code }}" style="width: 100%">1
-                </p>
-            </div>
+            {% for image in part.images %}
+                <div class="col-md-6 col-xs-12">
+                    <p class="space-xs">
+                        <img src="{{ image.pathUrl() }}" alt="{{ part.vendor_code }}" style="width: 100%">
+                    </p>
+                </div>
+            {% endfor %}
         </div>
+        {% endif %}
     </div>
 {% endblock %}

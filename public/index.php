@@ -1,4 +1,7 @@
 <?php
+//ini_set('upload_max_size' , '10M');
+//ini_set('post_max_size', '10M');
+
 require __DIR__.'/../bootstrap/autoload.php';
 
 $app = require_once __DIR__.'/../bootstrap/app.php';

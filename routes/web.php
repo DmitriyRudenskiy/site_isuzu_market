@@ -74,4 +74,9 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'admin', 'namespace' => 'Adm
 
         Route::post('import', 'PartsController@import')->name('import');
     });
+
+    Route::group(['prefix' => 'parts/images', 'as' => 'parts_images_'], function () {
+        Route::post('add', 'PartsImageController@add')->name('add');
+        Route::get('remove/{id}', 'PartsImageController@remove')->name('remove');
+    });
 });

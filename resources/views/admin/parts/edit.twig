@@ -23,6 +23,33 @@
     </div>
 {% endblock %}
 
+{% block gallery %}
+<div class="row well" style="margin-top: 48px;">
+    <div class="col-lg-3 col-md-4">
+        <div class="thumbnail">
+            <form enctype="multipart/form-data" method="post" action="{{ route('admin_parts_images_add') }}">
+                {{ csrf_field() }}
+                <input type="hidden" name="id" value="{{ part.id }}">
+                <input type="file" name="image" onchange="this.form.submit()">
+            </form>
+        </div>
+    </div>
+
+    {% for image in part.images %}
+        <div class="col-lg-12 col-md-12">
+            <div class="thumbnail">
+                <div class="caption">
+                    <p class="text-center">
+                        <a href="{{ route('admin_parts_images_remove', {'id' : image.id}) }}" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                    </p>
+                </div>
+                <img src="{{ image.pathUrl() }}" alt="...">
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
 {% block script %}
     <script>
         $(document).ready(function(){

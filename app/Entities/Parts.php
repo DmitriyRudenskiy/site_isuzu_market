@@ -29,5 +29,10 @@ class Parts extends Model
         . DIRECTORY_SEPARATOR
         . $this->image;
     }
+
+    public function images()
+    {
+        return $this->hasMany(PartsImages::class, "part_id", "id");
+    }
 }
 
