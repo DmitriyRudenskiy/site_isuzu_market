@@ -90,8 +90,10 @@ class PartsImageController extends Controller
             throw new NotFoundHttpException();
         }
 
+        $partId = $image->part_id;
+
         $image->delete();
 
-        return redirect()->route('admin_parts_edit', ['id' => $id]);
+        return redirect()->route('admin_parts_edit', ['id' => $partId]);
     }
 }
