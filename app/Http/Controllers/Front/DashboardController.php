@@ -50,11 +50,7 @@ class DashboardController extends Controller
 
     public function parts(Request $request, PartsRepository $repository)
     {
-        $list = [];
-
-        if ($request->get('t') !== null) {
-            $list = $repository->all();
-        }
+        $list = $repository->all();
 
         return view('front.dashboard.parts', ['list' => $list]);
     }
