@@ -14,6 +14,8 @@ class CallbackController extends Controller
      */
     public function index(Request $request)
     {
+        $referrer = $request->headers->get('referer');
+
         //
         $name = $request->get('name');
         $phone = $request->get('phone');
@@ -24,11 +26,13 @@ class CallbackController extends Controller
         $phone = preg_replace('/[^0-9]/', '', $phone);
         $message = !empty($message) ? 'Запчасти: ' . $message : null;
 
+        $message .= "\n Заявка отправлена со страницы: " . $referrer;
+
         if (!empty($name) && strlen($phone) > 4) {
             $this->sendMail($name, $phone, $message, $request->getHost());
         }
 
-        return new \Illuminate\Http\Response('I work from site');
+        return new \Illuminate\Http\Response('Send from: ' . $referrer);
     }
 
     /**
