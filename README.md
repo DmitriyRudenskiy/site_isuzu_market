@@ -20,3 +20,5 @@ php vendor/bin/phpunit
 php artisan key:generate
 php artisan migrate
 php artisan create:user
+
+
