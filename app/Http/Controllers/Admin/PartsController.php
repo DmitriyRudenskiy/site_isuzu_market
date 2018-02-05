@@ -40,8 +40,6 @@ class PartsController extends Controller
                     "amount" => (int)$row[4]
                 ];
 
-                dd($value);
-
                 $repository->add($value);
             }
         }
