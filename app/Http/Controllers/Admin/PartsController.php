@@ -31,9 +31,6 @@ class PartsController extends Controller
 
         foreach ($csv as $row) {
 
-
-            dd(sizeof($row), $row);
-
             if (sizeof($row) >= 5 && $row[2] > 0) {
 
                 $value = [
