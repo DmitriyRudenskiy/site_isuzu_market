@@ -22,15 +22,8 @@ class PartsController extends Controller
 
     public function import(PartsRepository $repository)
     {
-        var_dump(12345);
-        exit();
-
-
         /* @var \Illuminate\Http\UploadedFile $file */
         $file = Input::file('csv');
-
-        dd($file);
-
 
         $csv = new SplFileObject($file->path());
         $csv->setFlags(SplFileObject::READ_CSV);
