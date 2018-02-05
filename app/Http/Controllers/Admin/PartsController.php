@@ -27,6 +27,7 @@ class PartsController extends Controller
 
         $csv = new SplFileObject($file->path());
         $csv->setFlags(SplFileObject::READ_CSV);
+        $csv->setCsvControl(';');
 
         foreach ($csv as $row) {
 
