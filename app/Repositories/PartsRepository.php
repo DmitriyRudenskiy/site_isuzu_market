@@ -21,7 +21,7 @@ class PartsRepository extends BaseRepository
         try {
             return $this->create($data);
         } catch (\Exception $e) {
-
+            dd($e->getMessage());
         }
 
         return null;
