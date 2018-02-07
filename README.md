@@ -20,6 +20,3 @@ php vendor/bin/phpunit
 php artisan key:generate
 php artisan migrate
 php artisan create:user
-
-
-php -S 0.0.0.0:8100 -t /php/isuzu-kemerovo.ru/public > /dev/null 2>&1 &
