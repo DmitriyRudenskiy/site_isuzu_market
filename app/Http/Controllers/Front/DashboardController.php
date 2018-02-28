@@ -60,4 +60,8 @@ class DashboardController extends Controller
         return view('front.dashboard.finance');
     }
 
+    public function vacancy()
+    {
+        return view('front.dashboard.vacancy');
+    }
 }
