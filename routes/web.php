@@ -41,6 +41,8 @@ Route::group(['middleware' => ['web'], 'namespace' => 'Front', 'as' => 'front_']
 
     Route::get('/parts/view/{id}', 'PartsController@view')->name('parts_view');
     Route::get('/parts/{alias}', 'PartsController@find')->name('parts_find');
+
+    Route::get('/articles/1', 'ArticlesController@index')->name('articles_index');
 });
 
 Route::group(['middleware' => 'web', 'namespace' => 'Admin'], function() {
