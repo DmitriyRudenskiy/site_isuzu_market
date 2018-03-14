@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => ['web'], 'namespace' => 'Front', 'as' => 'front_'], function () {
-    Route::get('/', 'DashboardController@parts')->name('dashboard_parts');
+    Route::get('/', 'DashboardController@parts')->name('home');
     Route::get('/view/{id}', 'PartsController@view')->name('parts_view');
     Route::get('/{alias}', 'PartsController@find')->name('parts_find');
 });
