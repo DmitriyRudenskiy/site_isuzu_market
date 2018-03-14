@@ -6,6 +6,7 @@ Route::group(['middleware' => ['web'], 'namespace' => 'Front', 'as' => 'front_']
     Route::get('/', 'DashboardController@parts')->name('home');
     Route::get('/view/{id}', 'PartsController@view')->name('parts_view');
     Route::get('/{alias}', 'PartsController@find')->name('parts_find');
+    Route::post('/callback', 'CallbackController@index')->name('callback_index');
     Route::get('/articles/1', 'ArticlesController@index')->name('articles_index');
 });
 
