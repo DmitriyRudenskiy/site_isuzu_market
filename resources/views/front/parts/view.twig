@@ -43,7 +43,7 @@
             {% for image in part.images %}
                 <div class="col-md-6 col-xs-12">
                     <p class="space-xs">
-                        <img src="{{ image.pathUrl() }}" alt="{{ part.vendor_code }}" style="width: 100%">
+                        <img src="http://isuzu.market{{ image.pathUrl() }}" alt="{{ part.vendor_code }}" style="width: 100%">
                     </p>
                 </div>
             {% endfor %}
