@@ -25,7 +25,7 @@
                         <tr>
                             <td><img src="{{ item.image }}" alt=""> </td>
                             <td>{{ item.title }}</td>
-                            <td class="text-right"><a href="{{ route('front_leasing_pdf_download', {'bank_id': item.id}) }}&{{ data }}" class="btn btn-red">Cкачать</a></td>
+                            <td class="text-right"><button type="button" class="btn btn-red" data-toggle="modal" data-target="#modal_get_leasing">Cкачать</button></td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -42,3 +42,4 @@
         </div>
     </div>
 {% endblock %}
+
