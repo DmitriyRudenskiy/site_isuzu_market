@@ -26,7 +26,7 @@ class CreditController extends Controller
             $product = (object)[
                 "img" => sprintf("/img/configurator/products/%s_%s_1.jpg", $typeId, $baseId),
                 "title" => $base->title,
-                "price" => $price->price * 0.98
+                "price" => $price->price
             ];
 
         } elseif ($id > 0) {

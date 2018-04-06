@@ -57,6 +57,9 @@
 
     <div class="row add-space-for-md xs-padding-25">
         <div class="col-lg-7 col-xs-12">
+            <input type="hidden" name="price" value="{{ price }}">
+            <input type="hidden" name="period" value="5">
+            <input type="hidden" name="advance" value="50">
 
             <h2 style="margin-top: 60px">Стоимость</h2>
             <div class="row add-space-for-md xs-padding-5">
@@ -68,11 +71,11 @@
                 -->
                 <div class="col-lg-4 col-md-4">
                     <p style="color: #646464; font-size: 18px;">Цена в лизинг</p>
-                    <p class="leasing_price">{{ ((((price * (5.5 / 100)) * 5 + price) -  (price / 2))) / 60 | number_format(0, '.', ' ') }} <i class="fa fa-rub" aria-hidden="true"></i></p>
+                    <p class="leasing_price"><span class="pay_in_month"></span> <i class="fa fa-rub" aria-hidden="true"></i> / мес.</p>
                 </div>
                 <div class="col-lg-4 col-md-4">
                     <p style="color: #646464; font-size: 18px;">Цена в кредит</p>
-                    <p class="leasing_price">{{ ((((price * (6.5 / 100)) * 5 + price) -  (price / 2))) / 60 | number_format(0, '.', ' ') }} <i class="fa fa-rub" aria-hidden="true"></i></p>
+                    <p class="leasing_price"><span class="pay_in_month pay_in_month_credit"></span> <i class="fa fa-rub" aria-hidden="true"></i> / мес.</p>
                 </div>
             </div>
 

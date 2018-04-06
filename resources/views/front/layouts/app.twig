@@ -307,13 +307,20 @@
     /* Leasing calculator */
     $(document).ready(function () {
 
+        function fix() {
+            var price = $(".pay_in_month:first").text() * 0.95;
+
+            price = Math.floor(price);
+
+            $(".pay_in_month_credit").text(price);
+        }
+
         function getInMouth() {
 
             var price = parseInt($('[name="price"]').val());
             var period = parseInt($('[name="period"]').val()) * 12;
             var advance = parseInt($('[name="advance"]').val());
             var percent =  6.5;
-
             if (advance < 1) {
                 advance = 1;
             }
@@ -332,16 +339,19 @@
 
         element.each(function(){
             element.html(getInMouth());
+            fix();
         });
 
         $('[name="period"]').change(function() {
             $('#preiod_value').text($(this).val() * 12);
             element.html(getInMouth());
+            fix();
         });
 
         $('[name="advance"]').change(function() {
             $('#advance_value').text($(this).val() * 1);
             element.html(getInMouth());
+            fix();
         });
 
         /* bottom label */
@@ -396,14 +406,5 @@
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/44752870" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
-
-<script async src="https://callkeeper.ru/w/?f79df938"></script>
-<script async src="//track.sochunter.com/?id=ODQwN2M3ODlhYmY5ZjU3NTM4MzJkZTgzNDlhYzRhYWR8MzA4Nw=="></script>
-
-<!-- BEGIN JIVOSITE CODE {literal} -->
-<script>
-    (function(){ var widget_id = 'cUZFydC9l0';var d=document;var w=window;function l(){
-        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
-<!-- {/literal} END JIVOSITE CODE -->
 </body>
 </html>

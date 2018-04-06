@@ -2,14 +2,14 @@
     {% if price is not empty %}
         <input type="hidden" name="price" value="{{ (price * 0.98) }}">
     {% else %}
-        <input type="hidden" name="price" value="{{ (product.price * 0.98) }}">
+        <input type="hidden" name="price" value="{{ product.price }}">
     {% endif %}
     <div class="form-group" style="padding-top: 24px">
         <label class="space-xs">Срок кредита, мес</label>
 
         <div>
             <div class="col-sm-8 col-md-8 col-xs-12 space-xs">
-                <input name="period" type="range" min="1" max="5" step="1" value="4">
+                <input name="period" type="range" min="1" max="5" step="1" value="5">
 
                 <table class="space-xs" style="width: 100%; text-align: center">
                     <tbody>
@@ -24,7 +24,7 @@
                 </table>
             </div>
             <div class="col-sm-4 col-md-4 hidden-sm hidden-xs">
-                <p class="form-control-static"><span id="preiod_value">48</span> мес.</p>
+                <p class="form-control-static"><span id="preiod_value">60</span> мес.</p>
             </div>
         </div>
     </div>

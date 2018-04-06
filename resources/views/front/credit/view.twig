@@ -21,7 +21,7 @@
                 <p class="leasinf_view_comment xs-padding-5"><span class="space-xs">авансовый платеж</span></p>
             </div>
             <div class="col-md-4">
-                <p class="leasinf_view_red xs-padding-5"><span class="leasinf_view_black space-xs">от </span><span class="pay_in_month"></span> <span class="glyphicon glyphicon-ruble" aria-hidden="true" style="font-size: 42px; line-height: 0;"></span></p>
+                <p class="leasinf_view_red xs-padding-5"><span class="leasinf_view_black space-xs">от </span><span class="pay_in_month pay_in_month_credit"></span> <span class="glyphicon glyphicon-ruble" aria-hidden="true" style="font-size: 42px; line-height: 0;"></span></p>
                 <p class="leasinf_view_comment xs-padding-5"><sapn class="space-xs">платеж в месяц</sapn></p>
             </div>
         </div>
@@ -30,13 +30,13 @@
             <div class="col-md-6">
                 <h2 class="item1 space-xs">Расчет</h2>
                 <form method="get" action="{{ route('front_credit_banks') }}">
-                    <input type="hidden" name="price" value="{{ (product.price * 0.98) }}">
+                    <input type="hidden" name="price" value="{{ product.price }}">
                     <div class="form-group" style="padding-top: 24px">
                         <label class="space-xs">Срок кредита, мес</label>
 
                         <div>
                             <div class="col-sm-8 col-md-8 col-xs-12 space-xs">
-                                <input name="period" type="range" min="1" max="5" step="1" value="4">
+                                <input name="period" type="range" min="1" max="5" step="1" value="5">
 
                                 <table class="space-xs" style="width: 100%; text-align: center">
                                     <tbody>
@@ -61,7 +61,7 @@
 
                         <div>
                             <div class="col-sm-8 col-md-8 col-xs-12 space-xs">
-                                <input name="advance" type="range" min="0" max="50" step="1" value="0">
+                                <input name="advance" type="range" min="0" max="50" step="1" value="50">
                                 <table style="width: 100%; text-align: center">
                                     <tbody>
                                     <tr>
