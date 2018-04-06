@@ -67,7 +67,7 @@
             </div>
 
             <div class="col-lg-5 col-md-4 __home_item_cover_decription">
-                <p class="price space-xs">2 850 538 <i class="fa fa-rub" aria-hidden="true"></i></p>
+                <p class="price space-xs">{{ (2850538 * 0.98 / 12) | number_format(0, '.', ' ') }}  <i class="fa fa-rub" aria-hidden="true"></i></p>
                 <p class="title space-xs">Бортовой автомобиль ELF 7.5</p>
                 <p class="space-xs">
                     <a href="{{ route('front_configurator_leasing', {typeId: 3, baseId: 4 }) }}" class="btn btn-red btn-space-right">Оформить заявку</a>
@@ -78,7 +78,7 @@
         <div class="row">
             <div class="col-lg-6 col-md-6 col-xs-12 __home_item_list">
                 <img src="/img/catalog/2_2.jpg" alt="" class="__effect_zoom">
-                <p class="price space-xs">2 606 800 <i class="fa fa-rub" aria-hidden="true"></i></p>
+                <p class="price space-xs">{{ (2606800 * 0.98 / 12) | number_format(0, '.', ' ') }} <i class="fa fa-rub" aria-hidden="true"></i></p>
                 <p class="title space-xs">ISUZU ELF 7.5</p>
                 <p class="space-xs">
                     <a href="{{ route('front_configurator_leasing', {typeId: 2, baseId: 4 }) }}" class="btn btn-red btn-space-right">Оформить заявку</a>
@@ -88,7 +88,7 @@
 
             <div class="col-lg-6 col-md-6 col-xs-12 __home_item_list">
                 <img src="/img/catalog/2_3.jpg" alt="" class="__effect_zoom">
-                <p class="price space-xs">4 811 800 <i class="fa fa-rub" aria-hidden="true"></i></p>
+                <p class="price space-xs">{{ (4811800 * 0.98 / 12) | number_format(0, '.', ' ') }} <i class="fa fa-rub" aria-hidden="true"></i></p>
                 <p class="title space-xs">ISUZU ELF 9.5 EXTRALONG</p>
                 <p class="space-xs">
                     <a href="{{ route('front_configurator_leasing', {typeId: 10, baseId: 5 }) }}" class="btn btn-red btn-space-right">Оформить заявку</a>
