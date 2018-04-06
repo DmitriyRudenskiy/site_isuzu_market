@@ -60,24 +60,26 @@
 
             <h2 style="margin-top: 60px">Стоимость</h2>
             <div class="row add-space-for-md xs-padding-5">
+                <!--
                 <div class="col-lg-4 col-md-4">
                     <p style="color: #646464; font-size: 18px;">Розничная цена</p>
                     <p class="leasing_price">{{ price | number_format(0, '.', ' ') }} <i class="fa fa-rub" aria-hidden="true"></i></p>
                 </div>
-                <div class="col-lg-3 col-md-3">
-                    <p style="color: #646464; font-size: 18px;">Цена по акции</p>
+                -->
+                <div class="col-lg-4 col-md-4">
+                    <p style="color: #646464; font-size: 18px;">Цена в лизинг</p>
                     <p class="leasing_price">{{ (price * 0.98) | number_format(0, '.', ' ') }} <i class="fa fa-rub" aria-hidden="true"></i></p>
                 </div>
-                <div class="col-lg-5 col-md-5">
-                    <p style="color: #646464; font-size: 18px;">Цена от двух и более единиц</p>
+                <div class="col-lg-4 col-md-4">
+                    <p style="color: #646464; font-size: 18px;">Цена в кредит</p>
                     <p class="leasing_price">{{ (price * 0.96) | number_format(0, '.', ' ') }} <i class="fa fa-rub" aria-hidden="true"></i></p>
                 </div>
             </div>
 
             <div class="row add-space-for-md xs-padding-5">
                 <div class="col-lg-12" style="padding-bottom: 80px">
-                    <p style="color: #646464; font-size: 18px;">Итоговая цена</p>
-                    <p class="leasing_price_big">{{ (price * 0.98) | number_format(0, '.', ' ') }} <i class="fa fa-rub" aria-hidden="true"></i></p>
+                    <p style="color: #646464; font-size: 18px;">Розничная цена</p>
+                    <p class="leasing_price_big" style="cursor: pointer" data-toggle="modal" data-target="#modal_get_bonus">По запросу</p>
                 </div>
             </div>
 
