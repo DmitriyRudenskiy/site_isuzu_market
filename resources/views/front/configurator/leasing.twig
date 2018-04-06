@@ -68,11 +68,11 @@
                 -->
                 <div class="col-lg-4 col-md-4">
                     <p style="color: #646464; font-size: 18px;">Цена в лизинг</p>
-                    <p class="leasing_price">{{ (price * 0.98) | number_format(0, '.', ' ') }} <i class="fa fa-rub" aria-hidden="true"></i></p>
+                    <p class="leasing_price">{{ ((((price * (5.5 / 100)) * 5 + price) -  (price / 2))) / 60 | number_format(0, '.', ' ') }} <i class="fa fa-rub" aria-hidden="true"></i></p>
                 </div>
                 <div class="col-lg-4 col-md-4">
                     <p style="color: #646464; font-size: 18px;">Цена в кредит</p>
-                    <p class="leasing_price">{{ (price * 0.96) | number_format(0, '.', ' ') }} <i class="fa fa-rub" aria-hidden="true"></i></p>
+                    <p class="leasing_price">{{ ((((price * (6.5 / 100)) * 5 + price) -  (price / 2))) / 60 | number_format(0, '.', ' ') }} <i class="fa fa-rub" aria-hidden="true"></i></p>
                 </div>
             </div>
 
