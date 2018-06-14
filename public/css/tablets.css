@@ -15,6 +15,7 @@ body {
     padding-left: 195px;
     padding-right: 0;
     min-height: 100px;
+    margin-top: -100px;
 }
 
 .navbar-nav > li > a {
