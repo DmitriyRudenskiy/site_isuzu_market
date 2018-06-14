@@ -187,61 +187,29 @@
             </div>
         </div>
 
-        <!-- parts list -->
-        {% if  (list | length) > 0 %}
-            <div class="row">
-                <div class="col-md-12 ">
-                    <p class="__parts_price_title space-xs">Расходники на складе в наличии</p>
+        <div class="row">
+            <div class="col-md-6 col-xs-12">
+                <h3 class="space-xs">ISUZU BEST VALUE PARTS</h3>
 
-                    <div class="space-xs">
-                        <table class="table table-striped __parts_price_table">
-                            <thead>
-                            <tr>
-                                <th class="hidden-xs">Фото</th>
-                                <th>Артикул</th>
-                                <th>Наименование</th>
-                                <th>Цена<br>с ндс</th>
-                                <th class="hidden-xs">Ед. изм</th>
-                                <th class="hidden-xs">Кол-во</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-
-                            {% for item in list %}
-
-                                <tr>
-                                    <td class="hidden-xs">
-                                        {% if item.image is not empty %}
-                                            <img src="http://isuzu.market{{ item.path() }}" alt="" width="50">
-                                        {% else %}
-                                            <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
-                                        {% endif %}
-                                    </td>
-                                    <td>
-                                        <a href="{% if item.alias is empty %}{{ route('front_parts_view', {'id': item.id}) }}{% else %}{{ route('front_parts_find', {'alias': item.alias}) }}{% endif %}">{{ item.vendor_code }}</a>
-                                    </td>
-                                    <td>
-                                        <a href="{% if item.alias is empty %}{{ route('front_parts_view', {'id': item.id}) }}{% else %}{{ route('front_parts_find', {'alias': item.alias}) }}{% endif %}"> {{ item.title }}</a>
-                                    </td>
-                                    <td>
-                                        <a href="{% if item.alias is empty %}{{ route('front_parts_view', {'id': item.id}) }}{% else %}{{ route('front_parts_find', {'alias': item.alias}) }}{% endif %}">{{ (item.price * 1.25) | number_format(0, '.', ' ') }}</a>
-                                    </td>
-                                    <td class="hidden-xs">
-                                        <a href="{% if item.alias is empty %}{{ route('front_parts_view', {'id': item.id}) }}{% else %}{{ route('front_parts_find', {'alias': item.alias}) }}{% endif %}">шт</a>
-                                    </td>
-                                    <td class="hidden-xs">
-                                        <a href="{% if item.alias is empty %}{{ route('front_parts_view', {'id': item.id}) }}{% else %}{{ route('front_parts_find', {'alias': item.alias}) }}{% endif %}">{{ item.amount }}</a>
-                                    </td>
-                                </tr>
-
-                            {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
+                <div>
+                    <p>ISUZU BEST VALUE PARTS (BVP) – это самый экономичный вариант качественных и, что немаловажно, оригинальных запасных частей для автомобилей ISUZU.  В чем же их преимущества?</p>
+                    <ul>
+                        <li>обширный ассортимент;</li>
+                        <li>привлекательная цена;</li>
+                        <li>высокий уровень службы;</li>
+                        <li>гарантия от завода-изготовителя.</li>
+                    </ul>
                 </div>
             </div>
-        {% endif %}
-        <!--/ parts list -->
+            <div class="col-md-6 col-xs-12">
+                <div>
+                    <p>Ассортимент ISUZU BVP – от масляных  и воздушных фильтров до  сцеплений и тормозных компонентов – был разработан с тем, чтобы обеспечить владельцу надежного грузовика с большим стажем достойный выбор для обслуживания ценного бизнес-актива.</p>
+                    <p>Все запасные части ISUZU BVP изготовлены в соответствии со строгими стандартами Исузу по качеству и совместимости, раз за разом облегчая ремонт и обслуживание автомобиля.</p>
+                    <p>Устанавливая запасные части ISUZU BVP, Вы можете смело вернуть автомобиль на линию, не сомневаясь в наивысшем качестве установленных оригинальных компонентов от производителя.</p>
+                    <p>Оригинальные запасные части ISUZU BVP доступны исключительно у авторизованных дилеров Исузу по всей стране.</p>
+                </div>
+            </div>
+        </div>
 
         <div class="row">
             <div class="col-md-12">
