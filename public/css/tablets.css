@@ -3,6 +3,10 @@
     height: 100px;
 }
 
+body {
+    padding-top: 100px;
+}
+
 .main_logo img {
     margin-top: 40px;
 }
