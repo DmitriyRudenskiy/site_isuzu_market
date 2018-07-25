@@ -3,6 +3,11 @@
 use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => ['web'], 'namespace' => 'Front', 'as' => 'front_'], function () {
+
+    Route::get('/actions', 'SalesController@index')->name('sales_index');
+    Route::get('/actions/{slug}', 'SalesController@view')->name('sales_view');
+
+
     Route::get('/', 'DashboardController@home')->name('home');
     Route::get('/about', 'DashboardController@about')->name('dashboard_about');
     Route::get('/contacts', 'DashboardController@contacts')->name('dashboard_contacts');
@@ -16,7 +21,6 @@ Route::group(['middleware' => ['web'], 'namespace' => 'Front', 'as' => 'front_']
     Route::get('/leasing/view/{id}', 'LeasingController@view')->name('leasing_view');
     Route::get('/leasing/select/download', 'BankController@index')->name('leasing_select_download');
     Route::get('/leasing/pdf/download', 'BankController@downdload')->name('leasing_pdf_download');
-
 
     // Route::get('/credit', 'DashboardController@credit')->name('dashboard_credit');
     Route::get('/credit/view/{id}', 'CreditController@view')->name('credit_view');
