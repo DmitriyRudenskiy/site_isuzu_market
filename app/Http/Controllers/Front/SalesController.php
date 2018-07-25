@@ -23,8 +23,10 @@ class SalesController extends Controller
      */
     public function view($slug)
     {
-        dd($slug);
+        if ($slug == "originalnoe-motornoe-maslo-isuzu-genuine-oil") {
+            return view('front.sales.view1');
+        }
 
-        return view('front.sales.view');
+        dd($slug);
     }
 }
