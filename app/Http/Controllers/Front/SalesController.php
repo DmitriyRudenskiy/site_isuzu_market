@@ -31,7 +31,7 @@ class SalesController extends Controller
             return view('front.sales.view2');
         }
 
-        if ($slug == "leasing-finance") {
+        if ($slug == "dva-goda-to-v-podarok") {
             return view('front.sales.view3');
         }
 
