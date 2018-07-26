@@ -39,10 +39,6 @@ class SalesController extends Controller
             return view('front.sales.view4');
         }
 
-
-
-
-
         dd($slug);
     }
 }

@@ -1,0 +1,26 @@
+{% extends 'front.layouts.app' %}
+
+{% block title %}{{ item.title }} | Новости{% endblock %}
+
+{% block content %}
+    <style>
+        @media (min-width: 992px) and (orientation: landscape) {
+            p, li {
+                font-size: 18px;
+            }
+        }
+    </style>
+
+    <div class="container">
+        <h1 class="title_a1">{{ item.title }}</h1>
+
+        <div class="row">
+            <div class="col-md-12">
+                <p class="text-center space-xs" ><img src="{{ item.image }}" alt="" style="width: 100%"></p>
+                <p class="space-xs">{{ item.date }}</p>
+                {{ item.body | raw() }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

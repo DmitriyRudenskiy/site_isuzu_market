@@ -27,7 +27,7 @@ Route::group(['middleware' => ['web'], 'namespace' => 'Front', 'as' => 'front_']
     Route::get('/credit/banks', 'CreditController@banks')->name('credit_banks');
 
     Route::get('/news', 'NewsController@index')->name('news_list');
-    Route::get('/news/read/{id}', 'NewsController@index')->name('news_view');
+    Route::get('/news/read/{id}', 'NewsController@view')->name('news_view');
 
     Route::post('/callback', 'CallbackController@index')->name('callback_index');
 
