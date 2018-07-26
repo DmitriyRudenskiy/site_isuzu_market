@@ -27,6 +27,22 @@ class SalesController extends Controller
             return view('front.sales.view1');
         }
 
+        if ($slug == "start-prodazh-ogranichennoy-serii-avtomobiley-isuzu-d-max-black-edition") {
+            return view('front.sales.view2');
+        }
+
+        if ($slug == "leasing-finance") {
+            return view('front.sales.view3');
+        }
+
+        if ($slug == "prodlenie-garantii") {
+            return view('front.sales.view4');
+        }
+
+
+
+
+
         dd($slug);
     }
 }

@@ -1,0 +1,37 @@
+{% extends 'front.layouts.app' %}
+
+{% block title %}2 года бесплатного обслуживания в подарок.{% endblock %}
+
+{% block content %}
+    <style>
+        @media (min-width: 992px) and (orientation: landscape) {
+            p, li {
+                font-size: 18px;
+            }
+
+            p.sub_text {
+                font-size: 12px;
+            }
+        }
+    </style>
+
+    <div class="container">
+        <h1 class="title_a1">2 года бесплатного обслуживания в подарок.</h1>
+
+        <div class="row">
+            <div class="col-md-4">
+                <p class="text-center space-xs" ><img src="https://www.isuzu.ru/upload/iblock/cca/303x390.jpg" alt="" style="width: 100%"></p>
+
+                <p class="space-xs sub_text">* Регламентное техническое обслуживание в рамках Акции ограничено пробегом в 50 000 км и сроком в 2 года с даты приобретения соответствующего автомобиля конечным Клиентом, в зависимости от того что наступит ранее.<br>
+                    За подробностями обращайтесь к официальным Дилерам ISUZU.<br>
+                    Не является публичной офертой в соответствии со статьей 437 ГК РФ.
+                </p>
+            </div>
+            <div class="col-md-8">
+                <p class="space-xs">Акция распространяется на ограниченную партию автомобилей 2017 года выпуска по ПТС, реализованных в период с 01 апреля по 30 сентября 2018 года*.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}
+
