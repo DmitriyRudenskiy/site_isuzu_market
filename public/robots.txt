@@ -1,3 +1,2 @@
 User-agent: *
-Disallow: /admin
-Disallow: /login
+Host: https://isuzu.market
