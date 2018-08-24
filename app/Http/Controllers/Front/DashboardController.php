@@ -48,11 +48,32 @@ class DashboardController extends Controller
         return view('front.dashboard.service');
     }
 
+    public function findModel($type)
+    {
+        $type = trim(strtoupper($type));
+        $filename = public_path('model') . DIRECTORY_SEPARATOR . 'add.csv';
+        $result = [];
+
+        $file = new \SplFileObject($filename);
+        $file->setFlags(\SplFileObject::READ_CSV);
+        foreach ($file as $row) {
+            if ($row[1] == $type) {
+                $result[] = (object) [
+                    'title' => $row[2],
+                    'image' => $row[0],
+                    'year' => $row[3],
+                    'driver' => $row[4],
+                    'config_url' => $row[5]
+                ];
+            }
+        }
+
+        return view('front.dashboard.find_model', ['list' => $result]);
+    }
+
     public function parts(Request $request, PartsRepository $repository)
     {
-        $list = $repository->all();
-
-        return view('front.dashboard.parts', ['list' => $list]);
+        return view('front.dashboard.parts');
     }
 
     public function finance()

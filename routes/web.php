@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => ['web'], 'namespace' => 'Front', 'as' => 'front_'], function () {
     Route::get('/', 'DashboardController@parts')->name('home');
+    Route::get('/find/model/{typeId}', 'DashboardController@findModel')->name('find_model');
     Route::get('/view/{id}', 'PartsController@view')->name('parts_view');
     Route::get('/{alias}', 'PartsController@find')->name('parts_find');
     Route::post('/callback', 'CallbackController@index')->name('callback_index');

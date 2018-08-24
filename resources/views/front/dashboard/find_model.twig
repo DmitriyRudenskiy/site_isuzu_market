@@ -1,0 +1,45 @@
+{% extends 'front.layouts.app' %}
+
+{% block title %}Грузовики{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <h1 class="title_a1">Грузовики</h1>
+        <div class="row">
+            <!-- result -->
+            <div class="col-md-12 __search_result_box">
+                {% for item in list %}
+                    <div class="row __search_result_item">
+                        <div class="col-md-5 col-xs-12">
+                            <p class="space-xs"><img src="/model/{{ item.image }}.png" alt="" class="__search_result_item_image"></p>
+                        </div>
+                        <div class="col-md-7 col-xs-12">
+                            <h3 class="__search_result_item_title space-xs">{{ item.title }}</h3>
+
+                            <p class="space-xs __search_result_text">
+                                <span class="_text_gray">Год производства:</span><br>
+                                <label class="radio-inline">
+                                    <input type="radio" checked disabled> {{ item.year }}
+                                </label>
+                            </p>
+
+                            <p class="space-xs __search_result_text">
+                                <span class="_text_gray">Двигатель:</span><br>
+                                <label class="radio-inline">
+                                    <input type="radio" checked disabled> {{ item.driver }}
+                                </label>
+                            </p>
+
+                            <p class="space-xs">
+                                <a href="{{ item.config_url }}" class="btn btn-red btn-space-right">Подробнее</a>
+                                <button type="button" class="btn btn-gray-link" data-toggle="modal" data-target="#modal_order">Помощь специалиста</button>
+                            </p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <!--/ result -->
+        </div>
+    </div>
+{% endblock %}

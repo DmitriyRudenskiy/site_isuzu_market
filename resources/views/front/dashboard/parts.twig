@@ -128,6 +128,25 @@
 
     </style>
     <div class="container" style="padding-top: 70px">
+        <h1 class="title_a1">Выберите модель для самостоятельного подбора автозапчастей</h1>
+
+        <div class="row" style="padding-bottom: 48px;">
+            <div class="col-md-4 text-center" style="cursor: pointer" onclick="location.href='{{ route('front_find_model', {typeId: 'ELF'}) }}'">
+                <p><img src="/img/configurator/products/2_1_1.jpg" alt="" style="width: 100%"></p>
+                <p>ELF</p>
+            </div>
+            <div class="col-md-4 text-center" style="cursor: pointer" onclick="location.href='{{ route('front_find_model', {typeId: 'FORWARD'}) }}'">
+                <p><img src="/img/configurator/products/2_7_1.jpg" alt="" style="width: 100%"></p>
+                <p>FORWARD</p>
+            </div>
+            <div class="col-md-4 text-center" style="cursor: pointer" onclick="location.href='{{ route('front_find_model', {typeId: 'GIGA'}) }}'">
+                <p><img src="/img/configurator/products/2_9_1.jpg" alt="" style="width: 100%"></p>
+                <p>GIGA</p>
+            </div>
+
+            <div class="col-md-12"><h3 class="space-xs">Если вы не хотите подбирать запчасти самостоятельно обратитесь к нашим менеджерам</h3></div>
+        </div>
+
         <div class="row">
             <div class="col-lg-7 col-md-8" style="margin-bottom: 32px;">
                 <img src="/parts_001.jpg" alt="" style="width: 100%" class="__effect_zoom">
